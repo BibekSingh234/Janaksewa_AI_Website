@@ -1,0 +1,2293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JanakSewa AI | Citizen Assistance</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+<!-- =========================
+    TOP INFORMATION BAR
+========================= -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-bar-content">
+
+            <!-- LEFT: LOCATION -->
+            <div class="top-bar-left">
+                <span class="top-info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Janakpurdham, Madhesh Province, Nepal</span>
+                </span>
+            </div>
+
+            <!-- RIGHT: CONTACT + EMAIL + SOCIAL + LANGUAGE -->
+            <div class="top-bar-right">
+
+                <a href="tel:+97741520000" class="top-info-link">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>+977-41-520000</span>
+                </a>
+
+                <a href="mailto:info@janakpurmun.gov.np" class="top-info-link email-link">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>info@janakpurmun.gov.np</span>
+                </a>
+
+                <div class="top-social-icons">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="#" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                    <a href="#" aria-label="TikTok">
+                        <i class="fa-brands fa-tiktok"></i>
+                    </a>
+
+                </div>
+
+                <!-- LANGUAGE -->
+                <select
+                    class="language-select"
+                    id="languageSelect"
+                    aria-label="Select language">
+
+                    <option value="en">English</option>
+                    <option value="ne">नेपाली</option>
+                    <option value="mai">मैथिली</option>
+                    <option value="hi">हिन्दी</option>
+
+                </select>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<!-- =========================
+    MAIN HEADER
+========================= -->
+<header class="main-header">
+
+    <div class="container">
+
+        <div class="main-header-content">
+
+            <!-- =========================
+                LEFT: LOGO + BRAND
+            ========================= -->
+            <a href="index.html" class="janaksewa-brand">
+
+                <div class="logo-box">
+
+                    <img
+                        src="assets/images/janaksewa-logo.png"
+                        alt="Janaksewa AI Logo"
+                        class="janaksewa-logo"
+                        onerror="this.style.display='none'">
+
+                </div>
+
+                <div class="brand-text">
+
+                    <h1 data-i18n="janaksewaAI">
+                        Janaksewa AI
+                    </h1>
+
+                    <h2>
+                        जनकसेवा एआई
+                    </h2>
+
+                    <p>
+                        Citizen Assistance System
+                    </p>
+
+                </div>
+
+            </a>
+
+
+            <!-- =========================
+                RIGHT: HELPLINE + SEARCH + THEME
+            ========================= -->
+            <div class="header-actions">
+
+                <!-- CITIZEN HELPLINE -->
+                <div class="header-contact">
+
+                    <div class="contact-icon">
+                        <i class="bi bi-telephone-fill"></i>
+                    </div>
+
+                    <div class="contact-content">
+
+                        <span data-i18n="citizenHelpline">
+                            Citizen Helpline
+                        </span>
+
+                        <a href="tel:1660000000">
+                            1660-000-000
+                        </a>
+
+                        <small>
+                            Available for citizen assistance
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SEARCH -->
+                <button
+                    class="header-icon-button search-button"
+                    id="searchButton"
+                    type="button"
+                    aria-label="Search Website"
+                    title="Search Website">
+
+                    <i class="bi bi-search"></i>
+
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+    <!--NAVIGATION-->
+    <nav class="navbar navbar-expand-lg navbar-dark main-navbar sticky-top">
+        <div class="container">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavigation"
+                aria-controls="mainNavigation" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavigation">
+
+                <ul class="navbar-nav me-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#hero" data-i18n="home">
+                            <i class="bi bi-house-door"></i>
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#tourist-places" data-i18n="tourism">
+                            Tourism
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about" data-i18n="about">
+                            About Municipality
+                        </a>
+                    </li>
+
+                    <!-- SERVICES -->
+
+                    <li class="nav-item">
+                        <a class=" nav-link dropdown-toggle" href="#services" role="button" data-bs-toggle="dropdown"
+                        data-i18n="services">
+                        Services
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#services">
+                                    <i class="bi bi-grid me-2"></i>
+                                    <span data-i18n="allServices">All Services</span>
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="services.html#birth-registration"
+                                    data-i18n="birthRegistration">
+                                    Birth Registration
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="services.html#death-registration">
+                                    Death Registration
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="services.html#business-registration"
+                                    data-i18n="businessRegistration">
+                                    Business Registration
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="services.html#tax-services" data-i18n="taxServices">
+                                    Tax Services
+                                </a>
+                            </li>
+
+                            <li>
+                                <a class="dropdown-item" href="services.html#recommendation"
+                                    data-i18n="recommendations">
+                                    Recommendation
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#transportation" data-i18n="transportation">
+                            Transportation
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#notices-news" data-i18n="notices">
+                            Notices
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact" data-i18n="contact">
+                            Contact
+                        </a>
+                    </li>
+
+                </ul>
+
+
+                <!-- AI BUTTON -->
+
+                <a href="chatbot.html" class="ai-header-button">
+                    <i class="bi bi-robot"></i>
+                    <span data-i18n="askAI">JanakSewa AI</span>
+                </a>
+
+
+                <!-- LOGIN / REGISTER -->
+
+                <div class="header-auth">
+
+                    <a href="dashboard.html" class="auth-trigger" id="dashboardTrigger">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span>My Dashboard</span>
+                    </a>
+
+                    <a href="login-register.html" class="auth-trigger" id="authTrigger">
+                        <i class="fa-solid fa-user"></i>
+                        <span data-i18n="loginRegister">Login / Register</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!--QUICK FLOAT ACTIONS-->
+    <div class="quick-float-actions">
+
+        <a href="complaints.html" class="quick-float-btn complaint-btn" data-tooltip="Register Complaint"
+            aria-label="Register Complaint">
+            <i class="bi bi-file-earmark-text"></i>
+        </a>
+
+
+        <a href="services.html" class="quick-float-btn faq-btn" data-tooltip="Frequently Asked Questions"
+            aria-label="FAQ">
+            <i class="bi bi-question-circle"></i>
+        </a>
+
+        <a href="emergency.html" class="quick-float-btn emergency-btn" data-tooltip="Emergency Contacts"
+            aria-label="Emergency Contacts">
+            <i class="bi bi-telephone-fill"></i>
+        </a>
+    </div>
+
+    <!--SEARCH OVERLAY-->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-box">
+            <button class="close-search" id="closeSearch" type="button">
+                <i class="bi bi-x-lg"></i>
+            </button>
+
+            <h3 data-i18n="searchWebsite">Search Municipality Website</h3>
+
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search services, notices, tourism..."
+                    id="websiteSearch" data-i18n-placeholder="searchPlaceholder">
+                <button class="btn btn-primary" type="button" id="performSearch" data-i18n="searchButton">
+                    <i class="bi bi-search"></i>
+                    Search
+                </button>
+            </div>
+            <div id="searchResults" class="search-results"></div>
+        </div>
+    </div>
+
+    <!--HERO SECTION-->
+    <section class="hero-section" id="hero">
+        <video class="hero-background-video" autoplay muted loop playsinline poster="assets/images/licensed-image.jpg">
+            <source src="assets/videos/janakpur.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row align-items-center hero-row">
+                <div class="col-lg-7">
+                    <div class="hero-content">
+                        <span class="hero-badge" data-i18n="smartMunicipality">
+                            <i class="bi bi-stars"></i>
+                            Smart Municipality
+                        </span>
+                        <h2>
+                            <span data-i18n="welcome">Welcome to</span>
+                            <span data-i18n="janakSewaAI">Janaksewa AI</span>
+                        </h2>
+                        <p data-i18n="heroDescription">
+                            Digital citizen services, municipal information,
+                            tourism, emergency assistance and AI-powered
+                            citizen support — all in one place.
+                        </p>
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn btn-primary btn-lg" data-i18n="exploreServices">
+                                <i class="bi bi-grid"></i>
+                                Explore Services
+                            </a>
+
+                            <a href="chatbot.html" class="btn btn-light btn-lg" data-i18n="askAI">
+                                <i class="bi bi-chat-dots"></i>
+                                Ask JanakSewa AI
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-5">
+                    <div class="hero-png-container">
+                        <img src="assets/images/home.jpg" alt="JanakSewa AI" class="hero-png-image"
+                            onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--QUICK SERVICES-->
+    <section class="quick-services">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-lg-3 col-md-6">
+                    <a href="services.html" class="quick-card">
+                        <div class="quick-icon">
+                            <i class="bi bi-file-earmark-text"></i>
+                        </div>
+                        <div>
+                            <h5 data-i18n="onlineServices">Online Services</h5>
+                            <p data-i18n="quickServiceAccess">Access municipal services</p>
+                        </div>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="emergency.html" class="quick-card">
+                        <div class="quick-icon emergency">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+
+                        <div>
+                            <h5 data-i18n="emergencyLabel">Emergency</h5>
+                            <p data-i18n="emergencyQuick">Important emergency contacts</p>
+                        </div>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="tourist_places.html" class="quick-card">
+                        <div class="quick-icon tourism">
+                            <i class="bi bi-geo-alt-fill"></i>
+                        </div>
+
+                        <div>
+                            <h5 data-i18n="tourismLabel">Tourism</h5>
+                            <p data-i18n="tourismQuick">Explore Janakpur</p>
+                        </div>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+
+
+                <div class="col-lg-3 col-md-6">
+                    <a href="complaints.html" class="quick-card">
+                        <div class="quick-icon complaint">
+                            <i class="bi bi-megaphone-fill"></i>
+                        </div>
+
+                        <div>
+                            <h5 data-i18n="complaintsLabel">Complaints</h5>
+                            <p data-i18n="complaintsQuick">Report your problems</p>
+                        </div>
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--ABOUT-->
+
+    <section class="about-section py-5" id="about">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <div class="section-image">
+                        <img src="assets/images/janaki mandir.jpg" alt="Janakpur Municipality">
+                        <div class="image-badge">
+                            <strong>Smart</strong>
+                            <span>Digital Municipality</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-lg-6">
+                    <span class="section-label" data-i18n="about">
+                        ABOUT MUNICIPALITY
+                    </span>
+
+                    <h2 class="section-title">
+                        Building a Better
+                        <span>Janakpur</span>
+                    </h2>
+
+                    <p class="section-text">
+                        Janakpurdham, rich in ancient culture, history,
+                        and Mithila art, is transforming its municipal
+                        infrastructure into a modern citizen-first ecosystem.
+                    </p>
+
+                    <p class="section-text">
+                        Whether you need official ward documentation,
+                        wish to register a grievance regarding streetlights
+                        or water supply, or need tourist information,
+                        Janaksewa AI provides 24/7 digital assistance.
+                    </p>
+
+                    <a href="about.html" class="btn btn-primary" data-i18n="learnMore">
+                        Learn More
+                        <i class="bi bi-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--SERVICES-->
+
+    <section class="services-section py-5" id="services">
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <span class="section-label" data-i18n="municipalServices">
+                    CITIZEN SERVICES
+                </span>
+
+                <h2 class="section-title" data-i18n="services">
+                    Municipal Services
+                </h2>
+
+                <p>
+                    Access important services and information
+                    quickly and easily.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-3">
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-person-vcard"></i>
+                        </div>
+
+                        <h4 data-i18n="birthRegistration">Birth Registration</h4>
+
+                        <p>
+                            Information and assistance for
+                            birth registration services.
+                        </p>
+
+                        <a href="services.html#birth-registration" data-i18n="viewService">
+                            View Service
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-building"></i>
+                        </div>
+
+                        <h4 data-i18n="businessRegistration">Business Registration</h4>
+
+                        <p>
+                            Get information about business
+                            registration and municipal requirements.
+                        </p>
+
+                        <a href="services.html#business-registration" data-i18n="viewService">
+                            View Service
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-receipt"></i>
+                        </div>
+
+                        <h4 data-i18n="taxServices">Tax Services</h4>
+
+                        <p>
+                            Access municipal tax information,
+                            procedures and assistance.
+                        </p>
+
+                        <a href="services.html#tax-services" data-i18n="viewService">
+                            View Service
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-house-check"></i>
+                        </div>
+
+                        <h4 data-i18n="houseProperty">House & Property</h4>
+
+                        <p>
+                            Municipal property and house-related
+                            information and services.
+                        </p>
+
+                        <a href="services.html" data-i18n="viewService">
+                            View Service
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-file-earmark-check"></i>
+                        </div>
+
+                        <h4 data-i18n="recommendations">Recommendations</h4>
+
+                        <p>
+                            Information about recommendation
+                            letters and municipal procedures.
+                        </p>
+
+                        <a href="services.html#recommendation" data-i18n="viewService">
+                            View Service
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="service-card">
+
+                        <div class="service-icon">
+                            <i class="bi bi-three-dots"></i>
+                        </div>
+
+                        <h4 data-i18n="moreServices">More Services</h4>
+
+                        <p>
+                            Explore all available citizen
+                            services provided by the municipality.
+                        </p>
+
+                        <a href="services.html" data-i18n="viewAllServices">
+                            View All Services
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--TOURIST PLACES-->
+
+    <section id="tourist-places" class="py-5 bg-light">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="section-label" data-i18n="tourismLabel">
+                    EXPLORE JANAKPUR
+                </span>
+
+                <h2 class="fw-bold" data-i18n="popularTouristPlaces">
+                    Popular Tourist Places
+                </h2>
+
+                <p class="text-muted" data-i18n="touristExploreText">
+                    Explore famous temples and beautiful places of Janakpur.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <!-- Janaki Mandir -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card tourism-card h-100 shadow-sm border-0">
+
+                        <img src="assets/images/janaki mandir.jpg" class="card-img-top" alt="Janaki Mandir">
+
+                        <div class="card-body">
+
+                            <h5 class="fw-bold">
+                                Janaki Mandir
+                            </h5>
+
+                            <p class="text-muted">
+                                Janaki Mandir is one of the most
+                                important cultural landmarks of Janakpur.
+                            </p>
+
+                            <a href="tourist_places.html#janaki-mandir" class="btn btn-primary">
+                                Read More
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Ganga Sagar -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card tourism-card h-100 shadow-sm border-0">
+
+                        <img src="assets/images/Ganga_Sagar_Janakpurdham-_MG_3584.jpg" class="card-img-top"
+                            alt="Ganga Sagar">
+
+                        <div class="card-body">
+
+                            <h5 class="fw-bold">
+                                Ganga Sagar
+                            </h5>
+
+                            <p class="text-muted">
+                                Ganga Sagar is an important
+                                religious and cultural pond.
+                            </p>
+
+                            <a href="tourist_places.html#ganga-sagar" class="btn btn-primary">
+                                Read More
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Dhanush Sagar -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card tourism-card h-100 shadow-sm border-0">
+
+                        <img src="assets/images/Dhanush_Saagar.jpg" class="card-img-top" alt="Dhanush Sagar">
+
+                        <div class="card-body">
+
+                            <h5 class="fw-bold">
+                                Dhanush Sagar
+                            </h5>
+
+                            <p class="text-muted">
+                                Dhanush Sagar is a historic
+                                religious pond of Janakpur.
+                            </p>
+
+                            <a href="tourist_places.html#dhanush-sagar" class="btn btn-primary">
+                                Read More
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Ram Mandir -->
+
+                <div class="col-md-6 col-lg-3">
+
+                    <div class="card tourism-card h-100 shadow-sm border-0">
+
+                        <img src="assets/images/ram mandir.jpg" class="card-img-top" alt="Ram Mandir">
+
+                        <div class="card-body">
+
+                            <h5 class="fw-bold">
+                                Ram Mandir
+                            </h5>
+
+                            <p class="text-muted">
+                                Ram Mandir is an important
+                                religious landmark near Dhanush Sagar.
+                            </p>
+
+                            <a href="tourist_places.html#ram-mandir" class="btn btn-primary">
+                                Read More
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-center mt-4">
+
+                <a href="tourist_places.html" class="btn btn-outline-primary" data-i18n="viewAll">
+                    View All Tourist Places
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--TRANSPORTATION-->
+
+    <section id="transportation" class="py-5">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="section-label" data-i18n="travelInformation">
+                    TRAVEL INFORMATION
+                </span>
+
+                <h2 class="fw-bold" data-i18n="transportation">
+                    Transportation
+                </h2>
+
+                <p class="text-muted" data-i18n="transportationText">
+                    Find simple transportation information in Janakpur.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-md-4">
+
+                    <div class="card transport-card h-100 shadow-sm border-0">
+
+                        <img src="assets/images/railway.jpg" class="card-img-top" alt="Nepal Railway">
+
+                        <div class="card-body">
+
+                            <h5 class="fw-bold">
+                                <i class="fa-solid fa-train text-primary me-2"></i>
+                                Nepal Railway
+                            </h5>
+
+                            <p>
+                                Railway transportation information
+                                for passengers travelling from Janakpur.
+                            </p>
+
+                            <a href="transportation.html#railway" class="btn btn-primary" data-i18n="viewDetails">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card transport-card h-100 shadow-sm border-0">
+
+                        <img src="assets/images/airport.jpg" class="card-img-top" alt="Janakpur Airport">
+
+                        <div class="card-body">
+
+                            <h5 class="fw-bold">
+                                <i class="fa-solid fa-plane text-primary me-2"></i>
+                                Janakpur Airport
+                            </h5>
+
+                            <p>
+                                Find airport information and
+                                domestic travel assistance.
+                            </p>
+
+                            <a href="transportation.html#airport" class="btn btn-primary" data-i18n="viewDetails">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-md-4">
+
+                    <div class="card transport-card h-100 shadow-sm border-0">
+
+                        <img src="assets/images/E-rickshaw.jpg" class="card-img-top" alt="E-Rickshaw">
+
+                        <div class="card-body">
+
+                            <h5 class="fw-bold">
+                                <i class="fa-solid fa-car text-primary me-2"></i>
+                                E-Rickshaw
+                            </h5>
+
+                            <p>
+                                Convenient local transportation
+                                around Janakpur.
+                            </p>
+
+                            <a href="transportation.html#e-rickshaw" class="btn btn-primary" data-i18n="viewDetails">
+                                View Details
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="text-center mt-4">
+
+                <a href="transportation.html" class="btn btn-outline-primary" data-i18n="viewAllTransportation">
+                    View All Transportation
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- NOTICE + NEWS -->
+
+    <section class="notice-section py-5" id="notices-news">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-6">
+
+                    <div class="content-header">
+
+                        <div>
+
+                            <span class="section-label" data-i18n="latest">
+                                LATEST
+                            </span>
+
+                            <h2 data-i18n="noticesTitle">Notices</h2>
+
+                        </div>
+
+                        <a href="news.html">
+                            View All
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="notice-list">
+
+                        <a href="news.html#notice-1" class="notice-item">
+
+                            <div class="date-box">
+                                <strong>30</strong>
+                                <span>AUG</span>
+                            </div>
+
+                            <div>
+
+                                <h5>
+                                    Important municipal notice
+                                </h5>
+
+                                <p>
+                                    Municipality public information
+                                    and announcement.
+                                </p>
+
+                            </div>
+
+                            <i class="bi bi-chevron-right"></i>
+
+                        </a>
+
+
+                        <a href="news.html#notice-2" class="notice-item">
+
+                            <div class="date-box">
+                                <strong>27</strong>
+                                <span>AUG</span>
+                            </div>
+
+                            <div>
+
+                                <h5>
+                                    Citizen service announcement
+                                </h5>
+
+                                <p data-i18n="citizenServiceText">
+                                    Information regarding municipal
+                                    citizen services.
+                                </p>
+
+                            </div>
+
+                            <i class="bi bi-chevron-right"></i>
+
+                        </a>
+
+
+                        <a href="news.html#notice-3" class="notice-item">
+
+                            <div class="date-box">
+                                <strong>24</strong>
+                                <span>AUG</span>
+                            </div>
+
+                            <div>
+
+                                <h5>
+                                    Public information
+                                </h5>
+
+                                <p data-i18n="publicInfoText">
+                                    Latest information from
+                                    Janakpur Municipality.
+                                </p>
+
+                            </div>
+
+                            <i class="bi bi-chevron-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-6">
+
+                    <div class="content-header">
+
+                        <div>
+
+                            <span class="section-label" data-i18n="news">
+                                INFORMATION
+                            </span>
+
+                            <h2 data-i18n="latestNews">Latest News</h2>
+
+                        </div>
+
+                        <a href="news.html">
+                            View All
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="news-card">
+
+                        <div class="news-image">
+
+                            <img src="assets/images/Floor update.jpg" alt="Municipality News">
+
+                        </div>
+
+                        <div class="news-content">
+
+                            <small>
+                                <i class="bi bi-calendar3"></i>
+                                August 29, 2026
+                            </small>
+
+                            <h4>
+                                Nepal Land Flood Update
+                            </h4>
+
+                            <p>
+                                Local Land Administration (Administrative Updates) Under the Land Revenue Act Amendment,
+                                local governments (Palikas) handle primary land administrative functions such as
+                                ownership transfers (Jagga Pass), property freezes (Rokka), and releases (Phukuwa). This
+                                decentralizes operations directly to local municipal Land Management Branches (Bhumi
+                                Vyavasthapan Shakha) rather than routing everything through district offices.
+                            </p>
+
+                            <a href="news.html" data-i18n="readMore">
+                                Read More
+                                <i class="bi bi-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--EMERGENCY-->
+
+    <section class="emergency-section py-5" id="emergency">
+
+        <div class="container">
+
+            <div class="section-heading text-center">
+
+                <span class="section-label" data-i18n="emergencyAssistance">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    EMERGENCY ASSISTANCE
+                </span>
+
+                <h2 class="section-title" data-i18n="emergencyInformation">
+                    Emergency Information
+                </h2>
+
+                <p data-i18n="emergencyInfoText">
+                    Important emergency categories for quick access
+                    to police, fire, hospital and ambulance assistance.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4 mt-4">
+
+                <div class="col-sm-6 col-lg-3">
+
+                    <div class="emergency-card">
+
+                        <div class="emergency-image">
+                            <img src="assets/images/nepal police.png" alt="Nepal Police">
+                        </div>
+
+                        <div class="emergency-content">
+
+                            <h4>Police</h4>
+
+                            <p>
+                                Emergency police assistance
+                                for citizens.
+                            </p>
+
+                            <a href="tel:100" class="emergency-btn police-btn" data-i18n="callPolice">
+
+                                <i class="fa-solid fa-phone"></i>
+                                Call Police
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-sm-6 col-lg-3">
+
+                    <div class="emergency-card">
+
+                        <div class="emergency-image">
+                            <img src="assets/images/fire ambulance.jpg" alt="Fire Emergency">
+                        </div>
+
+                        <div class="emergency-content">
+
+                            <h4>Fire</h4>
+
+                            <p>
+                                Fire emergency assistance
+                                for urgent situations.
+                            </p>
+
+                            <a href="tel:101" class="emergency-btn fire-btn" data-i18n="callFire">
+
+                                <i class="fa-solid fa-phone"></i>
+                                Call Fire Service
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-sm-6 col-lg-3">
+
+                    <div class="emergency-card">
+
+                        <div class="emergency-image">
+                            <img src="assets/images/hospital.jpg" alt="Hospital">
+                        </div>
+
+                        <div class="emergency-content">
+
+                            <h4>Hospital</h4>
+
+                            <p>
+                                Hospital and medical assistance
+                                information.
+                            </p>
+
+                            <a href="emergency.html" class="emergency-btn hospital-btn" data-i18n="hospitalHelp">
+
+                                <i class="fa-solid fa-phone"></i>
+                                Hospital Help
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-sm-6 col-lg-3">
+
+                    <div class="emergency-card">
+
+                        <div class="emergency-image">
+                            <img src="assets/images/ambulance.jpg" alt="Ambulance">
+                        </div>
+
+                        <div class="emergency-content">
+
+                            <h4>Ambulance</h4>
+
+                            <p>
+                                Ambulance assistance for
+                                medical emergencies.
+                            </p>
+
+                            <a href="emergency.html" class="emergency-btn ambulance-btn" data-i18n="ambulanceHelp">
+
+                                <i class="fa-solid fa-phone"></i>
+                                Ambulance Help
+
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="emergency-notice">
+
+                <div class="notice-icon">
+                    <i class="fa-solid fa-circle-info"></i>
+                </div>
+
+                <div>
+
+                    <h5 data-i18n="importantInformation">Important Information</h5>
+
+                    <p data-i18n="importantWarningText">
+                        Emergency numbers should be verified with
+                        relevant official authorities before
+                        publishing them on the live website.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--COMPLAINT-->
+
+    <section class="complaint-section py-5" id="complaints">
+
+        <div class="container">
+
+            <div class="text-center mb-5">
+
+                <span class="section-label" data-i18n="citizenVoice">
+                    CITIZEN VOICE
+                </span>
+
+                <h2 class="section-title" data-i18n="reportMunicipalProblem">
+                    Report a Municipal Problem
+                </h2>
+
+                <p class="section-text mx-auto" data-i18n="complaintIntroText">
+                    Report problems in your area such as roads,
+                    drainage, water, garbage, street lights
+                    and sanitation.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-lg-5">
+
+                    <div class="complaint-info">
+
+                        <h3 data-i18n="yourVoiceMatters">
+                            <i class="bi bi-megaphone-fill"></i>
+                            Your Voice Matters
+                        </h3>
+
+                        <p data-i18n="complaintLeadText">
+                            Help improve Janakpur by reporting
+                            municipal problems directly to
+                            the concerned authority.
+                        </p>
+
+
+                        <div class="problem-item">
+
+                            <div class="problem-icon">
+                                <i class="bi bi-signpost-2-fill"></i>
+                            </div>
+
+                            <div>
+                                <h5 data-i18n="roadProblems">Road Problems</h5>
+                                <p data-i18n="roadsText">
+                                    Report potholes, damaged roads
+                                    and infrastructure problems.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="problem-item">
+
+                            <div class="problem-icon">
+                                <i class="bi bi-droplet-fill"></i>
+                            </div>
+
+                            <div>
+                                <h5 data-i18n="waterDrainage">Water & Drainage</h5>
+                                <p data-i18n="waterText">
+                                    Report water supply, drainage
+                                    and flooding problems.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="problem-item">
+
+                            <div class="problem-icon">
+                                <i class="bi bi-trash3-fill"></i>
+                            </div>
+
+                            <div>
+                                <h5 data-i18n="garbageSanitation">Garbage & Sanitation</h5>
+                                <p data-i18n="garbageText">
+                                    Report garbage collection
+                                    and sanitation issues.
+                                </p>
+                            </div>
+
+                        </div>
+
+
+                        <div class="problem-item">
+
+                            <div class="problem-icon">
+                                <i class="bi bi-lightbulb-fill"></i>
+                            </div>
+
+                            <div>
+                                <h5 data-i18n="streetLights">Street Lights</h5>
+                                <p data-i18n="streetlightsText">
+                                    Report damaged or non-working
+                                    street lights.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-7">
+
+                    <div class="complaint-form-card">
+
+                        <div class="form-heading">
+
+                            <div class="form-heading-icon">
+                                <i class="bi bi-pencil-square"></i>
+                            </div>
+
+                            <div>
+
+                                <h3 data-i18n="submitComplaint">Submit a Complaint</h3>
+
+                                <p data-i18n="pleaseProvideDetails">
+                                    Please provide the details of your problem.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="complaintForm">
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label">
+                                        Full Name
+                                    </label>
+
+                                    <div class="complaint-input">
+
+                                        <i class="bi bi-person"></i>
+
+                                        <input type="text" name="name" class="form-control"
+                                            placeholder="Enter your name" data-i18n-placeholder="enterFullName"
+                                            required>
+
+                                    </div>
+
+                                </div>
+
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label" data-i18n="formPhone">
+                                        Phone Number
+                                    </label>
+
+                                    <div class="complaint-input">
+
+                                        <i class="bi bi-telephone"></i>
+
+                                        <input type="tel" name="phone" id="complaintPhone" class="form-control"
+                                            placeholder="Enter phone number" data-i18n-placeholder="enterPhone"
+                                            required>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mb-3">
+
+                                <label class="form-label" data-i18n="formAddress">
+                                    Address
+                                </label>
+
+                                <div class="complaint-input">
+
+                                    <i class="bi bi-geo-alt"></i>
+
+                                    <input type="text" name="address" class="form-control"
+                                        placeholder="Enter your address" data-i18n-placeholder="address" required>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label" data-i18n="formWard">
+                                        Ward Number
+                                    </label>
+
+                                    <select name="ward" id="complaintWard" class="form-select" required>
+
+                                        <option value="">
+                                            Select Ward
+                                        </option>
+
+                                        <option value="1">Ward 1</option>
+                                        <option value="2">Ward 2</option>
+                                        <option value="3">Ward 3</option>
+                                        <option value="4">Ward 4</option>
+                                        <option value="5">Ward 5</option>
+                                        <option value="6">Ward 6</option>
+                                        <option value="7">Ward 7</option>
+                                        <option value="8">Ward 8</option>
+                                        <option value="9">Ward 9</option>
+                                        <option value="10">Ward 10</option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label" data-i18n="formCategory">
+                                        Problem Category
+                                    </label>
+
+                                    <select name="category" id="complaintCategory" class="form-select" required>
+
+                                        <option value="">
+                                            Select Category
+                                        </option>
+
+                                        <option value="road">
+                                            Road Problem
+                                        </option>
+
+                                        <option value="drainage">
+                                            Drainage
+                                        </option>
+
+                                        <option value="water">
+                                            Water Supply
+                                        </option>
+
+                                        <option value="garbage">
+                                            Garbage
+                                        </option>
+
+                                        <option value="street-light">
+                                            Street Light
+                                        </option>
+
+                                        <option value="sanitation">
+                                            Sanitation
+                                        </option>
+
+                                        <option value="other">
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mb-3">
+
+                                <label class="form-label" data-i18n="formDescription">
+                                    Describe Your Problem
+                                </label>
+
+                                <textarea name="description" id="complaintDescription" class="form-control" rows="5"
+                                    placeholder="Describe the problem in detail..."
+                                    data-i18n-placeholder="formDescription" required></textarea>
+
+                            </div>
+
+
+                            <div class="mb-3">
+
+                                <label class="form-label" data-i18n="formLocation">
+                                    Problem Location
+                                </label>
+
+                                <div class="complaint-input">
+
+                                    <i class="bi bi-pin-map"></i>
+
+                                    <input type="text" name="location" id="complaintLocation" class="form-control"
+                                        placeholder="Example: Near Janaki Mandir"
+                                        data-i18n-placeholder="formLocationExample">
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mb-3">
+                                <div id="formMessage" class="alert d-none" role="alert"></div>
+                            </div>
+
+                            <div class="mb-4">
+
+                                <label class="form-label">
+                                    <span data-i18n="formImage">Upload Problem Image</span>
+                                    <small data-i18n="optionalLabel">(Optional)</small>
+                                </label>
+
+                                <input type="file" name="image" id="complaintImage" class="form-control"
+                                    accept="image/*">
+
+                            </div>
+
+
+                            <button type="submit" class="btn complaint-submit" data-i18n="complaintSubmit">
+
+                                <i class="bi bi-send-fill"></i>
+                                Submit Complaint
+
+                            </button>
+
+                        </form>
+
+
+                        <div id="complaintSuccess" class="complaint-success">
+
+                            <i class="bi bi-check-circle-fill"></i>
+
+                            <strong data-i18n="complaintSuccessTitle">
+                                Complaint Submitted Successfully!
+                            </strong>
+
+                            <span data-i18n="complaintSuccessText">
+                                Your complaint has been received.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--AI ASSISTANT-->
+
+    <section class="ai-section py-5" id="ai">
+
+        <div class="container">
+
+            <div class="ai-banner">
+
+                <div class="ai-content">
+
+                    <div class="ai-icon">
+                        <i class="bi bi-robot"></i>
+                    </div>
+
+                    <div>
+
+                        <span class="ai-small-title" data-i18n="aiPowered">
+                            AI-POWERED CITIZEN ASSISTANCE
+                        </span>
+
+                        <h2 data-i18n="askJanakSewaAI">
+                            Ask JanakSewa AI
+                        </h2>
+
+                        <p data-i18n="aiSupportText">
+                            Get assistance with municipal services,
+                            complaints, tourism, transportation
+                            and general information.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <a href="chatbot.html" class="btn btn-light ai-button" data-i18n="startAiChat">
+
+                    <i class="bi bi-chat-dots-fill"></i>
+                    Start AI Chat
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--CONTACT-->
+
+    <section class="contact-section py-5" id="contact">
+
+        <div class="container">
+
+            <div class="contact-section-title text-center mb-5">
+
+                <span class="contact-badge" data-i18n="getInTouch">
+                    <i class="fa-solid fa-headset"></i>
+                    Get In Touch
+                </span>
+
+                <h2 class="fw-bold mt-3" data-i18n="contactUs">
+                    Contact Us
+                </h2>
+
+                <p class="text-muted">
+                    Contact Janaksewa AI for information,
+                    support and citizen services.
+                </p>
+
+            </div>
+
+
+            <div class="row g-4">
+
+                <div class="col-lg-5">
+
+                    <div class="contact-info-card h-100">
+
+                        <div class="contact-card-header">
+
+                            <div class="contact-header-icon">
+                                <i class="fa-solid fa-comments"></i>
+                            </div>
+
+                            <div>
+
+                                <h4 class="fw-bold mb-1" data-i18n="contactInformation">
+                                    Contact Information
+                                </h4>
+
+                                <p class="mb-0" data-i18n="contactHelpText">
+                                    We're here to help you.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <p class="contact-description" data-i18n="contactDescription">
+                            Have a question, need municipal information,
+                            or require assistance? Contact us using
+                            the information below.
+                        </p>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+
+                            <div class="contact-item-content">
+
+                                <h6 data-i18n="address">Address</h6>
+
+                                <p>
+                                    Janakpurdham, Dhanusha, Nepal
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+
+                            <div class="contact-item-content">
+
+                                <h6 data-i18n="phone">Phone</h6>
+
+                                <p>
+                                    +977-41-520000
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+
+                            <div class="contact-item-content">
+
+                                <h6 data-i18n="email">Email</h6>
+
+                                <p>
+                                    info@janakpurmun.gov.np
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-item">
+
+                            <div class="contact-icon">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+
+                            <div class="contact-item-content">
+
+                                <h6 data-i18n="officeHours">Office Hours</h6>
+
+                                <p>
+                                    <span data-i18n="openingHours">Sunday - Friday</span><br>
+                                    <span data-i18n="officeHoursText">10:00 AM - 5:00 PM</span>
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="contact-social-area">
+
+                            <h6 class="fw-bold mb-3" data-i18n="followUs">
+                                Follow Us
+                            </h6>
+
+                            <div class="social-links">
+
+                                <a href="#" aria-label="Facebook">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+
+                                <a href="#" aria-label="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+
+                                <a href="#" aria-label="YouTube">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+
+                                <a href="#" aria-label="TikTok">
+                                    <i class="fa-brands fa-tiktok"></i>
+                                </a>
+
+                                <a href="#" aria-label="X">
+                                    <i class="fa-brands fa-x-twitter"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-7">
+
+                    <div class="contact-form-card">
+
+                        <div class="contact-form-header">
+
+                            <div class="form-header-icon">
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </div>
+
+                            <div>
+
+                                <h4 class="fw-bold mb-1" data-i18n="sendMessage">
+                                    Send Us a Message
+                                </h4>
+
+                                <p class="text-muted mb-0">
+                                    Fill out the form and we'll get back to you.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <form id="contactForm">
+
+                            <div class="row">
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label" data-i18n="fullName">
+                                        Full Name
+                                    </label>
+
+                                    <input type="text" name="name" class="form-control" placeholder="Enter your name"
+                                        data-i18n-placeholder="enterFullName" required>
+
+                                </div>
+
+
+                                <div class="col-md-6 mb-3">
+
+                                    <label class="form-label" data-i18n="email">
+                                        Email
+                                    </label>
+
+                                    <input type="email" name="email" class="form-control" placeholder="Enter your email"
+                                        data-i18n-placeholder="enterEmail" required>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="mb-3">
+
+                                <label class="form-label" data-i18n="phone">
+                                    Phone Number
+                                </label>
+
+                                <input type="tel" name="phone" class="form-control"
+                                    placeholder="Enter your phone number" data-i18n-placeholder="enterPhone">
+
+                            </div>
+
+
+                            <div class="mb-3">
+
+                                <label class="form-label" data-i18n="subject">
+                                    Subject
+                                </label>
+
+                                <input type="text" name="subject" class="form-control" placeholder="Enter subject"
+                                    data-i18n-placeholder="subject" required>
+
+                            </div>
+
+
+                            <div class="mb-4">
+
+                                <label class="form-label" data-i18n="message">
+                                    Message
+                                </label>
+
+                                <textarea name="message" class="form-control" rows="6"
+                                    placeholder="Write your message..." data-i18n-placeholder="formMessage"
+                                    required></textarea>
+
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary contact-submit-btn"
+                                data-i18n="sendMessageButton">
+
+                                <i class="fa-solid fa-paper-plane me-2"></i>
+                                Send Message
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- MAP -->
+
+            <div class="contact-map-wrapper mt-5">
+
+                <div class="contact-map-card">
+
+                    <div class="contact-map-header">
+
+                        <div class="map-header-icon">
+                            <i class="fa-solid fa-map-location-dot"></i>
+                        </div>
+
+                        <div>
+
+                            <h4 class="fw-bold mb-1" data-i18n="findUsOnMap">
+                                Find Us on Map
+                            </h4>
+
+                            <p class="text-muted mb-0" data-i18n="locateJanakpur">
+                                Locate Janakpurdham, Dhanusha, Nepal.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-map">
+
+                        <iframe src="https://www.google.com/maps?q=Janakpurdham,Nepal&output=embed" width="100%"
+                            height="400" style="border:0;" allowfullscreen="" loading="lazy">
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!--FOOTER-->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row g-5">
+
+                <div class="col-lg-4">
+
+                    <a href="index.html" class="footer-brand">
+
+                        <div class="footer-logo">
+
+                            <img src="assets/images/janaksewa-logo.png" alt="JanakSewa Logo"
+                                class="footer-janaksewa-logo">
+
+                        </div>
+
+                        <div>
+                            <h4>Janaksewa AI</h4>
+                            <p>जनकसेवा एआई</p>
+                        </div>
+
+                    </a>
+
+
+                    <p class="footer-description" data-i18n="footerDescription">
+                        Providing accessible, transparent and
+                        citizen-friendly digital municipal services.
+                    </p>
+
+
+                    <div class="footer-social">
+
+                        <a href="#">
+                            <i class="bi bi-facebook"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="bi bi-instagram"></i>
+                        </a>
+
+                        <a href="#">
+                            <i class="bi bi-youtube"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-2 col-md-4">
+
+                    <h5 data-i18n="quickLinks">Quick Links</h5>
+
+                    <ul>
+
+                        <li>
+                            <a href="index.html">Home</a>
+                        </li>
+
+                        <li>
+                            <a href="about.html">About</a>
+                        </li>
+
+                        <li>
+                            <a href="services.html">Services</a>
+                        </li>
+
+                        <li>
+                            <a href="news.html">Notices</a>
+                        </li>
+
+                        <li>
+                            <a href="#contact">Contact</a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4">
+
+                    <h5 data-i18n="citizenServices">Citizen Services</h5>
+
+                    <ul>
+
+                        <li>
+                            <a href="services.html#birth-registration">
+                                Birth Registration
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html#business-registration">
+                                Business Registration
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="services.html#tax-services">
+                                Tax Services
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="complaints.html">
+                                Complaints
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="emergency.html">
+                                Emergency
+                            </a>
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="col-lg-3 col-md-4">
+
+                    <h5 data-i18n="contactUsFooter">Contact Us</h5>
+
+                    <div class="footer-contact">
+
+                        <p>
+                            <i class="bi bi-geo-alt-fill"></i>
+                            Janakpur, Madhesh Province, Nepal
+                        </p>
+
+                        <p>
+                            <i class="bi bi-telephone-fill"></i>
+                            +977-41-520000
+                        </p>
+
+                        <p>
+                            <i class="bi bi-envelope-fill"></i>
+                            info@janakpurmun.gov.np
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="footer-bottom">
+
+                <p>
+                    © 2026 <span data-i18n="janakpurMunicipality">Janakpur Municipality.</span>
+                    <span data-i18n="allRightsReserved">All Rights Reserved.</span>
+                </p>
+
+                <p>
+                    <span data-i18n="poweredBy">Powered by</span>
+                    <strong>JanakSewa AI</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!--FLOATING AI CHATBOT-->
+
+    <div class="chatbot-container">
+
+        <div class="chatbot-tooltip">
+            Ask JanakSewa AI
+        </div>
+
+        <a href="chatbot.html" class="chatbot-button" id="chatbotButton" aria-label="Open JanakSewa AI">
+
+            <i class="bi bi-robot"></i>
+
+        </a>
+
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JS -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/complaints.js"></script>
+
+</body>
+
+</html>
+
+</body>
+
+</html>

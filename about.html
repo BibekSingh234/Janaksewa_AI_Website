@@ -1,0 +1,1915 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Janaksewa AI | About</title>
+
+    <!-- Bootstrap -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
+
+    <!-- Bootstrap Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    >
+
+    <!-- Font Awesome -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <style>
+
+        /* =====================================================
+           GLOBAL
+        ===================================================== */
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f4f8fc;
+            color: #172033;
+            line-height: 1.7;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .top-bar {
+            background: #063b56;
+            color: white;
+            font-size: 13px;
+            padding: 9px 0;
+        }
+
+        .top-bar-inner {
+            max-width: 1250px;
+            margin: auto;
+            padding: 0 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .top-left,
+        .top-right {
+            display: flex;
+            align-items: center;
+            gap: 17px;
+        }
+
+        .top-item {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .top-item i {
+            color: #7dd3fc;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 6px;
+        }
+
+        .social-icons a {
+            color: white;
+
+            width: 26px;
+            height: 26px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            transition: .3s;
+        }
+
+        .social-icons a:hover {
+            background: rgba(255,255,255,.15);
+            color: #7dd3fc;
+            transform: translateY(-2px);
+        }
+
+        .language-select {
+            padding: 5px 9px;
+
+            border: 1px solid rgba(255,255,255,.3);
+            border-radius: 6px;
+
+            background: #064e6f;
+            color: white;
+
+            outline: none;
+        }
+
+        .language-select option {
+            background: white;
+            color: #172033;
+        }
+
+
+        /* =====================================================
+           MAIN HEADER
+        ===================================================== */
+
+        .main-header {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+
+            box-shadow:
+                0 3px 15px rgba(0,0,0,.06);
+        }
+
+        .header-inner {
+            max-width: 1250px;
+            margin: auto;
+
+            padding: 18px 20px;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+
+            color: #172033;
+        }
+
+        .brand-logo {
+            width: 65px;
+            height: 65px;
+
+            object-fit: contain;
+
+            padding: 5px;
+
+            border-radius: 12px;
+
+            background: #e0f2fe;
+
+            border: 1px solid #bae6fd;
+        }
+
+        .brand h1 {
+            margin: 0;
+
+            color: #075985;
+
+            font-size: 25px;
+            font-weight: 800;
+
+            line-height: 1.2;
+        }
+
+        .brand h2 {
+            margin: 2px 0;
+
+            font-size: 14px;
+
+            color: #334155;
+        }
+
+        .brand p {
+            margin: 0;
+
+            color: #64748b;
+
+            font-size: 11px;
+        }
+
+
+        /* =====================================================
+           HEADER CONTACT
+        ===================================================== */
+
+        .helpline {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .helpline-icon {
+            width: 43px;
+            height: 43px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            background: #e0f2fe;
+
+            color: #075985;
+        }
+
+        .helpline small {
+            display: block;
+
+            color: #64748b;
+
+            font-size: 10px;
+        }
+
+        .helpline strong {
+            display: block;
+
+            color: #075985;
+
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .navbar-custom {
+            background: #075985;
+
+            box-shadow:
+                0 5px 15px rgba(0,0,0,.12);
+        }
+
+        .navbar-custom .nav-link {
+            color: white !important;
+
+            padding: 15px 13px !important;
+
+            font-size: 14px;
+            font-weight: 600;
+
+            border-bottom: 3px solid transparent;
+
+            transition: .3s;
+        }
+
+        .navbar-custom .nav-link:hover,
+        .navbar-custom .nav-link.active {
+            background: rgba(255,255,255,.08);
+
+            border-bottom-color: #f59e0b;
+        }
+
+        .ai-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 8px 15px;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0ea5e9,
+                    #075985
+                );
+
+            border-radius: 7px;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .ai-btn:hover {
+            color: white;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 7px 20px rgba(14,165,233,.3);
+        }
+
+
+        /* =====================================================
+           ABOUT HERO
+        ===================================================== */
+
+        .about-hero {
+
+            min-height: 420px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    rgba(2,35,52,.70),
+                    rgba(2,35,52,.58)
+                ),
+                url("assets/images/")
+                center/cover no-repeat;
+        }
+
+        .about-hero-content {
+            max-width: 850px;
+
+            padding: 30px 20px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+
+            padding: 7px 15px;
+
+            border: 1px solid rgba(255,255,255,.35);
+
+            background: rgba(255,255,255,.12);
+
+            border-radius: 30px;
+
+            font-size: 13px;
+
+            backdrop-filter: blur(5px);
+
+            margin-bottom: 16px;
+        }
+
+        .about-hero h1 {
+            font-size: clamp(38px,5vw,60px);
+
+            font-weight: 800;
+
+            margin-bottom: 12px;
+        }
+
+        .about-hero p {
+            max-width: 700px;
+
+            margin: auto;
+
+            color: #e2e8f0;
+
+            font-size: 17px;
+        }
+
+
+        /* =====================================================
+           ABOUT SECTION
+        ===================================================== */
+
+        .about-section {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 75px 20px;
+        }
+
+        .about-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 55px;
+
+            align-items: center;
+        }
+
+        .about-image-wrapper {
+
+            position: relative;
+
+            border-radius: 20px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 20px 45px rgba(15,23,42,.14);
+        }
+
+        .about-image {
+
+            width: 100%;
+
+            height: 430px;
+
+            object-fit: cover;
+
+            transition: .5s;
+        }
+
+        .about-image-wrapper:hover .about-image {
+            transform: scale(1.04);
+        }
+
+        .image-caption {
+
+            position: absolute;
+
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+
+            padding: 16px;
+
+            color: white;
+
+            background:
+                rgba(2,30,45,.78);
+
+            border-radius: 12px;
+
+            backdrop-filter: blur(5px);
+        }
+
+        .image-caption strong {
+            display: block;
+
+            font-size: 16px;
+        }
+
+        .image-caption span {
+            font-size: 12px;
+
+            color: #cbd5e1;
+        }
+
+
+        /* =====================================================
+           ABOUT CONTENT
+        ===================================================== */
+
+        .section-label {
+
+            color: #0ea5e9;
+
+            font-size: 13px;
+
+            font-weight: 800;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .about-content h2 {
+
+            margin: 7px 0 15px;
+
+            color: #075985;
+
+            font-size: 35px;
+
+            font-weight: 800;
+
+            line-height: 1.2;
+        }
+
+        .about-content p {
+
+            color: #64748b;
+
+            font-size: 15px;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* =====================================================
+           HIGHLIGHTS
+        ===================================================== */
+
+        .highlight-list {
+
+            margin-top: 25px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 12px;
+        }
+
+        .highlight-item {
+
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 12px;
+
+            background: #f8fafc;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 10px;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            color: #334155;
+        }
+
+        .highlight-item i {
+
+            width: 32px;
+            height: 32px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background: #e0f2fe;
+
+            color: #075985;
+
+            border-radius: 50%;
+        }
+
+
+        /* =====================================================
+           JANAKSEWA AI SECTION
+        ===================================================== */
+
+        .ai-section {
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #075985,
+                    #0c4a6e
+                );
+
+            color: white;
+
+            padding: 70px 20px;
+        }
+
+        .ai-section-inner {
+
+            max-width: 1250px;
+
+            margin: auto;
+        }
+
+        .ai-heading {
+
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+        .ai-heading span {
+
+            color: #7dd3fc;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1px;
+        }
+
+        .ai-heading h2 {
+
+            margin: 7px 0;
+
+            font-size: 34px;
+
+            font-weight: 800;
+        }
+
+        .ai-heading p {
+
+            max-width: 650px;
+
+            margin: auto;
+
+            color: #dbeafe;
+        }
+
+
+        /* =====================================================
+           FEATURE CARDS
+        ===================================================== */
+
+        .feature-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(4,1fr);
+
+            gap: 20px;
+        }
+
+        .feature-card {
+
+            padding: 25px;
+
+            border-radius: 15px;
+
+            background:
+                rgba(255,255,255,.08);
+
+            border:
+                1px solid rgba(255,255,255,.12);
+
+            transition: .3s;
+        }
+
+        .feature-card:hover {
+
+            transform: translateY(-7px);
+
+            background:
+                rgba(255,255,255,.13);
+        }
+
+        .feature-icon {
+
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            margin-bottom: 17px;
+
+            border-radius: 12px;
+
+            background:
+                rgba(255,255,255,.12);
+
+            color: #7dd3fc;
+
+            font-size: 22px;
+        }
+
+        .feature-card h3 {
+
+            font-size: 17px;
+
+            margin-bottom: 8px;
+        }
+
+        .feature-card p {
+
+            margin: 0;
+
+            color: #cbd5e1;
+
+            font-size: 13px;
+        }
+
+
+        /* =====================================================
+           MISSION / VISION
+        ===================================================== */
+
+        .mission-section {
+
+            max-width: 1250px;
+
+            margin: auto;
+
+            padding: 70px 20px;
+        }
+
+        .mission-grid {
+
+            display: grid;
+
+            grid-template-columns:
+                1fr 1fr;
+
+            gap: 25px;
+        }
+
+        .mission-card {
+
+            background: white;
+
+            border: 1px solid #e2e8f0;
+
+            border-radius: 18px;
+
+            padding: 30px;
+
+            box-shadow:
+                0 10px 30px rgba(15,23,42,.06);
+
+            transition: .3s;
+        }
+
+        .mission-card:hover {
+
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 18px 35px rgba(15,23,42,.1);
+        }
+
+        .mission-icon {
+
+            width: 50px;
+            height: 50px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            background: #e0f2fe;
+
+            color: #075985;
+
+            border-radius: 12px;
+
+            font-size: 21px;
+
+            margin-bottom: 15px;
+        }
+
+        .mission-card h3 {
+
+            color: #075985;
+
+            font-size: 23px;
+
+            font-weight: 750;
+
+            margin-bottom: 10px;
+        }
+
+        .mission-card p {
+
+            margin: 0;
+
+            color: #64748b;
+
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .about-cta {
+
+            max-width: 1250px;
+
+            margin: 0 auto 70px;
+
+            padding: 0 20px;
+        }
+
+        .cta-box {
+
+            border-radius: 20px;
+
+            padding: 45px;
+
+            text-align: center;
+
+            color: white;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0ea5e9,
+                    #075985
+                );
+
+            box-shadow:
+                0 15px 35px rgba(7,89,133,.18);
+        }
+
+        .cta-box h2 {
+
+            font-size: 30px;
+
+            font-weight: 800;
+
+            margin-bottom: 10px;
+        }
+
+        .cta-box p {
+
+            max-width: 650px;
+
+            margin: 0 auto 22px;
+
+            color: #e0f2fe;
+        }
+
+        .cta-button {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 11px 20px;
+
+            background: white;
+
+            color: #075985;
+
+            border-radius: 8px;
+
+            font-size: 14px;
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .cta-button:hover {
+
+            color: #075985;
+
+            transform: translateY(-2px);
+
+            box-shadow:
+                0 8px 20px rgba(0,0,0,.15);
+        }
+
+
+        /* =====================================================
+           FLOATING AI
+        ===================================================== */
+
+        .floating-ai {
+
+            position: fixed;
+
+            right: 22px;
+            bottom: 25px;
+
+            width: 57px;
+            height: 57px;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border-radius: 50%;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0ea5e9,
+                    #075985
+                );
+
+            color: white;
+
+            font-size: 22px;
+
+            box-shadow:
+                0 10px 25px rgba(7,89,133,.3);
+
+            z-index: 1000;
+
+            transition: .3s;
+        }
+
+        .floating-ai:hover {
+
+            color: white;
+
+            transform: scale(1.08);
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        footer {
+
+            background: #062f43;
+
+            color: #cbd5e1;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer strong {
+            color: white;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media(max-width:991px) {
+
+            .top-bar-inner {
+
+                flex-direction: column;
+
+                align-items: flex-start;
+            }
+
+            .helpline {
+                display: none;
+            }
+
+            .about-grid {
+
+                grid-template-columns: 1fr;
+
+                gap: 35px;
+            }
+
+            .feature-grid {
+
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .mission-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .navbar-custom .nav-link {
+
+                padding: 10px 12px !important;
+
+                border: none;
+
+                border-radius: 5px;
+            }
+
+            .ai-btn {
+
+                width: 100%;
+
+                justify-content: center;
+
+                margin-bottom: 10px;
+            }
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width:575px) {
+
+            .top-right {
+
+                flex-wrap: wrap;
+
+                gap: 8px;
+            }
+
+            .top-right .top-item:nth-child(2) {
+
+                display: none;
+            }
+
+            .brand-logo {
+
+                width: 52px;
+                height: 52px;
+            }
+
+            .brand h1 {
+
+                font-size: 20px;
+            }
+
+            .brand h2 {
+
+                font-size: 12px;
+            }
+
+            .brand p {
+
+                display: none;
+            }
+
+            .about-hero {
+
+                min-height: 340px;
+            }
+
+            .about-hero h1 {
+
+                font-size: 38px;
+            }
+
+            .about-hero p {
+
+                font-size: 14px;
+            }
+
+            .about-section {
+
+                padding: 50px 15px;
+            }
+
+            .about-image {
+
+                height: 320px;
+            }
+
+            .about-content h2 {
+
+                font-size: 29px;
+            }
+
+            .highlight-list {
+
+                grid-template-columns: 1fr;
+            }
+
+            .feature-grid {
+
+                grid-template-columns: 1fr;
+            }
+
+            .mission-section {
+
+                padding: 50px 15px;
+            }
+
+            .cta-box {
+
+                padding: 30px 20px;
+            }
+
+            .cta-box h2 {
+
+                font-size: 25px;
+            }
+
+            .about-cta {
+
+                padding: 0 15px;
+            }
+
+            .floating-ai {
+
+                right: 15px;
+                bottom: 18px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     TOP INFORMATION BAR
+===================================================== -->
+
+<div class="top-bar">
+
+    <div class="top-bar-inner">
+
+        <div class="top-left">
+
+            <div class="top-item">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <span>
+                    Janakpurdham, Madhesh Province, Nepal
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="top-right">
+
+            <div class="top-item">
+
+                <i class="fa-solid fa-phone"></i>
+
+                <span>
+                    +977-41-520000
+                </span>
+
+            </div>
+
+
+            <div class="top-item">
+
+                <i class="fa-solid fa-envelope"></i>
+
+                <span>
+                    info@janakpurmun.gov.np
+                </span>
+
+            </div>
+
+
+            <div class="social-icons">
+
+                <a href="#" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+
+                <a href="#" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#" aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="#" aria-label="TikTok">
+                    <i class="fa-brands fa-tiktok"></i>
+                </a>
+
+            </div>
+
+
+            <select
+                class="language-select"
+                id="languageSelect"
+                aria-label="Select language"
+            >
+
+                <option value="en">
+                    English
+                </option>
+
+                <option value="ne">
+                    नेपाली
+                </option>
+
+                <option value="mai">
+                    मैथिली
+                </option>
+
+                <option value="hi">
+                    हिन्दी
+                </option>
+
+            </select>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header">
+
+    <div class="header-inner">
+
+        <a href="index.html" class="brand">
+
+            <img
+                src="assets/images/janaksewa-logo.png"
+                alt="Janaksewa AI Logo"
+                class="brand-logo"
+            >
+
+            <div>
+
+                <h1>
+                    Janaksewa AI
+                </h1>
+
+                <h2>
+                    जनकसेवा एआई
+                </h2>
+
+                <p>
+                    Citizen Assistance System
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <div class="helpline">
+
+            <div class="helpline-icon">
+
+                <i class="bi bi-telephone-fill"></i>
+
+            </div>
+
+            <div>
+
+                <small>
+                    Citizen Helpline
+                </small>
+
+                <strong>
+                    1660-000-000
+                </strong>
+
+                <small>
+                    Citizen Assistance
+                </small>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-custom sticky-top">
+
+    <div class="container">
+
+        <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#mainNavigation"
+        >
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div
+            class="collapse navbar-collapse"
+            id="mainNavigation"
+        >
+
+            <ul class="navbar-nav me-auto">
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="index.html"
+                    >
+
+                        <i class="bi bi-house-door me-1"></i>
+
+                        Home
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link active"
+                        href="about.html"
+                    >
+
+                        <i class="bi bi-info-circle me-1"></i>
+
+                        About
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="services.html"
+                    >
+
+                        Services
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="tourist-places.html"
+                    >
+
+                        Tourism
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="transportation.html"
+                    >
+
+                        Transportation
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="complaints.html"
+                    >
+
+                        Complaints
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="notices.html"
+                    >
+
+                        Notices
+
+                    </a>
+
+                </li>
+
+
+                <li class="nav-item">
+
+                    <a
+                        class="nav-link"
+                        href="contact.html"
+                    >
+
+                        Contact
+
+                    </a>
+
+                </li>
+
+            </ul>
+
+
+            <a
+                href="chatbot.html"
+                class="ai-btn"
+            >
+
+                <i class="bi bi-robot"></i>
+
+                JanakSewa AI
+
+            </a>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="about-hero">
+
+    <div class="about-hero-content">
+
+        <div class="hero-badge">
+
+            <i class="bi bi-building"></i>
+
+            About Janaksewa AI
+
+        </div>
+
+
+        <h1>
+            Serving Citizens Digitally
+        </h1>
+
+
+        <p>
+
+            Connecting citizens with municipal information,
+            public services, tourism resources and intelligent
+            digital assistance through one simple platform.
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT JANAKPUR
+===================================================== -->
+
+<section class="about-section">
+
+    <div class="about-grid">
+
+
+        <!-- IMAGE -->
+
+        <div class="about-image-wrapper">
+
+            <img
+                src="assets/images/janaki mandir.jpg"
+                alt="Cultural heritage of Janakpur"
+                class="about-image"
+                loading="lazy"
+            >
+
+
+            <div class="image-caption">
+
+                <strong>
+                    Janakpurdham, Madhesh Province
+                </strong>
+
+                <span>
+                    A city of culture, heritage and spirituality
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="about-content">
+
+            <span class="section-label">
+                About Janakpurdham
+            </span>
+
+
+            <h2>
+                A City of Heritage,
+                Culture & Community
+            </h2>
+
+
+            <p>
+
+                Janakpurdham is one of Nepal's important
+                cultural and religious destinations. The city
+                is widely known for its temples, sacred ponds,
+                Mithila culture, traditional art and historical
+                connection with the Ram-Janaki tradition.
+
+            </p>
+
+
+            <p>
+
+                With the growth of digital technology, citizens
+                increasingly need faster and easier access to
+                public information and services. Janaksewa AI
+                is designed as a digital citizen-assistance
+                platform to bring useful information together
+                in one place.
+
+            </p>
+
+
+            <div class="highlight-list">
+
+
+                <div class="highlight-item">
+
+                    <i class="bi bi-building"></i>
+
+                    <span>
+                        Municipal Information
+                    </span>
+
+                </div>
+
+
+                <div class="highlight-item">
+
+                    <i class="bi bi-file-earmark-text"></i>
+
+                    <span>
+                        Online Services
+                    </span>
+
+                </div>
+
+
+                <div class="highlight-item">
+
+                    <i class="bi bi-exclamation-triangle"></i>
+
+                    <span>
+                        Complaint Support
+                    </span>
+
+                </div>
+
+
+                <div class="highlight-item">
+
+                    <i class="bi bi-geo-alt"></i>
+
+                    <span>
+                        Tourism Information
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JANAKSEWA AI FEATURES
+===================================================== -->
+
+<section class="ai-section">
+
+    <div class="ai-section-inner">
+
+
+        <div class="ai-heading">
+
+            <span>
+                Digital Citizen Platform
+            </span>
+
+            <h2>
+                What Janaksewa AI Provides
+            </h2>
+
+            <p>
+
+                A centralized digital platform designed to
+                make citizen information and local services
+                easier to discover and access.
+
+            </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+
+            <!-- CARD 1 -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    <i class="bi bi-robot"></i>
+
+                </div>
+
+                <h3>
+                    AI Assistance
+                </h3>
+
+                <p>
+
+                    Ask questions and receive guidance about
+                    municipal services, tourism and citizen
+                    information.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 2 -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    <i class="bi bi-file-earmark-check"></i>
+
+                </div>
+
+                <h3>
+                    Online Services
+                </h3>
+
+                <p>
+
+                    Find information about registrations,
+                    recommendations, taxes and other municipal
+                    services.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 3 -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    <i class="bi bi-megaphone"></i>
+
+                </div>
+
+                <h3>
+                    Complaint Support
+                </h3>
+
+                <p>
+
+                    Citizens can submit problems and complaints
+                    related to public services and local issues.
+
+                </p>
+
+            </div>
+
+
+            <!-- CARD 4 -->
+
+            <div class="feature-card">
+
+                <div class="feature-icon">
+
+                    <i class="bi bi-map"></i>
+
+                </div>
+
+                <h3>
+                    Tourism Guide
+                </h3>
+
+                <p>
+
+                    Discover important temples, cultural sites,
+                    attractions and destinations around Janakpur.
+
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     MISSION / VISION
+===================================================== -->
+
+<section class="mission-section">
+
+
+    <div class="mission-grid">
+
+
+        <!-- MISSION -->
+
+        <div class="mission-card">
+
+            <div class="mission-icon">
+
+                <i class="bi bi-bullseye"></i>
+
+            </div>
+
+            <h3>
+                Our Mission
+            </h3>
+
+            <p>
+
+                To provide citizens with simple, accessible
+                and useful digital information while improving
+                the way people discover municipal services,
+                report public problems and receive assistance.
+
+            </p>
+
+        </div>
+
+
+        <!-- VISION -->
+
+        <div class="mission-card">
+
+            <div class="mission-icon">
+
+                <i class="bi bi-eye"></i>
+
+            </div>
+
+            <h3>
+                Our Vision
+            </h3>
+
+            <p>
+
+                To build a smart, citizen-friendly digital
+                ecosystem for Janakpurdham where technology,
+                artificial intelligence and public information
+                work together to support the community.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="about-cta">
+
+    <div class="cta-box">
+
+        <h2>
+            Need Help?
+        </h2>
+
+        <p>
+
+            Ask JanakSewa AI about municipal services,
+            complaints, tourism, transportation and other
+            citizen information.
+
+        </p>
+
+
+        <a
+            href="chatbot.html"
+            class="cta-button"
+        >
+
+            <i class="bi bi-robot"></i>
+
+            Ask JanakSewa AI
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FLOATING AI BUTTON
+===================================================== -->
+
+<a
+    href="chatbot.html"
+    class="floating-ai"
+    title="Ask JanakSewa AI"
+    aria-label="Ask JanakSewa AI"
+>
+
+    <i class="bi bi-robot"></i>
+
+</a>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <p class="mb-1">
+
+        <strong>
+            Janaksewa AI
+        </strong>
+
+        | Citizen Assistance System
+
+    </p>
+
+
+    <small>
+
+        Digital Citizen Assistance Platform
+
+    </small>
+
+</footer>
+
+
+<!-- Bootstrap JS -->
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<!-- Shared JavaScript -->
+
+<script src="assets/js/script.js"></script>
+
+
+</body>
+
+</html>

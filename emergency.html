@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Janaksewa AI | Emergency Assistance</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+
+    :root {
+      --primary: #d93025;
+      --primary-dark: #a61b15;
+      --blue: #0d6efd;
+      --dark: #092b57;
+      --text: #172033;
+      --muted: #667085;
+      --light: #fff7f7;
+      --border: #f0dada;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(120, 25, 25, 0.10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff7f7;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       TOP BAR
+    ========================== */
+
+    .top-bar {
+      background: var(--dark);
+      color: white;
+      padding: 9px 0;
+      font-size: 13px;
+    }
+
+    .top-bar-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .top-left,
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .top-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .top-item i {
+      color: #ffb3b3;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-icons a {
+      width: 28px;
+      height: 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      color: white;
+      border-radius: 50%;
+
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       MAIN HEADER
+    ========================== */
+
+    .main-header {
+      background: white;
+      border-bottom: 1px solid #eee5e5;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .brand-title {
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--blue);
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .helpline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      background: #fff3f3;
+      padding: 10px 17px;
+      border-radius: 12px;
+    }
+
+    .helpline-icon {
+      width: 40px;
+      height: 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--primary);
+      color: white;
+
+      border-radius: 50%;
+    }
+
+    .helpline small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .helpline strong {
+      color: var(--primary-dark);
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================== */
+
+    .navbar-custom {
+      background: white;
+      border-bottom: 1px solid #eee5e5;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+
+      min-height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link-custom {
+      color: #334155;
+
+      font-size: 14px;
+      font-weight: 600;
+
+      padding: 10px 12px;
+
+      border-radius: 8px;
+
+      transition: 0.25s;
+    }
+
+    .nav-link-custom:hover {
+      color: var(--primary);
+      background: #fff1f1;
+    }
+
+    .nav-link-custom.active {
+      color: white;
+      background: var(--primary);
+    }
+
+    .ai-nav-btn {
+      color: white !important;
+
+      background:
+        linear-gradient(135deg, #0d6efd, #6f42c1);
+
+      border-radius: 25px;
+
+      padding: 10px 17px;
+
+      box-shadow:
+        0 7px 18px rgba(13,110,253,0.22);
+    }
+
+    .ai-nav-btn:hover {
+      color: white !important;
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .emergency-hero {
+      min-height: 390px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(93, 10, 10, 0.95),
+          rgba(155, 30, 30, 0.78),
+          rgba(90, 10, 10, 0.35)
+        ),
+        url("https://images.unsplash.com/photo-1587745416684-47953f16f02f?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      width: 100%;
+
+      margin: auto;
+
+      padding: 65px 20px;
+
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      background: rgba(255,255,255,0.13);
+
+      border: 1px solid rgba(255,255,255,0.28);
+
+      padding: 8px 16px;
+
+      border-radius: 25px;
+
+      font-size: 13px;
+
+      margin-bottom: 18px;
+
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-content h1 {
+      font-size: clamp(38px, 5vw, 58px);
+
+      font-weight: 800;
+
+      margin-bottom: 13px;
+    }
+
+    .hero-content p {
+      max-width: 720px;
+
+      font-size: 17px;
+
+      color: #ffecec;
+    }
+
+
+    /* =========================
+       WARNING
+    ========================== */
+
+    .warning-section {
+      padding: 35px 20px 10px;
+    }
+
+    .warning-box {
+      max-width: 1150px;
+      margin: auto;
+
+      display: flex;
+      align-items: center;
+      gap: 17px;
+
+      background: #fff0f0;
+
+      border: 1px solid #f4caca;
+
+      border-left: 5px solid var(--primary);
+
+      border-radius: 14px;
+
+      padding: 18px 20px;
+
+      box-shadow: 0 8px 20px rgba(120,25,25,0.05);
+    }
+
+    .warning-icon {
+      width: 45px;
+      height: 45px;
+
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #ffe0e0;
+
+      color: var(--primary);
+
+      border-radius: 50%;
+
+      font-size: 21px;
+    }
+
+    .warning-box strong {
+      display: block;
+      margin-bottom: 3px;
+      color: #8e1712;
+    }
+
+    .warning-box p {
+      margin: 0;
+      color: #6d4545;
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       EMERGENCY SECTION
+    ========================== */
+
+    .emergency-section {
+      padding: 55px 20px 75px;
+    }
+
+    .section-heading {
+      max-width: 720px;
+
+      margin: 0 auto 40px;
+
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+
+      color: var(--primary);
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-size: 36px;
+
+      font-weight: 800;
+
+      margin-bottom: 9px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+
+    /* =========================
+       EMERGENCY GRID
+    ========================== */
+
+    .emergency-grid {
+      max-width: 1150px;
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 22px;
+    }
+
+    .emergency-card {
+      position: relative;
+
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 20px;
+
+      padding: 28px 23px;
+
+      text-align: center;
+
+      box-shadow:
+        0 9px 25px rgba(120,25,25,0.06);
+
+      overflow: hidden;
+
+      transition: 0.3s;
+    }
+
+    .emergency-card::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 4px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #d93025,
+          #ff7670
+        );
+
+      transform: scaleX(0);
+
+      transform-origin: left;
+
+      transition: 0.3s;
+    }
+
+    .emergency-card:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 20px 40px rgba(120,25,25,0.13);
+    }
+
+    .emergency-card:hover::before {
+      transform: scaleX(1);
+    }
+
+
+    /* =========================
+       EMERGENCY ICON
+    ========================== */
+
+    .emergency-icon {
+      width: 75px;
+      height: 75px;
+
+      margin: 0 auto 18px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #fff0f0;
+
+      color: var(--primary);
+
+      border-radius: 50%;
+
+      font-size: 31px;
+
+      transition: 0.3s;
+    }
+
+    .emergency-card:hover .emergency-icon {
+      background: var(--primary);
+      color: white;
+
+      transform: scale(1.08);
+    }
+
+    .emergency-card h3 {
+      font-size: 22px;
+      font-weight: 800;
+
+      margin-bottom: 8px;
+    }
+
+    .emergency-card p {
+      min-height: 65px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      margin-bottom: 18px;
+    }
+
+
+    /* =========================
+       CALL BUTTON
+    ========================== */
+
+    .call-btn {
+      width: 100%;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 8px;
+
+      padding: 12px 17px;
+
+      color: white;
+
+      background: var(--primary);
+
+      border-radius: 11px;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      transition: 0.25s;
+    }
+
+    .call-btn:hover {
+      color: white;
+
+      background: var(--primary-dark);
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 9px 18px rgba(217,48,37,0.25);
+    }
+
+
+    /* =========================
+       SAFETY INFORMATION
+    ========================== */
+
+    .safety-section {
+      padding: 0 20px 75px;
+    }
+
+    .safety-wrapper {
+      max-width: 1150px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 25px;
+    }
+
+    .safety-card {
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 20px;
+
+      padding: 30px;
+
+      box-shadow:
+        0 10px 28px rgba(120,25,25,0.06);
+    }
+
+    .safety-card h3 {
+      font-size: 22px;
+
+      font-weight: 800;
+
+      margin-bottom: 18px;
+    }
+
+    .safety-list {
+      list-style: none;
+
+      padding: 0;
+
+      margin: 0;
+    }
+
+    .safety-list li {
+      display: flex;
+
+      align-items: flex-start;
+
+      gap: 10px;
+
+      margin-bottom: 13px;
+
+      color: #526071;
+
+      font-size: 14px;
+    }
+
+    .safety-list i {
+      color: #198754;
+
+      font-size: 17px;
+
+      margin-top: 2px;
+    }
+
+    .important-list i {
+      color: var(--primary);
+    }
+
+
+    /* =========================
+       AI CTA
+    ========================== */
+
+    .ai-section {
+      padding: 0 20px 75px;
+    }
+
+    .ai-box {
+      max-width: 1150px;
+
+      margin: auto;
+
+      padding: 45px;
+
+      border-radius: 25px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #092b57,
+          #0d6efd,
+          #6f42c1
+        );
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      box-shadow:
+        0 18px 45px rgba(13,110,253,0.18);
+    }
+
+    .ai-box h2 {
+      font-size: 31px;
+
+      font-weight: 800;
+
+      margin-bottom: 9px;
+    }
+
+    .ai-box p {
+      max-width: 680px;
+
+      color: #e4edff;
+
+      margin: 0;
+    }
+
+    .ai-button {
+      white-space: nowrap;
+
+      padding: 13px 21px;
+
+      background: white;
+
+      color: var(--dark);
+
+      border-radius: 12px;
+
+      font-weight: 800;
+
+      transition: 0.25s;
+    }
+
+    .ai-button:hover {
+      color: var(--dark);
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 10px 20px rgba(0,0,0,0.15);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      background: #071f3d;
+
+      color: #cbd8e8;
+
+      padding: 35px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+
+      margin: auto;
+
+      display: flex;
+
+      justify-content: space-between;
+
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    .footer-links {
+      display: flex;
+
+      gap: 18px;
+
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #cbd8e8;
+
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+
+    /* =========================
+       FLOATING AI
+    ========================== */
+
+    .floating-ai {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0d6efd,
+          #6f42c1
+        );
+
+      color: white;
+
+      border-radius: 50%;
+
+      font-size: 23px;
+
+      box-shadow:
+        0 12px 28px rgba(13,110,253,0.35);
+
+      z-index: 2000;
+
+      transition: 0.25s;
+    }
+
+    .floating-ai:hover {
+      color: white;
+      transform: scale(1.08);
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 1050px) {
+
+      .emergency-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 800px) {
+
+      .top-bar-inner,
+      .header-inner,
+      .footer-inner {
+        flex-direction: column;
+
+        text-align: center;
+      }
+
+      .top-left,
+      .top-right {
+        justify-content: center;
+      }
+
+      .helpline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .nav-inner {
+        padding: 8px 15px;
+      }
+
+      .safety-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-box {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 35px 25px;
+      }
+
+    }
+
+
+    @media (max-width: 576px) {
+
+      .brand-title {
+        font-size: 21px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .emergency-hero {
+        min-height: 320px;
+      }
+
+      .hero-content {
+        padding: 50px 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .hero-content p {
+        font-size: 15px;
+      }
+
+      .warning-box {
+        align-items: flex-start;
+      }
+
+      .emergency-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .emergency-section {
+        padding-top: 45px;
+      }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
+
+      .safety-card {
+        padding: 24px 20px;
+      }
+
+      .ai-box h2 {
+        font-size: 27px;
+      }
+
+      .nav-link-custom {
+        font-size: 12px;
+        padding: 8px 8px;
+      }
+
+      .floating-ai {
+        width: 52px;
+        height: 52px;
+
+        right: 15px;
+        bottom: 15px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       TOP BAR
+  ========================== -->
+
+  <div class="top-bar">
+
+    <div class="top-bar-inner">
+
+      <div class="top-left">
+
+        <div class="top-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          Janakpurdham, Madhesh Province, Nepal
+        </div>
+
+        <div class="top-item">
+          <i class="bi bi-telephone-fill"></i>
+          +977-41-520000
+        </div>
+
+        <div class="top-item">
+          <i class="bi bi-envelope-fill"></i>
+          info@janakpurmun.gov.np
+        </div>
+
+      </div>
+
+
+      <div class="top-right">
+
+        <div class="social-icons">
+
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-youtube"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       MAIN HEADER
+  ========================== -->
+
+  <header class="main-header">
+
+    <div class="header-inner">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="assets/images/janaksewa-logo.png"
+          alt="Janaksewa AI Logo"
+          class="brand-logo"
+        />
+
+        <div>
+
+          <div class="brand-title">
+            Janaksewa AI
+          </div>
+
+          <div class="brand-subtitle">
+            Citizen Assistance System
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <div class="helpline">
+
+        <div class="helpline-icon">
+          <i class="bi bi-telephone-fill"></i>
+        </div>
+
+        <div>
+
+          <small>
+            Emergency Helpline
+          </small>
+
+          <strong>
+            Call for Assistance
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav class="navbar-custom">
+
+    <div class="nav-inner">
+
+      <a
+        href="index.html"
+        class="nav-link-custom"
+        data-i18n="home"
+      >
+        <i class="bi bi-house-door"></i>
+        Home
+      </a>
+
+
+      <a
+        href="about.html"
+        class="nav-link-custom"
+      >
+        About Municipality
+      </a>
+
+
+      <a
+        href="services.html"
+        class="nav-link-custom"
+      >
+        Services
+      </a>
+
+
+      <a
+        href="tourist-places.html"
+        class="nav-link-custom"
+      >
+        Tourism
+      </a>
+
+
+      <a
+        href="transportation.html"
+        class="nav-link-custom"
+      >
+        Transportation
+      </a>
+
+
+      <a
+        href="notices.html"
+        class="nav-link-custom"
+      >
+        Notices
+      </a>
+
+
+      <a
+        href="complaints.html"
+        class="nav-link-custom"
+      >
+        Complaints
+      </a>
+
+
+      <a
+        href="emergency.html"
+        class="nav-link-custom active"
+      >
+        Emergency
+      </a>
+
+
+      <a
+        href="contact.html"
+        class="nav-link-custom"
+      >
+        Contact
+      </a>
+
+
+      <a
+        href="chatbot.html"
+        class="nav-link-custom ai-nav-btn"
+      >
+        <i class="bi bi-robot"></i>
+        JanakSewa AI
+      </a>
+
+
+      <a
+        href="dashboard.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-person-circle"></i>
+        Dashboard
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="emergency-hero">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+
+        <i class="bi bi-exclamation-triangle-fill"></i>
+
+        Emergency Assistance
+
+      </div>
+
+
+      <h1>
+        Get Help When It Matters
+      </h1>
+
+
+      <p>
+        Find important emergency assistance options quickly.
+        In a life-threatening situation, contact the appropriate
+        emergency authority immediately.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       WARNING
+  ========================== -->
+
+  <section class="warning-section">
+
+    <div class="warning-box">
+
+      <div class="warning-icon">
+        <i class="bi bi-exclamation-triangle-fill"></i>
+      </div>
+
+      <div>
+
+        <strong>
+          Emergency Information Notice
+        </strong>
+
+        <p>
+          Verify emergency contact numbers with official
+          authorities before deploying this website for live use.
+          Do not rely only on information displayed here during
+          a critical emergency.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       EMERGENCY SERVICES
+  ========================== -->
+
+  <section class="emergency-section">
+
+    <div class="section-heading">
+
+      <span class="section-label">
+        Quick Emergency Access
+      </span>
+
+      <h2>
+        Emergency Services
+      </h2>
+
+      <p>
+        Select the appropriate service for urgent assistance.
+      </p>
+
+    </div>
+
+
+    <div class="emergency-grid">
+
+
+      <!-- POLICE -->
+
+      <div class="emergency-card">
+
+        <div class="emergency-icon">
+          <i class="bi bi-shield-fill-check"></i>
+        </div>
+
+        <h3>
+          Police
+        </h3>
+
+        <p>
+          Contact police for urgent protection,
+          public safety and law-enforcement assistance.
+        </p>
+
+        <a
+          href="tel:100"
+          class="call-btn"
+        >
+          <i class="bi bi-telephone-fill"></i>
+          Call 100
+        </a>
+
+      </div>
+
+
+      <!-- FIRE -->
+
+      <div class="emergency-card">
+
+        <div class="emergency-icon">
+          <i class="bi bi-fire"></i>
+        </div>
+
+        <h3>
+          Fire Service
+        </h3>
+
+        <p>
+          Report fires and request immediate
+          firefighting and rescue assistance.
+        </p>
+
+        <a
+          href="tel:101"
+          class="call-btn"
+        >
+          <i class="bi bi-telephone-fill"></i>
+          Call 101
+        </a>
+
+      </div>
+
+
+      <!-- HOSPITAL -->
+
+      <div class="emergency-card">
+
+        <div class="emergency-icon">
+          <i class="bi bi-hospital"></i>
+        </div>
+
+        <h3>
+          Hospital
+        </h3>
+
+        <p>
+          Find medical assistance and contact
+          healthcare support during urgent situations.
+        </p>
+
+        <a
+          href="tel:102"
+          class="call-btn"
+        >
+          <i class="bi bi-telephone-fill"></i>
+          Call 102
+        </a>
+
+      </div>
+
+
+      <!-- AMBULANCE -->
+
+      <div class="emergency-card">
+
+        <div class="emergency-icon">
+          <i class="bi bi-heart-pulse-fill"></i>
+        </div>
+
+        <h3>
+          Ambulance
+        </h3>
+
+        <p>
+          Request emergency medical transportation
+          for critical medical situations.
+        </p>
+
+        <a
+          href="tel:108"
+          class="call-btn"
+        >
+          <i class="bi bi-telephone-fill"></i>
+          Call 108
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SAFETY INFORMATION
+  ========================== -->
+
+  <section class="safety-section">
+
+    <div class="safety-wrapper">
+
+
+      <div class="safety-card">
+
+        <h3>
+          <i class="bi bi-check-circle-fill text-success me-2"></i>
+          During an Emergency
+        </h3>
+
+        <ul class="safety-list">
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Stay calm and move to a safe location.
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Contact the appropriate emergency authority.
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Clearly provide your location and situation.
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Follow instructions from emergency responders.
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Help vulnerable people only when it is safe to do so.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <div class="safety-card">
+
+        <h3>
+          <i class="bi bi-info-circle-fill me-2"
+             style="color:#d93025;"></i>
+          Important
+        </h3>
+
+        <ul class="safety-list important-list">
+
+          <li>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            Do not make false or prank emergency calls.
+          </li>
+
+          <li>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            Keep your phone available for emergency communication.
+          </li>
+
+          <li>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            Verify contact numbers before using them.
+          </li>
+
+          <li>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            For serious danger, prioritize official emergency services.
+          </li>
+
+          <li>
+            <i class="bi bi-exclamation-circle-fill"></i>
+            This website should not replace professional emergency response.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       AI CTA
+  ========================== -->
+
+  <section class="ai-section">
+
+    <div class="ai-box">
+
+      <div>
+
+        <h2>
+          Need Information Quickly?
+        </h2>
+
+        <p>
+          JanakSewa AI can help you navigate municipal
+          information, public services, complaints,
+          transportation and other citizen resources.
+        </p>
+
+      </div>
+
+
+      <a
+        href="chatbot.html"
+        class="ai-button"
+      >
+        <i class="bi bi-robot me-2"></i>
+        Ask JanakSewa AI
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+
+        <strong>
+          Janaksewa AI
+        </strong>
+
+        <br />
+
+        <small>
+          Citizen Assistance System
+        </small>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+        <a href="complaints.html">
+          Complaints
+        </a>
+
+        <a href="emergency.html">
+          Emergency
+        </a>
+
+        <a href="chatbot.html">
+          AI Chatbot
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       FLOATING AI
+  ========================== -->
+
+  <a
+    href="chatbot.html"
+    class="floating-ai"
+    title="Ask JanakSewa AI"
+  >
+    <i class="bi bi-robot"></i>
+  </a>
+
+
+  <!-- Bootstrap JS -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+
+  <!-- Janaksewa Shared JS -->
+
+  <script src="assets/js/script.js"></script>
+
+</body>
+
+</html>
+

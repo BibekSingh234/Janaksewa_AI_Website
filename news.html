@@ -1,0 +1,1912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Janaksewa AI | News & Notices</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #084298;
+      --secondary: #0b5ed7;
+      --dark: #172033;
+      --text: #455468;
+      --light: #f5f8fc;
+      --border: #e2e8f0;
+      --white: #ffffff;
+      --success: #198754;
+      --warning: #f59e0b;
+      --danger: #dc3545;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8fc;
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* =========================
+       TOP BAR
+    ========================= */
+
+    .top-info-bar {
+      background: #0b1f3a;
+      color: #dce8f8;
+      font-size: 14px;
+      padding: 9px 0;
+    }
+
+    .top-info-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .top-left,
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .top-info-bar i {
+      color: #6db3ff;
+      margin-right: 5px;
+    }
+
+    .social-links a {
+      color: #dce8f8;
+      margin-left: 8px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ffffff;
+    }
+
+    /* =========================
+       MAIN HEADER
+    ========================= */
+
+    .main-header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .main-header-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 17px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .brand-title {
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--primary);
+      margin: 0;
+    }
+
+    .brand-nepali {
+      font-size: 14px;
+      font-weight: 700;
+      color: #555;
+      margin: 0;
+    }
+
+    .brand-subtitle {
+      font-size: 12px;
+      color: #7a8797;
+      margin: 0;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .language-select {
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 9px 12px;
+      background: #ffffff;
+      color: var(--dark);
+      outline: none;
+    }
+
+    .helpline {
+      background: #eef6ff;
+      border: 1px solid #d5e9ff;
+      padding: 9px 14px;
+      border-radius: 10px;
+      text-align: right;
+    }
+
+    .helpline small {
+      display: block;
+      color: #66758a;
+      font-size: 11px;
+    }
+
+    .helpline strong {
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+    /* =========================
+       NAVBAR
+    ========================= */
+
+    .main-nav {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link-custom {
+      color: #26364d;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 15px 12px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: 0.3s;
+    }
+
+    .nav-link-custom:hover,
+    .nav-link-custom.active {
+      color: var(--primary);
+    }
+
+    .ai-nav-btn {
+      background: linear-gradient(135deg, #0d6efd, #084298);
+      color: white !important;
+      border-radius: 9px;
+      padding: 9px 15px !important;
+      margin-left: 5px;
+    }
+
+    .dashboard-btn {
+      border: 1px solid var(--primary);
+      color: var(--primary) !important;
+      border-radius: 9px;
+      padding: 8px 14px !important;
+      margin-left: 3px;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .news-hero {
+      min-height: 360px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(5, 26, 55, 0.90),
+          rgba(5, 38, 78, 0.70),
+          rgba(5, 38, 78, 0.35)
+        ),
+        url("https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+
+      display: flex;
+      align-items: center;
+      color: white;
+    }
+
+    .hero-inner {
+      max-width: 1250px;
+      width: 100%;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 7px 13px;
+      border-radius: 50px;
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+
+    .hero-badge i {
+      margin-right: 5px;
+    }
+
+    .news-hero h1 {
+      font-size: clamp(34px, 5vw, 56px);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .news-hero p {
+      max-width: 680px;
+      font-size: 17px;
+      color: #e7eff9;
+      margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary-custom {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 9px;
+      font-weight: 600;
+    }
+
+    .btn-light-custom {
+      background: white;
+      color: var(--primary-dark);
+      padding: 12px 20px;
+      border-radius: 9px;
+      font-weight: 600;
+    }
+
+    /* =========================
+       NEWS SECTION
+    ========================= */
+
+    .news-section {
+      max-width: 1250px;
+      margin: auto;
+      padding: 65px 20px;
+    }
+
+    .section-heading {
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 38px;
+    }
+
+    .section-heading span {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .section-heading h2 {
+      font-size: 34px;
+      font-weight: 800;
+      margin: 8px 0 12px;
+    }
+
+    .section-heading p {
+      color: var(--text);
+      margin: 0;
+    }
+
+    /* =========================
+       SEARCH
+    ========================= */
+
+    .news-toolbar {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 30px;
+      box-shadow: 0 8px 25px rgba(18, 38, 61, 0.05);
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #7d8ba0;
+    }
+
+    .search-box input {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 15px 12px 42px;
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.10);
+    }
+
+    .filter-buttons {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .filter-btn {
+      border: 1px solid var(--border);
+      background: white;
+      color: #526176;
+      padding: 9px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+
+    /* =========================
+       FEATURED NOTICE
+    ========================= */
+
+    .featured-notice {
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 35px rgba(18, 38, 61, 0.08);
+      margin-bottom: 35px;
+    }
+
+    .featured-image {
+      min-height: 300px;
+      height: 100%;
+      background:
+        linear-gradient(
+          rgba(8, 54, 105, 0.15),
+          rgba(8, 54, 105, 0.15)
+        ),
+        url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1000&q=85")
+        center/cover no-repeat;
+    }
+
+    .featured-content {
+      padding: 35px;
+    }
+
+    .important-badge {
+      display: inline-block;
+      background: #fff0f0;
+      color: var(--danger);
+      padding: 6px 11px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .featured-content .date {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .featured-content h3 {
+      font-size: 27px;
+      font-weight: 800;
+      margin: 10px 0;
+    }
+
+    .featured-content p {
+      color: var(--text);
+    }
+
+    .read-more {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    /* =========================
+       NEWS CARDS
+    ========================= */
+
+    .news-card {
+      height: 100%;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      overflow: hidden;
+      box-shadow: 0 9px 25px rgba(18, 38, 61, 0.06);
+      transition: 0.3s;
+    }
+
+    .news-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 35px rgba(18, 38, 61, 0.12);
+    }
+
+    .news-image {
+      height: 190px;
+      overflow: hidden;
+    }
+
+    .news-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: 0.4s;
+    }
+
+    .news-card:hover .news-image img {
+      transform: scale(1.05);
+    }
+
+    .news-content {
+      padding: 22px;
+    }
+
+    .news-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .news-date {
+      color: var(--primary);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .news-category {
+      background: #eef6ff;
+      color: var(--primary);
+      padding: 4px 8px;
+      border-radius: 5px;
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .news-content h4 {
+      font-size: 19px;
+      font-weight: 750;
+      line-height: 1.35;
+      margin-bottom: 10px;
+    }
+
+    .news-content p {
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
+    /* =========================
+       NOTICE TYPES
+    ========================= */
+
+    .notice-types {
+      margin-top: 70px;
+    }
+
+    .type-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 25px;
+      height: 100%;
+      transition: 0.3s;
+    }
+
+    .type-card:hover {
+      transform: translateY(-4px);
+      border-color: #bdd9ff;
+    }
+
+    .type-icon {
+      width: 55px;
+      height: 55px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #eef6ff;
+      color: var(--primary);
+      font-size: 23px;
+      margin-bottom: 15px;
+    }
+
+    .type-card h5 {
+      font-weight: 750;
+      margin-bottom: 7px;
+    }
+
+    .type-card p {
+      color: var(--text);
+      font-size: 14px;
+      margin: 0;
+    }
+
+    /* =========================
+       SUBSCRIBE / AI CTA
+    ========================= */
+
+    .news-cta {
+      margin-top: 70px;
+      background:
+        linear-gradient(
+          120deg,
+          rgba(13, 110, 253, 0.96),
+          rgba(8, 66, 152, 0.96)
+        ),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1400&q=80")
+        center/cover;
+      color: white;
+      border-radius: 22px;
+      padding: 45px;
+      text-align: center;
+    }
+
+    .news-cta h3 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .news-cta p {
+      color: #e4efff;
+      max-width: 700px;
+      margin: 0 auto 22px;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #0b1f3a;
+      color: #c9d5e5;
+      padding: 55px 0 20px;
+    }
+
+    .footer-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .footer-title {
+      color: white;
+      font-size: 20px;
+      font-weight: 750;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      font-size: 14px;
+      color: #aebdd0;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #b9c8da;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.12);
+      margin-top: 35px;
+      padding-top: 18px;
+      text-align: center;
+      color: #9eb0c5;
+      font-size: 13px;
+    }
+
+    /* =========================
+       FLOATING AI BUTTON
+    ========================= */
+
+    .floating-ai {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d6efd, #084298);
+      color: white;
+      display: grid;
+      place-items: center;
+      font-size: 23px;
+      box-shadow: 0 12px 28px rgba(13, 110, 253, 0.35);
+      z-index: 1500;
+      transition: 0.3s;
+    }
+
+    .floating-ai:hover {
+      color: white;
+      transform: translateY(-4px) scale(1.05);
+    }
+
+    /* =========================
+       DARK MODE
+    ========================= */
+
+    body.dark-mode {
+      background: #101827;
+      color: #edf4ff;
+    }
+
+    body.dark-mode .main-header,
+    body.dark-mode .main-nav,
+    body.dark-mode .news-toolbar,
+    body.dark-mode .featured-notice,
+    body.dark-mode .news-card,
+    body.dark-mode .type-card {
+      background: #172235;
+      border-color: #29384d;
+    }
+
+    body.dark-mode .nav-link-custom,
+    body.dark-mode .language-select {
+      color: #edf4ff;
+      background: #172235;
+    }
+
+    body.dark-mode .news-content p,
+    body.dark-mode .featured-content p,
+    body.dark-mode .type-card p,
+    body.dark-mode .section-heading p {
+      color: #b9c6d8;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 992px) {
+      .main-header-inner {
+        flex-direction: column;
+      }
+
+      .header-actions {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .nav-inner {
+        justify-content: center;
+      }
+
+      .nav-link-custom {
+        padding: 11px 8px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-info-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .main-header-inner {
+        text-align: center;
+      }
+
+      .brand-area {
+        justify-content: center;
+      }
+
+      .header-actions {
+        flex-wrap: wrap;
+      }
+
+      .nav-inner {
+        overflow-x: auto;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        padding-bottom: 5px;
+      }
+
+      .nav-link-custom {
+        white-space: nowrap;
+      }
+
+      .news-hero {
+        min-height: 320px;
+      }
+
+      .hero-inner {
+        padding: 55px 20px;
+      }
+
+      .featured-image {
+        min-height: 230px;
+      }
+
+      .featured-content {
+        padding: 25px;
+      }
+
+      .filter-buttons {
+        justify-content: flex-start;
+        margin-top: 12px;
+      }
+
+      .news-section {
+        padding: 45px 15px;
+      }
+
+      .news-cta {
+        padding: 32px 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .brand-title {
+        font-size: 21px;
+      }
+
+      .brand-logo {
+        width: 52px;
+        height: 52px;
+      }
+
+      .helpline {
+        display: none;
+      }
+
+      .news-hero h1 {
+        font-size: 34px;
+      }
+
+      .news-hero p {
+        font-size: 15px;
+      }
+
+      .section-heading h2 {
+        font-size: 28px;
+      }
+
+      .news-toolbar {
+        padding: 13px;
+      }
+
+      .news-cta h3 {
+        font-size: 25px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       TOP INFORMATION BAR
+  ========================== -->
+
+  <div class="top-info-bar">
+    <div class="top-info-inner">
+
+      <div class="top-left">
+        <span>
+          <i class="bi bi-geo-alt-fill"></i>
+          Janakpurdham, Madhesh Province, Nepal
+        </span>
+
+        <span>
+          <i class="bi bi-telephone-fill"></i>
+          +977-41-520000
+        </span>
+      </div>
+
+      <div class="top-right">
+        <span>
+          <i class="bi bi-envelope-fill"></i>
+          info@janakpurmun.gov.np
+        </span>
+
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================
+       MAIN HEADER
+  ========================== -->
+
+  <header class="main-header">
+
+    <div class="main-header-inner">
+
+      <div class="brand-area">
+
+        <img
+          src="assets/images/janaksewa-logo.png"
+          alt="Janaksewa AI Logo"
+          class="brand-logo"
+        />
+
+        <div>
+          <h1 class="brand-title">Janaksewa AI</h1>
+          <p class="brand-nepali">जनकसेवा एआई</p>
+          <p class="brand-subtitle">Citizen Assistance System</p>
+        </div>
+
+      </div>
+
+      <div class="header-actions">
+
+        <div class="helpline">
+          <small>Citizen Helpline</small>
+          <strong>1660-000-000</strong>
+        </div>
+
+        <select
+          class="language-select"
+          aria-label="Select language"
+        >
+          <option value="en">English</option>
+          <option value="ne">नेपाली</option>
+          <option value="mai">मैथिली</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav class="main-nav">
+
+    <div class="nav-inner">
+
+      <a href="index.html" class="nav-link-custom">
+        <i class="bi bi-house"></i>
+        <span data-i18n="home">Home</span>
+      </a>
+
+      <a href="about.html" class="nav-link-custom">
+        <i class="bi bi-info-circle"></i>
+        <span data-i18n="about">About</span>
+      </a>
+
+      <a href="services.html" class="nav-link-custom">
+        <i class="bi bi-grid"></i>
+        <span data-i18n="services">Services</span>
+      </a>
+
+      <a href="tourist-places.html" class="nav-link-custom">
+        <i class="bi bi-camera"></i>
+        <span data-i18n="tourism">Tourism</span>
+      </a>
+
+      <a href="transportation.html" class="nav-link-custom">
+        <i class="bi bi-bus-front"></i>
+        <span data-i18n="transportation">Transportation</span>
+      </a>
+
+      <a href="notices.html" class="nav-link-custom active">
+        <i class="bi bi-megaphone"></i>
+        <span data-i18n="notices">Notices</span>
+      </a>
+
+      <a href="complaints.html" class="nav-link-custom">
+        <i class="bi bi-exclamation-circle"></i>
+        Complaints
+      </a>
+
+      <a href="emergency.html" class="nav-link-custom">
+        <i class="bi bi-shield-exclamation"></i>
+        Emergency
+      </a>
+
+      <a href="contact.html" class="nav-link-custom">
+        <i class="bi bi-envelope"></i>
+        <span data-i18n="contact">Contact</span>
+      </a>
+
+      <a href="chatbot.html" class="nav-link-custom ai-nav-btn">
+        <i class="bi bi-stars"></i>
+        <span data-i18n="janaksewaAI">JanakSewa AI</span>
+      </a>
+
+      <a href="dashboard.html" class="nav-link-custom dashboard-btn">
+        <i class="bi bi-person-circle"></i>
+        Dashboard
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="news-hero">
+
+    <div class="hero-inner">
+
+      <span class="hero-badge">
+        <i class="bi bi-megaphone-fill"></i>
+        Official Information Center
+      </span>
+
+      <h1 data-i18n="noticesTitle">
+        Latest News & Notices
+      </h1>
+
+      <p>
+        Stay informed about municipal announcements, public notices,
+        citizen services, development activities and important updates
+        from Janakpurdham.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a href="#latest-news" class="btn-primary-custom">
+          <i class="bi bi-newspaper"></i>
+          View Latest News
+        </a>
+
+        <a href="chatbot.html" class="btn-light-custom">
+          <i class="bi bi-stars"></i>
+          Ask JanakSewa AI
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       NEWS CONTENT
+  ========================== -->
+
+  <main class="news-section" id="latest-news">
+
+    <div class="section-heading">
+
+      <span>Information & Updates</span>
+
+      <h2>News & Municipal Notices</h2>
+
+      <p>
+        Find important announcements and public information
+        in one convenient place.
+      </p>
+
+    </div>
+
+
+    <!-- SEARCH & FILTER -->
+
+    <div class="news-toolbar">
+
+      <div class="row align-items-center g-3">
+
+        <div class="col-lg-5">
+
+          <div class="search-box">
+
+            <i class="bi bi-search"></i>
+
+            <input
+              type="search"
+              id="newsSearch"
+              placeholder="Search news or notices..."
+            />
+
+          </div>
+
+        </div>
+
+        <div class="col-lg-7">
+
+          <div class="filter-buttons">
+
+            <button
+              class="filter-btn active"
+              data-filter="all"
+            >
+              All
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="important"
+            >
+              Important
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="service"
+            >
+              Services
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="public"
+            >
+              Public Information
+            </button>
+
+            <button
+              class="filter-btn"
+              data-filter="development"
+            >
+              Development
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         FEATURED NOTICE
+    ========================== -->
+
+    <div class="featured-notice">
+
+      <div class="row g-0">
+
+        <div class="col-lg-5">
+
+          <div class="featured-image"></div>
+
+        </div>
+
+        <div class="col-lg-7">
+
+          <div class="featured-content">
+
+            <span class="important-badge">
+              <i class="bi bi-exclamation-circle-fill"></i>
+              Important Notice
+            </span>
+
+            <div class="date">
+              30 August 2026
+            </div>
+
+            <h3>
+              Important Municipal Service Notice
+            </h3>
+
+            <p>
+              Municipal public information and announcements regarding
+              citizen services, procedures and service updates will be
+              published here for easy access.
+            </p>
+
+            <p>
+              Citizens are encouraged to check official announcements
+              regularly before visiting municipal offices.
+            </p>
+
+            <a href="#" class="read-more">
+              Read Full Notice
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =========================
+         NEWS GRID
+    ========================== -->
+
+    <div class="row g-4" id="newsGrid">
+
+
+      <!-- NEWS 1 -->
+
+      <div
+        class="col-md-6 col-lg-4 news-item"
+        data-category="service"
+      >
+
+        <article class="news-card">
+
+          <div class="news-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80"
+              alt="Citizen service announcement"
+            />
+
+          </div>
+
+          <div class="news-content">
+
+            <div class="news-meta">
+
+              <span class="news-date">
+                27 Aug 2026
+              </span>
+
+              <span class="news-category">
+                Services
+              </span>
+
+            </div>
+
+            <h4>
+              Citizen Service Announcement
+            </h4>
+
+            <p>
+              Information regarding municipal citizen services,
+              procedures and official guidance for daily access.
+            </p>
+
+            <a href="#" class="read-more">
+              Read More
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- NEWS 2 -->
+
+      <div
+        class="col-md-6 col-lg-4 news-item"
+        data-category="public"
+      >
+
+        <article class="news-card">
+
+          <div class="news-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?auto=format&fit=crop&w=900&q=80"
+              alt="Public information"
+            />
+
+          </div>
+
+          <div class="news-content">
+
+            <div class="news-meta">
+
+              <span class="news-date">
+                24 Aug 2026
+              </span>
+
+              <span class="news-category">
+                Public
+              </span>
+
+            </div>
+
+            <h4>
+              Public Information Update
+            </h4>
+
+            <p>
+              Latest information about public services and municipal
+              operations for citizens.
+            </p>
+
+            <a href="#" class="read-more">
+              Read More
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- NEWS 3 -->
+
+      <div
+        class="col-md-6 col-lg-4 news-item"
+        data-category="development"
+      >
+
+        <article class="news-card">
+
+          <div class="news-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
+              alt="Municipal development"
+            />
+
+          </div>
+
+          <div class="news-content">
+
+            <div class="news-meta">
+
+              <span class="news-date">
+                20 Aug 2026
+              </span>
+
+              <span class="news-category">
+                Development
+              </span>
+
+            </div>
+
+            <h4>
+              Municipal Development Activities
+            </h4>
+
+            <p>
+              Updates about municipal development activities,
+              infrastructure and public improvement initiatives.
+            </p>
+
+            <a href="#" class="read-more">
+              Read More
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- NEWS 4 -->
+
+      <div
+        class="col-md-6 col-lg-4 news-item"
+        data-category="important"
+      >
+
+        <article class="news-card">
+
+          <div class="news-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80"
+              alt="Municipal office notice"
+            />
+
+          </div>
+
+          <div class="news-content">
+
+            <div class="news-meta">
+
+              <span class="news-date">
+                18 Aug 2026
+              </span>
+
+              <span class="news-category">
+                Important
+              </span>
+
+            </div>
+
+            <h4>
+              Municipal Office Service Update
+            </h4>
+
+            <p>
+              Citizens can check updated office procedures and
+              service information before visiting municipal offices.
+            </p>
+
+            <a href="#" class="read-more">
+              Read More
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- NEWS 5 -->
+
+      <div
+        class="col-md-6 col-lg-4 news-item"
+        data-category="service"
+      >
+
+        <article class="news-card">
+
+          <div class="news-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&w=900&q=80"
+              alt="Tax service"
+            />
+
+          </div>
+
+          <div class="news-content">
+
+            <div class="news-meta">
+
+              <span class="news-date">
+                15 Aug 2026
+              </span>
+
+              <span class="news-category">
+                Services
+              </span>
+
+            </div>
+
+            <h4>
+              Municipal Tax Service Information
+            </h4>
+
+            <p>
+              Citizens can find tax-related information, payment
+              guidance and municipal service procedures.
+            </p>
+
+            <a href="#" class="read-more">
+              Read More
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- NEWS 6 -->
+
+      <div
+        class="col-md-6 col-lg-4 news-item"
+        data-category="public"
+      >
+
+        <article class="news-card">
+
+          <div class="news-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80"
+              alt="Community public information"
+            />
+
+          </div>
+
+          <div class="news-content">
+
+            <div class="news-meta">
+
+              <span class="news-date">
+                12 Aug 2026
+              </span>
+
+              <span class="news-category">
+                Public
+              </span>
+
+            </div>
+
+            <h4>
+              Community Public Information
+            </h4>
+
+            <p>
+              Important information and announcements for citizens
+              and local communities.
+            </p>
+
+            <a href="#" class="read-more">
+              Read More
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+    <!-- NO RESULTS -->
+
+    <div
+      id="noResults"
+      class="text-center py-5 d-none"
+    >
+
+      <i
+        class="bi bi-search"
+        style="font-size: 42px; color: #9aa8ba;"
+      ></i>
+
+      <h4 class="mt-3">
+        No news found
+      </h4>
+
+      <p class="text-muted">
+        Try another search keyword or category.
+      </p>
+
+    </div>
+
+
+    <!-- =========================
+         NOTICE TYPES
+    ========================== -->
+
+    <section class="notice-types">
+
+      <div class="section-heading">
+
+        <span>Stay Updated</span>
+
+        <h2>Information Categories</h2>
+
+        <p>
+          Quickly find the type of information you need.
+        </p>
+
+      </div>
+
+      <div class="row g-4">
+
+        <div class="col-md-6 col-lg-3">
+
+          <div class="type-card">
+
+            <div class="type-icon">
+              <i class="bi bi-megaphone"></i>
+            </div>
+
+            <h5>Important Notices</h5>
+
+            <p>
+              Critical announcements and important municipal
+              information for citizens.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+
+          <div class="type-card">
+
+            <div class="type-icon">
+              <i class="bi bi-file-earmark-text"></i>
+            </div>
+
+            <h5>Citizen Services</h5>
+
+            <p>
+              Updates about applications, documents, fees and
+              municipal procedures.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+
+          <div class="type-card">
+
+            <div class="type-icon">
+              <i class="bi bi-building"></i>
+            </div>
+
+            <h5>Development</h5>
+
+            <p>
+              Infrastructure, construction and public development
+              activities.
+            </p>
+
+          </div>
+
+        </div>
+
+        <div class="col-md-6 col-lg-3">
+
+          <div class="type-card">
+
+            <div class="type-icon">
+              <i class="bi bi-people"></i>
+            </div>
+
+            <h5>Public Information</h5>
+
+            <p>
+              General information and announcements for the
+              Janakpurdham community.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         AI CTA
+    ========================== -->
+
+    <section class="news-cta">
+
+      <h3>
+        Can't Find the Information You Need?
+      </h3>
+
+      <p>
+        Ask JanakSewa AI about municipal services, notices,
+        complaints, tourism, transportation and other citizen
+        assistance information.
+      </p>
+
+      <a
+        href="chatbot.html"
+        class="btn-light-custom d-inline-flex align-items-center gap-2"
+      >
+        <i class="bi bi-stars"></i>
+        Ask JanakSewa AI
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="row g-4">
+
+        <div class="col-lg-5">
+
+          <div class="footer-title">
+            Janaksewa AI
+          </div>
+
+          <p>
+            A citizen assistance platform designed to make
+            municipal information, services, complaints and
+            local assistance easier to access.
+          </p>
+
+          <p>
+            <i class="bi bi-geo-alt"></i>
+            Janakpurdham, Madhesh Province, Nepal
+          </p>
+
+        </div>
+
+        <div class="col-sm-6 col-lg-2">
+
+          <div class="footer-title">
+            Quick Links
+          </div>
+
+          <ul class="footer-links">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="tourist-places.html">Tourism</a></li>
+
+          </ul>
+
+        </div>
+
+        <div class="col-sm-6 col-lg-2">
+
+          <div class="footer-title">
+            Citizen
+          </div>
+
+          <ul class="footer-links">
+
+            <li><a href="complaints.html">Complaints</a></li>
+            <li><a href="emergency.html">Emergency</a></li>
+            <li><a href="dashboard.html">Dashboard</a></li>
+            <li><a href="chatbot.html">AI Chatbot</a></li>
+
+          </ul>
+
+        </div>
+
+        <div class="col-lg-3">
+
+          <div class="footer-title">
+            Contact
+          </div>
+
+          <p>
+            <i class="bi bi-telephone"></i>
+            +977-41-520000
+          </p>
+
+          <p>
+            <i class="bi bi-envelope"></i>
+            info@janakpurmun.gov.np
+          </p>
+
+          <p>
+            <i class="bi bi-clock"></i>
+            Sunday – Friday, 10 AM – 5 PM
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        © 2026 Janaksewa AI | Citizen Assistance System.
+        All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       FLOATING AI
+  ========================== -->
+
+  <a
+    href="chatbot.html"
+    class="floating-ai"
+    title="Ask JanakSewa AI"
+  >
+    <i class="bi bi-stars"></i>
+  </a>
+
+
+  <!-- Existing Project JS -->
+  <script src="assets/js/script.js"></script>
+
+
+  <!-- News Page JS -->
+  <script>
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const searchInput = document.getElementById("newsSearch");
+      const filterButtons = document.querySelectorAll(".filter-btn");
+      const newsItems = document.querySelectorAll(".news-item");
+      const noResults = document.getElementById("noResults");
+
+      let currentFilter = "all";
+
+
+      function filterNews() {
+
+        const searchTerm =
+          searchInput.value.toLowerCase().trim();
+
+        let visibleCount = 0;
+
+        newsItems.forEach(function (item) {
+
+          const category =
+            item.getAttribute("data-category");
+
+          const text =
+            item.innerText.toLowerCase();
+
+          const matchesSearch =
+            text.includes(searchTerm);
+
+          const matchesCategory =
+            currentFilter === "all" ||
+            category === currentFilter;
+
+          if (matchesSearch && matchesCategory) {
+
+            item.style.display = "";
+
+            visibleCount++;
+
+          } else {
+
+            item.style.display = "none";
+
+          }
+
+        });
+
+
+        if (visibleCount === 0) {
+
+          noResults.classList.remove("d-none");
+
+        } else {
+
+          noResults.classList.add("d-none");
+
+        }
+
+      }
+
+
+      searchInput.addEventListener(
+        "input",
+        filterNews
+      );
+
+
+      filterButtons.forEach(function (button) {
+
+        button.addEventListener(
+          "click",
+          function () {
+
+            filterButtons.forEach(function (btn) {
+              btn.classList.remove("active");
+            });
+
+            this.classList.add("active");
+
+            currentFilter =
+              this.getAttribute("data-filter");
+
+            filterNews();
+
+          }
+        );
+
+      });
+
+    });
+
+  </script>
+
+</body>
+</html>

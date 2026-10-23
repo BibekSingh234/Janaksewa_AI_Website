@@ -1,0 +1,2342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Janaksewa AI | Transportation</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #084298;
+      --dark: #172033;
+      --text: #526176;
+      --light: #f4f8fd;
+      --border: #e1e8f1;
+      --white: #ffffff;
+      --success: #198754;
+      --warning: #f59e0b;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    /* =================================
+       TOP INFORMATION BAR
+    ================================= */
+
+    .top-info-bar {
+      background: #0b1f3a;
+      color: #dce7f5;
+      font-size: 14px;
+      padding: 9px 0;
+    }
+
+    .top-info-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 20px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .top-left,
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .top-info-bar i {
+      color: #72b7ff;
+      margin-right: 5px;
+    }
+
+    .social-links a {
+      color: #dce7f5;
+      margin-left: 8px;
+      transition: 0.3s;
+    }
+
+    .social-links a:hover {
+      color: #ffffff;
+    }
+
+
+    /* =================================
+       MAIN HEADER
+    ================================= */
+
+    .main-header {
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .main-header-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 16px 20px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    .brand-area {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .brand-logo {
+      width: 64px;
+      height: 64px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .brand-title {
+      margin: 0;
+      color: var(--primary);
+      font-size: 25px;
+      font-weight: 800;
+    }
+
+    .brand-nepali {
+      margin: 0;
+      color: #555;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .brand-subtitle {
+      margin: 0;
+      color: #7c8999;
+      font-size: 12px;
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .language-select {
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      background: white;
+      color: var(--dark);
+      outline: none;
+    }
+
+    .helpline {
+      padding: 9px 14px;
+      background: #eef6ff;
+      border: 1px solid #d7eaff;
+      border-radius: 10px;
+      text-align: right;
+    }
+
+    .helpline small {
+      display: block;
+      color: #68778a;
+      font-size: 11px;
+    }
+
+    .helpline strong {
+      color: var(--primary);
+      font-size: 16px;
+    }
+
+
+    /* =================================
+       NAVIGATION
+    ================================= */
+
+    .main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: white;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 20px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 3px;
+
+      flex-wrap: wrap;
+    }
+
+    .nav-link-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+
+      padding: 15px 11px;
+
+      color: #26364d;
+      font-size: 14px;
+      font-weight: 600;
+
+      transition: 0.3s;
+    }
+
+    .nav-link-custom:hover,
+    .nav-link-custom.active {
+      color: var(--primary);
+    }
+
+    .ai-nav-btn {
+      color: white !important;
+      background: linear-gradient(
+        135deg,
+        #0d6efd,
+        #084298
+      );
+
+      border-radius: 9px;
+      padding: 9px 15px !important;
+      margin-left: 5px;
+    }
+
+    .dashboard-btn {
+      color: var(--primary) !important;
+      border: 1px solid var(--primary);
+      border-radius: 9px;
+      padding: 8px 14px !important;
+    }
+
+
+    /* =================================
+       HERO
+    ================================= */
+
+    .transport-hero {
+
+      min-height: 390px;
+
+      display: flex;
+      align-items: center;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4, 28, 58, 0.92),
+          rgba(5, 52, 101, 0.72),
+          rgba(5, 52, 101, 0.32)
+        ),
+
+        url("https://images.unsplash.com/photo-1519003722824-194d4455a60c?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero-inner {
+      width: 100%;
+      max-width: 1250px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+
+      padding: 7px 13px;
+
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.28);
+
+      border-radius: 50px;
+
+      font-size: 13px;
+      margin-bottom: 15px;
+    }
+
+    .hero-badge i {
+      margin-right: 5px;
+    }
+
+    .transport-hero h1 {
+      font-size: clamp(36px, 5vw, 58px);
+      font-weight: 800;
+      margin-bottom: 15px;
+    }
+
+    .transport-hero p {
+      max-width: 700px;
+      color: #e6effa;
+      font-size: 17px;
+      margin-bottom: 25px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn-primary-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 12px 20px;
+
+      background: var(--primary);
+      color: white;
+
+      border-radius: 9px;
+      font-weight: 600;
+    }
+
+    .btn-primary-custom:hover {
+      color: white;
+      background: #0b5ed7;
+    }
+
+    .btn-light-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      padding: 12px 20px;
+
+      background: white;
+      color: var(--primary-dark);
+
+      border-radius: 9px;
+      font-weight: 600;
+    }
+
+    .btn-light-custom:hover {
+      color: var(--primary-dark);
+    }
+
+
+    /* =================================
+       MAIN SECTION
+    ================================= */
+
+    .transport-section {
+      max-width: 1250px;
+      margin: auto;
+      padding: 65px 20px;
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin: 0 auto 40px;
+      text-align: center;
+    }
+
+    .section-heading span {
+      color: var(--primary);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 8px 0 12px;
+      font-size: 35px;
+      font-weight: 800;
+    }
+
+    .section-heading p {
+      color: var(--text);
+      margin: 0;
+    }
+
+
+    /* =================================
+       SEARCH
+    ================================= */
+
+    .transport-toolbar {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 18px;
+      margin-bottom: 35px;
+
+      box-shadow:
+        0 8px 25px rgba(18,38,61,0.05);
+    }
+
+    .search-box {
+      position: relative;
+    }
+
+    .search-box i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8290a3;
+    }
+
+    .search-box input {
+      width: 100%;
+      padding: 12px 15px 12px 42px;
+
+      border: 1px solid var(--border);
+      border-radius: 10px;
+
+      outline: none;
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+
+      box-shadow:
+        0 0 0 3px rgba(13,110,253,0.10);
+    }
+
+
+    /* =================================
+       TRANSPORT CARDS
+    ================================= */
+
+    .transport-card {
+      height: 100%;
+      overflow: hidden;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      box-shadow:
+        0 10px 28px rgba(18,38,61,0.07);
+
+      transition: 0.3s;
+    }
+
+    .transport-card:hover {
+      transform: translateY(-7px);
+
+      box-shadow:
+        0 18px 38px rgba(18,38,61,0.13);
+    }
+
+    .transport-image {
+      height: 210px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .transport-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      transition: 0.4s;
+    }
+
+    .transport-card:hover .transport-image img {
+      transform: scale(1.06);
+    }
+
+    .transport-badge {
+      position: absolute;
+      left: 15px;
+      top: 15px;
+
+      padding: 6px 10px;
+
+      background: white;
+      color: var(--primary);
+
+      border-radius: 7px;
+
+      font-size: 11px;
+      font-weight: 700;
+
+      box-shadow:
+        0 5px 15px rgba(0,0,0,0.12);
+    }
+
+    .transport-content {
+      padding: 23px;
+    }
+
+    .transport-icon {
+      width: 52px;
+      height: 52px;
+
+      display: grid;
+      place-items: center;
+
+      margin-bottom: 13px;
+
+      background: #eef6ff;
+      color: var(--primary);
+
+      border-radius: 13px;
+
+      font-size: 23px;
+    }
+
+    .transport-content h3 {
+      font-size: 21px;
+      font-weight: 750;
+      margin-bottom: 9px;
+    }
+
+    .transport-content p {
+      color: var(--text);
+      font-size: 14px;
+      margin-bottom: 16px;
+    }
+
+    .info-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 17px;
+    }
+
+    .info-list li {
+      color: #526176;
+      font-size: 13px;
+      margin-bottom: 7px;
+    }
+
+    .info-list i {
+      color: var(--success);
+      margin-right: 6px;
+    }
+
+    .transport-link {
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 14px;
+
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+
+    /* =================================
+       TRAVEL OPTIONS
+    ================================= */
+
+    .travel-options {
+      margin-top: 70px;
+    }
+
+    .option-card {
+      height: 100%;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 16px;
+
+      padding: 25px;
+
+      transition: 0.3s;
+    }
+
+    .option-card:hover {
+      transform: translateY(-5px);
+      border-color: #b9d7ff;
+    }
+
+    .option-icon {
+      width: 56px;
+      height: 56px;
+
+      display: grid;
+      place-items: center;
+
+      background: #eef6ff;
+      color: var(--primary);
+
+      border-radius: 14px;
+
+      font-size: 24px;
+
+      margin-bottom: 15px;
+    }
+
+    .option-card h5 {
+      font-size: 18px;
+      font-weight: 750;
+      margin-bottom: 8px;
+    }
+
+    .option-card p {
+      color: var(--text);
+      font-size: 14px;
+      margin: 0;
+    }
+
+
+    /* =================================
+       TRAVEL TIPS
+    ================================= */
+
+    .tips-section {
+      margin-top: 70px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      padding: 35px;
+
+      box-shadow:
+        0 10px 28px rgba(18,38,61,0.05);
+    }
+
+    .tip {
+      display: flex;
+      gap: 15px;
+
+      padding: 17px 0;
+
+      border-bottom: 1px solid var(--border);
+    }
+
+    .tip:last-child {
+      border-bottom: none;
+    }
+
+    .tip-icon {
+      flex-shrink: 0;
+
+      width: 45px;
+      height: 45px;
+
+      display: grid;
+      place-items: center;
+
+      background: #eef6ff;
+      color: var(--primary);
+
+      border-radius: 11px;
+    }
+
+    .tip h5 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .tip p {
+      color: var(--text);
+      font-size: 14px;
+      margin: 0;
+    }
+
+
+    /* =================================
+       AI CTA
+    ================================= */
+
+    .transport-cta {
+      margin-top: 70px;
+
+      padding: 45px;
+
+      text-align: center;
+
+      color: white;
+
+      border-radius: 22px;
+
+      background:
+        linear-gradient(
+          120deg,
+          rgba(13,110,253,0.96),
+          rgba(8,66,152,0.96)
+        ),
+        url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1400&q=80")
+        center/cover;
+    }
+
+    .transport-cta h3 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .transport-cta p {
+      max-width: 700px;
+      margin: 0 auto 23px;
+      color: #e4efff;
+    }
+
+
+    /* =================================
+       FOOTER
+    ================================= */
+
+    footer {
+      background: #0b1f3a;
+      color: #c7d4e4;
+      padding: 55px 0 20px;
+    }
+
+    .footer-inner {
+      max-width: 1250px;
+      margin: auto;
+      padding: 0 20px;
+    }
+
+    .footer-title {
+      color: white;
+      font-size: 20px;
+      font-weight: 750;
+      margin-bottom: 15px;
+    }
+
+    footer p {
+      color: #aebdd0;
+      font-size: 14px;
+    }
+
+    .footer-links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .footer-links li {
+      margin-bottom: 8px;
+    }
+
+    .footer-links a {
+      color: #b9c8da;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    .footer-links a:hover {
+      color: white;
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      margin-top: 35px;
+      padding-top: 18px;
+
+      border-top:
+        1px solid rgba(255,255,255,0.12);
+
+      text-align: center;
+
+      color: #9eb0c5;
+      font-size: 13px;
+    }
+
+
+    /* =================================
+       FLOATING AI
+    ================================= */
+
+    .floating-ai {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 58px;
+      height: 58px;
+
+      display: grid;
+      place-items: center;
+
+      border-radius: 50%;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0d6efd,
+          #084298
+        );
+
+      color: white;
+
+      font-size: 23px;
+
+      box-shadow:
+        0 12px 28px rgba(13,110,253,0.35);
+
+      z-index: 1500;
+
+      transition: 0.3s;
+    }
+
+    .floating-ai:hover {
+      color: white;
+      transform: translateY(-4px) scale(1.05);
+    }
+
+
+    /* =================================
+       DARK MODE
+    ================================= */
+
+    body.dark-mode {
+      background: #101827;
+      color: #edf4ff;
+    }
+
+    body.dark-mode .main-header,
+    body.dark-mode .main-nav,
+    body.dark-mode .transport-toolbar,
+    body.dark-mode .transport-card,
+    body.dark-mode .option-card,
+    body.dark-mode .tips-section {
+      background: #172235;
+      border-color: #29384d;
+    }
+
+    body.dark-mode .nav-link-custom,
+    body.dark-mode .language-select {
+      background: #172235;
+      color: #edf4ff;
+    }
+
+    body.dark-mode .transport-content p,
+    body.dark-mode .option-card p,
+    body.dark-mode .tip p {
+      color: #b9c6d8;
+    }
+
+
+    /* =================================
+       RESPONSIVE
+    ================================= */
+
+    @media (max-width: 992px) {
+
+      .main-header-inner {
+        flex-direction: column;
+      }
+
+      .header-actions {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .nav-inner {
+        justify-content: center;
+      }
+
+      .nav-link-custom {
+        padding: 11px 8px;
+      }
+
+    }
+
+
+    @media (max-width: 768px) {
+
+      .top-info-inner {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .main-header-inner {
+        text-align: center;
+      }
+
+      .brand-area {
+        justify-content: center;
+      }
+
+      .header-actions {
+        flex-wrap: wrap;
+      }
+
+      .nav-inner {
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+      }
+
+      .nav-link-custom {
+        white-space: nowrap;
+      }
+
+      .transport-hero {
+        min-height: 340px;
+      }
+
+      .hero-inner {
+        padding: 55px 20px;
+      }
+
+      .transport-section {
+        padding: 45px 15px;
+      }
+
+      .transport-cta {
+        padding: 32px 20px;
+      }
+
+      .tips-section {
+        padding: 25px;
+      }
+
+    }
+
+
+    @media (max-width: 576px) {
+
+      .brand-title {
+        font-size: 21px;
+      }
+
+      .brand-logo {
+        width: 52px;
+        height: 52px;
+      }
+
+      .helpline {
+        display: none;
+      }
+
+      .transport-hero h1 {
+        font-size: 34px;
+      }
+
+      .transport-hero p {
+        font-size: 15px;
+      }
+
+      .section-heading h2 {
+        font-size: 28px;
+      }
+
+      .transport-cta h3 {
+        font-size: 25px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =================================
+       TOP INFORMATION BAR
+  ================================= -->
+
+  <div class="top-info-bar">
+
+    <div class="top-info-inner">
+
+      <div class="top-left">
+
+        <span>
+          <i class="bi bi-geo-alt-fill"></i>
+          Janakpurdham, Madhesh Province, Nepal
+        </span>
+
+        <span>
+          <i class="bi bi-telephone-fill"></i>
+          +977-41-520000
+        </span>
+
+      </div>
+
+
+      <div class="top-right">
+
+        <span>
+          <i class="bi bi-envelope-fill"></i>
+          info@janakpurmun.gov.np
+        </span>
+
+        <div class="social-links">
+
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-youtube"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =================================
+       MAIN HEADER
+  ================================= -->
+
+  <header class="main-header">
+
+    <div class="main-header-inner">
+
+      <div class="brand-area">
+
+        <img
+          src="assets/images/janaksewa-logo.png"
+          alt="Janaksewa AI Logo"
+          class="brand-logo"
+        >
+
+        <div>
+
+          <h1 class="brand-title">
+            Janaksewa AI
+          </h1>
+
+          <p class="brand-nepali">
+            जनकसेवा एआई
+          </p>
+
+          <p class="brand-subtitle">
+            Citizen Assistance System
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="header-actions">
+
+        <div class="helpline">
+
+          <small>
+            Citizen Helpline
+          </small>
+
+          <strong>
+            1660-000-000
+          </strong>
+
+        </div>
+
+
+        <select
+          class="language-select"
+          aria-label="Select language"
+        >
+
+          <option value="en">
+            English
+          </option>
+
+          <option value="ne">
+            नेपाली
+          </option>
+
+          <option value="mai">
+            मैथिली
+          </option>
+
+          <option value="hi">
+            हिन्दी
+          </option>
+
+        </select>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =================================
+       NAVIGATION
+  ================================= -->
+
+  <nav class="main-nav">
+
+    <div class="nav-inner">
+
+      <a
+        href="index.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-house"></i>
+        <span data-i18n="home">Home</span>
+      </a>
+
+
+      <a
+        href="about.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-info-circle"></i>
+        <span data-i18n="about">About</span>
+      </a>
+
+
+      <a
+        href="services.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-grid"></i>
+        <span data-i18n="services">Services</span>
+      </a>
+
+
+      <a
+        href="tourist-places.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-camera"></i>
+        <span data-i18n="tourism">Tourism</span>
+      </a>
+
+
+      <a
+        href="transportation.html"
+        class="nav-link-custom active"
+      >
+        <i class="bi bi-bus-front"></i>
+        <span data-i18n="transportation">
+          Transportation
+        </span>
+      </a>
+
+
+      <a
+        href="notices.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-megaphone"></i>
+        <span data-i18n="notices">
+          Notices
+        </span>
+      </a>
+
+
+      <a
+        href="complaints.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-exclamation-circle"></i>
+        Complaints
+      </a>
+
+
+      <a
+        href="emergency.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-shield-exclamation"></i>
+        Emergency
+      </a>
+
+
+      <a
+        href="contact.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-envelope"></i>
+        <span data-i18n="contact">
+          Contact
+        </span>
+      </a>
+
+
+      <a
+        href="chatbot.html"
+        class="nav-link-custom ai-nav-btn"
+      >
+        <i class="bi bi-stars"></i>
+        <span data-i18n="janaksewaAI">
+          JanakSewa AI
+        </span>
+      </a>
+
+
+      <a
+        href="dashboard.html"
+        class="nav-link-custom dashboard-btn"
+      >
+        <i class="bi bi-person-circle"></i>
+        Dashboard
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =================================
+       HERO
+  ================================= -->
+
+  <section class="transport-hero">
+
+    <div class="hero-inner">
+
+      <span class="hero-badge">
+
+        <i class="bi bi-signpost-2-fill"></i>
+
+        Janakpurdham Travel Information
+
+      </span>
+
+
+      <h1 data-i18n="travelInformation">
+
+        Transportation Information
+
+      </h1>
+
+
+      <p>
+
+        Explore railway, airport, local transport, buses,
+        taxis and other transportation options available
+        for citizens and visitors travelling around Janakpurdham.
+
+      </p>
+
+
+      <div class="hero-buttons">
+
+        <a
+          href="#transport-options"
+          class="btn-primary-custom"
+        >
+
+          <i class="bi bi-map"></i>
+
+          Explore Transport
+
+        </a>
+
+
+        <a
+          href="chatbot.html"
+          class="btn-light-custom"
+        >
+
+          <i class="bi bi-stars"></i>
+
+          Ask JanakSewa AI
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =================================
+       TRANSPORTATION SECTION
+  ================================= -->
+
+  <main
+    class="transport-section"
+    id="transport-options"
+  >
+
+
+    <div class="section-heading">
+
+      <span>
+        Travel Around Janakpur
+      </span>
+
+      <h2>
+        Transportation Options
+      </h2>
+
+      <p>
+        Find useful information about major transportation
+        services for travelling to and around Janakpurdham.
+      </p>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="transport-toolbar">
+
+      <div class="search-box">
+
+        <i class="bi bi-search"></i>
+
+        <input
+          type="search"
+          id="transportSearch"
+          placeholder="Search transportation..."
+          aria-label="Search transportation"
+        >
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================
+         TRANSPORT CARDS
+    ================================= -->
+
+    <div
+      class="row g-4"
+      id="transportGrid"
+    >
+
+
+      <!-- RAILWAY -->
+
+      <div
+        class="col-md-6 col-lg-4 transport-item"
+      >
+
+        <article class="transport-card">
+
+          <div class="transport-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?auto=format&fit=crop&w=900&q=85"
+              alt="Railway transportation"
+            >
+
+            <span class="transport-badge">
+              Railway
+            </span>
+
+          </div>
+
+
+          <div class="transport-content">
+
+            <div class="transport-icon">
+              <i class="bi bi-train-front"></i>
+            </div>
+
+
+            <h3>
+              Nepal Railway
+            </h3>
+
+
+            <p>
+              Railway transportation connecting Janakpurdham
+              with nearby destinations and providing an
+              alternative travel option for passengers.
+            </p>
+
+
+            <ul class="info-list">
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Passenger railway service
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Station information
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Ticket and schedule guidance
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#"
+              class="transport-link"
+            >
+              View Railway Information
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- AIRPORT -->
+
+      <div
+        class="col-md-6 col-lg-4 transport-item"
+      >
+
+        <article class="transport-card">
+
+          <div class="transport-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=85"
+              alt="Airport transportation"
+            >
+
+            <span class="transport-badge">
+              Airport
+            </span>
+
+          </div>
+
+
+          <div class="transport-content">
+
+            <div class="transport-icon">
+              <i class="bi bi-airplane"></i>
+            </div>
+
+
+            <h3>
+              Janakpur Airport
+            </h3>
+
+
+            <p>
+              Domestic air travel information for passengers
+              travelling to and from Janakpurdham.
+            </p>
+
+
+            <ul class="info-list">
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Domestic flight information
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Airport access
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Passenger travel guidance
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#"
+              class="transport-link"
+            >
+              View Airport Information
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- E-RICKSHAW -->
+
+      <div
+        class="col-md-6 col-lg-4 transport-item"
+      >
+
+        <article class="transport-card">
+
+          <div class="transport-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=900&q=85"
+              alt="Local rickshaw transportation"
+            >
+
+            <span class="transport-badge">
+              Local
+            </span>
+
+          </div>
+
+
+          <div class="transport-content">
+
+            <div class="transport-icon">
+              <i class="bi bi-taxi-front"></i>
+            </div>
+
+
+            <h3>
+              E-Rickshaw
+            </h3>
+
+
+            <p>
+              Convenient local transportation for short-distance
+              travel within Janakpurdham and surrounding areas.
+            </p>
+
+
+            <ul class="info-list">
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Short-distance travel
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Local city routes
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Convenient for visitors
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#"
+              class="transport-link"
+            >
+              Local Transport Guide
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- BUS -->
+
+      <div
+        class="col-md-6 col-lg-4 transport-item"
+      >
+
+        <article class="transport-card">
+
+          <div class="transport-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=900&q=85"
+              alt="Bus transportation"
+            >
+
+            <span class="transport-badge">
+              Bus
+            </span>
+
+          </div>
+
+
+          <div class="transport-content">
+
+            <div class="transport-icon">
+              <i class="bi bi-bus-front"></i>
+            </div>
+
+
+            <h3>
+              Bus Services
+            </h3>
+
+
+            <p>
+              Public and long-distance bus transportation
+              connecting Janakpurdham with different locations.
+            </p>
+
+
+            <ul class="info-list">
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Local bus services
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Long-distance routes
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Bus station guidance
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#"
+              class="transport-link"
+            >
+              View Bus Information
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- TAXI -->
+
+      <div
+        class="col-md-6 col-lg-4 transport-item"
+      >
+
+        <article class="transport-card">
+
+          <div class="transport-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&w=900&q=85"
+              alt="Taxi transportation"
+            >
+
+            <span class="transport-badge">
+              Taxi
+            </span>
+
+          </div>
+
+
+          <div class="transport-content">
+
+            <div class="transport-icon">
+              <i class="bi bi-car-front"></i>
+            </div>
+
+
+            <h3>
+              Taxi & Private Vehicles
+            </h3>
+
+
+            <p>
+              Private vehicle and taxi options for convenient
+              travel within the city and nearby destinations.
+            </p>
+
+
+            <ul class="info-list">
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                City transportation
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Tourist travel
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Private vehicle options
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#"
+              class="transport-link"
+            >
+              Travel Guidance
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- ROADS -->
+
+      <div
+        class="col-md-6 col-lg-4 transport-item"
+      >
+
+        <article class="transport-card">
+
+          <div class="transport-image">
+
+            <img
+              src="https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=900&q=85"
+              alt="Road transportation"
+            >
+
+            <span class="transport-badge">
+              Road
+            </span>
+
+          </div>
+
+
+          <div class="transport-content">
+
+            <div class="transport-icon">
+              <i class="bi bi-sign-turn-right"></i>
+            </div>
+
+
+            <h3>
+              Roads & Routes
+            </h3>
+
+
+            <p>
+              General road and route information to help citizens
+              and visitors plan journeys around Janakpurdham.
+            </p>
+
+
+            <ul class="info-list">
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Major city routes
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Road travel guidance
+              </li>
+
+              <li>
+                <i class="bi bi-check-circle-fill"></i>
+                Tourist route planning
+              </li>
+
+            </ul>
+
+
+            <a
+              href="#"
+              class="transport-link"
+            >
+              Explore Routes
+              <i class="bi bi-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </article>
+
+      </div>
+
+    </div>
+
+
+    <!-- NO RESULTS -->
+
+    <div
+      id="noTransportResults"
+      class="text-center py-5 d-none"
+    >
+
+      <i
+        class="bi bi-search"
+        style="
+          font-size:42px;
+          color:#9aa8ba;
+        "
+      ></i>
+
+      <h4 class="mt-3">
+        No transportation option found
+      </h4>
+
+      <p class="text-muted">
+        Try another search keyword.
+      </p>
+
+    </div>
+
+
+    <!-- =================================
+         TRAVEL OPTIONS
+    ================================= -->
+
+    <section class="travel-options">
+
+      <div class="section-heading">
+
+        <span>
+          Travel Support
+        </span>
+
+        <h2>
+          Useful Travel Information
+        </h2>
+
+        <p>
+          Helpful resources for citizens and visitors.
+        </p>
+
+      </div>
+
+
+      <div class="row g-4">
+
+
+        <div class="col-md-6 col-lg-3">
+
+          <div class="option-card">
+
+            <div class="option-icon">
+              <i class="bi bi-geo-alt"></i>
+            </div>
+
+            <h5>
+              Find Locations
+            </h5>
+
+            <p>
+              Get directions and location information
+              for important transport points.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-md-6 col-lg-3">
+
+          <div class="option-card">
+
+            <div class="option-icon">
+              <i class="bi bi-clock"></i>
+            </div>
+
+            <h5>
+              Check Timings
+            </h5>
+
+            <p>
+              Check current schedules and operating times
+              from verified transport providers.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-md-6 col-lg-3">
+
+          <div class="option-card">
+
+            <div class="option-icon">
+              <i class="bi bi-ticket-perforated"></i>
+            </div>
+
+            <h5>
+              Ticket Information
+            </h5>
+
+            <p>
+              Find guidance about tickets, fares and
+              passenger travel requirements.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <div class="col-md-6 col-lg-3">
+
+          <div class="option-card">
+
+            <div class="option-icon">
+              <i class="bi bi-stars"></i>
+            </div>
+
+            <h5>
+              AI Travel Help
+            </h5>
+
+            <p>
+              Ask JanakSewa AI for transportation
+              and route-related information.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================
+         TRAVEL TIPS
+    ================================= -->
+
+    <section class="tips-section">
+
+      <div class="section-heading mb-3">
+
+        <span>
+          Travel Smart
+        </span>
+
+        <h2>
+          Transportation Tips
+        </h2>
+
+      </div>
+
+
+      <div class="tip">
+
+        <div class="tip-icon">
+          <i class="bi bi-shield-check"></i>
+        </div>
+
+        <div>
+
+          <h5>
+            Use Verified Information
+          </h5>
+
+          <p>
+            Check official transport providers for current
+            schedules, fares and route information before travelling.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="tip">
+
+        <div class="tip-icon">
+          <i class="bi bi-clock-history"></i>
+        </div>
+
+        <div>
+
+          <h5>
+            Plan Your Journey
+          </h5>
+
+          <p>
+            Allow additional travel time during traffic,
+            festivals, road construction and busy periods.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="tip">
+
+        <div class="tip-icon">
+          <i class="bi bi-person-check"></i>
+        </div>
+
+        <div>
+
+          <h5>
+            Keep Personal Belongings Safe
+          </h5>
+
+          <p>
+            Keep your phone, wallet, documents and other
+            personal belongings secure while travelling.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="tip">
+
+        <div class="tip-icon">
+          <i class="bi bi-exclamation-triangle"></i>
+        </div>
+
+        <div>
+
+          <h5>
+            Follow Traffic Rules
+          </h5>
+
+          <p>
+            Follow traffic signs, wear appropriate safety equipment
+            and use designated transport services where available.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =================================
+         AI CTA
+    ================================= -->
+
+    <section class="transport-cta">
+
+      <h3>
+        Need Help Planning Your Journey?
+      </h3>
+
+      <p>
+        Ask JanakSewa AI about transportation, tourist places,
+        routes, municipal services and other information
+        available through the citizen assistance system.
+      </p>
+
+
+      <a
+        href="chatbot.html"
+        class="btn-light-custom"
+      >
+
+        <i class="bi bi-stars"></i>
+
+        Ask JanakSewa AI
+
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- =================================
+       FOOTER
+  ================================= -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div class="row g-4">
+
+
+        <div class="col-lg-5">
+
+          <div class="footer-title">
+            Janaksewa AI
+          </div>
+
+          <p>
+            A citizen assistance platform designed to make
+            municipal information, services, complaints,
+            transportation and local assistance easier to access.
+          </p>
+
+          <p>
+            <i class="bi bi-geo-alt"></i>
+            Janakpurdham, Madhesh Province, Nepal
+          </p>
+
+        </div>
+
+
+        <div class="col-sm-6 col-lg-2">
+
+          <div class="footer-title">
+            Quick Links
+          </div>
+
+          <ul class="footer-links">
+
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+
+            <li>
+              <a href="about.html">About</a>
+            </li>
+
+            <li>
+              <a href="services.html">Services</a>
+            </li>
+
+            <li>
+              <a href="tourist-places.html">Tourism</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="col-sm-6 col-lg-2">
+
+          <div class="footer-title">
+            Citizen
+          </div>
+
+          <ul class="footer-links">
+
+            <li>
+              <a href="complaints.html">
+                Complaints
+              </a>
+            </li>
+
+            <li>
+              <a href="emergency.html">
+                Emergency
+              </a>
+            </li>
+
+            <li>
+              <a href="dashboard.html">
+                Dashboard
+              </a>
+            </li>
+
+            <li>
+              <a href="chatbot.html">
+                AI Chatbot
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+
+        <div class="col-lg-3">
+
+          <div class="footer-title">
+            Contact
+          </div>
+
+          <p>
+            <i class="bi bi-telephone"></i>
+            +977-41-520000
+          </p>
+
+          <p>
+            <i class="bi bi-envelope"></i>
+            info@janakpurmun.gov.np
+          </p>
+
+          <p>
+            <i class="bi bi-clock"></i>
+            Sunday – Friday, 10 AM – 5 PM
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="footer-bottom">
+
+        © 2026 Janaksewa AI | Citizen Assistance System.
+        All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =================================
+       FLOATING AI
+  ================================= -->
+
+  <a
+    href="chatbot.html"
+    class="floating-ai"
+    title="Ask JanakSewa AI"
+  >
+
+    <i class="bi bi-stars"></i>
+
+  </a>
+
+
+  <!-- Existing Project JS -->
+
+  <script src="assets/js/script.js"></script>
+
+
+  <!-- Transportation Page JS -->
+
+  <script>
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      function () {
+
+        const searchInput =
+          document.getElementById(
+            "transportSearch"
+          );
+
+        const transportItems =
+          document.querySelectorAll(
+            ".transport-item"
+          );
+
+        const noResults =
+          document.getElementById(
+            "noTransportResults"
+          );
+
+
+        searchInput.addEventListener(
+          "input",
+          function () {
+
+            const searchTerm =
+              this.value
+                .toLowerCase()
+                .trim();
+
+            let visibleCount = 0;
+
+
+            transportItems.forEach(
+              function (item) {
+
+                const text =
+                  item.innerText.toLowerCase();
+
+
+                if (
+                  text.includes(searchTerm)
+                ) {
+
+                  item.style.display = "";
+
+                  visibleCount++;
+
+                } else {
+
+                  item.style.display = "none";
+
+                }
+
+              }
+            );
+
+
+            if (visibleCount === 0) {
+
+              noResults.classList.remove(
+                "d-none"
+              );
+
+            } else {
+
+              noResults.classList.add(
+                "d-none"
+              );
+
+            }
+
+          }
+        );
+
+      }
+    );
+
+  </script>
+
+
+</body>
+</html>

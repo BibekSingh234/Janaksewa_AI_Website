@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Janaksewa AI | Complaints</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body { background: #f6f9ff; color: #1d2a39; font-family: Arial, sans-serif; }
+    .container { max-width: 900px; margin: 48px auto; padding: 28px; }
+    .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 26px; }
+    .brand { font-size: 1.9rem; font-weight: 700; color: #0d6efd; }
+    .nav a { margin-left: 12px; color: #1d2a39; text-decoration: none; }
+    .card { background: white; border-radius: 18px; padding: 28px; box-shadow: 0 12px 28px rgba(14, 47, 83, 0.08); }
+    .field { margin-bottom: 16px; }
+    label { display: block; margin-bottom: 8px; font-weight: 600; }
+    input, select, textarea { width: 100%; padding: 12px 14px; border: 1px solid #dfe7f3; border-radius: 10px; }
+    .submit-btn { padding: 12px 18px; background: #0d6efd; color: white; border: none; border-radius: 10px; }
+    .language-select { padding: 8px 12px; border: 1px solid #dfe7f3; border-radius: 10px; background: white; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="top">
+      <div class="brand">Janaksewa AI</div>
+      <div class="nav">
+        <a href="index.html" data-i18n="home">Home</a>
+        <a href="services.html" data-i18n="services">Services</a>
+        <a href="dashboard.html">My Dashboard</a>
+        <select class="language-select" aria-label="Select language">
+          <option value="en">English</option>
+          <option value="ne">नेपाली</option>
+          <option value="mai">मैथिली</option>
+          <option value="hi">हिन्दी</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="card">
+      <h1 class="mb-4" data-i18n="reportMunicipalProblem">Report a Municipal Problem</h1>
+      <form id="complaintForm">
+        <div id="formMessage" class="alert d-none" role="alert"></div>
+        <div class="field">
+          <label data-i18n="formName">Full Name</label>
+          <input id="complaintName" type="text" placeholder="Your signed-in account will be used" readonly />
+        </div>
+        <div class="field">
+          <label data-i18n="formPhone">Phone Number</label>
+          <input id="complaintPhone" type="tel" required placeholder="Enter phone number" />
+        </div>
+        <div class="field">
+          <label data-i18n="formAddress">Address</label>
+          <input id="complaintSubject" type="text" required placeholder="Short title, e.g. Drain blockage near station" />
+        </div>
+        <div class="field">
+          <label data-i18n="formWard">Ward Number</label>
+          <select id="complaintWard" required>
+            <option>Ward 1</option>
+            <option>Ward 2</option>
+            <option>Ward 3</option>
+            <option>Ward 4</option>
+          </select>
+        </div>
+        <div class="field">
+          <label data-i18n="formCategory">Problem Category</label>
+          <select id="complaintCategory" required>
+            <option data-i18n="roadProblems">Road Problem</option>
+            <option>Water & Drainage</option>
+            <option>Garbage & Sanitation</option>
+            <option>Street Light</option>
+          </select>
+        </div>
+        <div class="field">
+          <label data-i18n="formDescription">Problem Details</label>
+          <textarea id="complaintDescription" rows="5" required placeholder="Describe the issue, location, and impact"></textarea>
+        </div>
+        <button class="submit-btn" type="submit" data-i18n="submitComplaint">Submit Complaint</button>
+      </form>
+    </div>
+  </div>
+  <script src="assets/js/script.js"></script>
+  <script src="assets/js/complaints.js"></script>
+</body>
+</html>

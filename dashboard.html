@@ -1,0 +1,834 @@
+
+
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>My Dashboard | Janaksewa AI</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/user-dashboard.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     TOP INFORMATION BAR
+========================================================= -->
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-content">
+
+```
+  <div class="top-bar-left">
+    <span>
+      <i class="bi bi-geo-alt-fill"></i>
+      Janakpurdham, Madhesh Province, Nepal
+    </span>
+
+    <a href="tel:+97741520000">
+      <i class="bi bi-telephone-fill"></i>
+      +977-41-520000
+    </a>
+
+    <a href="mailto:info@janakpurmun.gov.np">
+      <i class="bi bi-envelope-fill"></i>
+      info@janakpurmun.gov.np
+    </a>
+  </div>
+
+  <div class="top-bar-right">
+
+    <div class="top-social-icons">
+      <a href="#" aria-label="Facebook">
+        <i class="bi bi-facebook"></i>
+      </a>
+
+      <a href="#" aria-label="Twitter">
+        <i class="bi bi-twitter-x"></i>
+      </a>
+
+      <a href="#" aria-label="Instagram">
+        <i class="bi bi-instagram"></i>
+      </a>
+
+      <a href="#" aria-label="LinkedIn">
+        <i class="bi bi-linkedin"></i>
+      </a>
+
+      <a href="#" aria-label="YouTube">
+        <i class="bi bi-youtube"></i>
+      </a>
+
+      <a href="#" aria-label="TikTok">
+        <i class="bi bi-tiktok"></i>
+      </a>
+    </div>
+
+    <select id="languageSelect" class="language-select" aria-label="Select language">
+      <option value="en">English</option>
+      <option value="ne">नेपाली</option>
+      <option value="mai">मैथिली</option>
+      <option value="hi">हिन्दी</option>
+    </select>
+
+  </div>
+
+</div>
+```
+
+  </div>
+</div>
+
+<!-- =========================================================
+     MAIN HEADER
+========================================================= -->
+
+<header class="main-header">
+
+  <div class="container">
+    <div class="main-header-content">
+
+```
+  <a href="index.html" class="janaksewa-brand">
+
+    <div class="logo-box">
+      <img
+        src="assets/images/janaksewa-logo.png"
+        alt="Janaksewa AI Logo"
+        class="janaksewa-logo"
+        onerror="this.style.display='none';"
+      >
+      <i class="bi bi-buildings-fill logo-fallback"></i>
+    </div>
+
+    <div class="brand-text">
+      <div class="brand-title">Janaksewa AI</div>
+      <div class="brand-nepali">जनकसेवा एआई</div>
+      <small>Citizen Assistance System</small>
+    </div>
+
+  </a>
+
+
+  <div class="header-actions">
+
+    <div class="header-contact">
+      <div class="contact-icon">
+        <i class="bi bi-headset"></i>
+      </div>
+
+      <div class="contact-content">
+        <small>Citizen Helpline</small>
+        <strong>1660-000-000</strong>
+      </div>
+    </div>
+
+    <a href="chatbot.html" class="header-icon-button" title="Ask JanakSewa AI">
+      <i class="bi bi-robot"></i>
+    </a>
+
+    <a href="index.html" class="header-icon-button" title="Home">
+      <i class="bi bi-house-door-fill"></i>
+    </a>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</header>
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav class="navbar navbar-expand-lg navbar-dark main-navbar sticky-top">
+
+  <div class="container">
+
+```
+<a class="navbar-brand mobile-brand" href="index.html">
+  <i class="bi bi-buildings-fill me-2"></i>
+  Janaksewa AI
+</a>
+
+<button
+  class="navbar-toggler"
+  type="button"
+  data-bs-toggle="collapse"
+  data-bs-target="#mainNavigation"
+  aria-controls="mainNavigation"
+  aria-expanded="false"
+  aria-label="Toggle navigation"
+>
+  <span class="navbar-toggler-icon"></span>
+</button>
+
+
+<div class="collapse navbar-collapse" id="mainNavigation">
+
+  <ul class="navbar-nav mx-auto">
+
+    <li class="nav-item">
+      <a class="nav-link" href="index.html">
+        <i class="bi bi-house-door me-1"></i>
+        Home
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="tourist_places.html">
+        <i class="bi bi-camera me-1"></i>
+        Tourism
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="about.html">
+        About Municipality
+      </a>
+    </li>
+
+
+    <li class="nav-item dropdown">
+
+      <a
+        class="nav-link dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+      >
+        Services
+      </a>
+
+      <ul class="dropdown-menu">
+
+        <li>
+          <a class="dropdown-item" href="services.html">
+            <i class="bi bi-grid me-2"></i>
+            All Services
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="services.html#birth-registration">
+            Birth Registration
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="services.html#death-registration">
+            Death Registration
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="services.html#business-registration">
+            Business Registration
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="services.html#tax-services">
+            Tax Services
+          </a>
+        </li>
+
+        <li>
+          <a class="dropdown-item" href="services.html#recommendation">
+            Recommendations
+          </a>
+        </li>
+
+      </ul>
+
+    </li>
+
+
+    <li class="nav-item">
+      <a class="nav-link" href="transportation.html">
+        Transportation
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="news.html">
+        Notices
+      </a>
+    </li>
+
+    <li class="nav-item">
+      <a class="nav-link" href="contact.html">
+        Contact
+      </a>
+    </li>
+
+  </ul>
+
+
+  <div class="navbar-actions">
+
+    <a href="chatbot.html" class="ai-header-button">
+      <i class="bi bi-stars"></i>
+      JanakSewa AI
+    </a>
+
+    <a href="dashboard.html" class="dashboard-header-button active">
+      <i class="bi bi-person-circle"></i>
+      My Dashboard
+    </a>
+
+    <button id="logoutButton" class="auth-trigger logout-trigger">
+      <i class="bi bi-box-arrow-right"></i>
+      Logout
+    </button>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</nav>
+
+<!-- =========================================================
+     DASHBOARD HERO
+========================================================= -->
+
+<section class="dashboard-hero">
+
+  <div class="container">
+
+```
+<div class="dashboard-hero-content">
+
+  <div>
+
+    <div class="portal-badge">
+      <i class="bi bi-person-check-fill"></i>
+      CITIZEN PORTAL
+    </div>
+
+    <h1>
+      Welcome,
+      <span id="userName">Citizen</span>
+    </h1>
+
+    <p>
+      Manage your citizen requests and track every complaint
+      submitted through Janaksewa AI.
+    </p>
+
+  </div>
+
+
+  <div class="hero-actions">
+
+    <a href="complaints.html" class="btn btn-primary">
+      <i class="bi bi-plus-circle me-2"></i>
+      Report a Problem
+    </a>
+
+    <a href="index.html" class="btn btn-outline-primary">
+      <i class="bi bi-arrow-left me-2"></i>
+      Back to Website
+    </a>
+
+  </div>
+
+</div>
+```
+
+  </div>
+
+</section>
+
+<!-- =========================================================
+     DASHBOARD CONTENT
+========================================================= -->
+
+<main class="dashboard-main">
+
+  <div class="container">
+
+```
+<!-- Message -->
+<div
+  id="dashboardMessage"
+  class="alert d-none dashboard-message"
+  role="alert"
+></div>
+
+
+<!-- =====================================================
+     STATISTICS
+====================================================== -->
+<section class="statistics-section">
+
+  <div class="row g-4">
+
+    <div class="col-sm-6 col-xl-3">
+
+      <div class="metric-card total-card">
+
+        <div class="metric-icon">
+          <i class="bi bi-file-earmark-text-fill"></i>
+        </div>
+
+        <div class="metric-content">
+          <span>Total Reports</span>
+          <strong id="totalCount">0</strong>
+          <small>All submitted reports</small>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="col-sm-6 col-xl-3">
+
+      <div class="metric-card pending-card">
+
+        <div class="metric-icon">
+          <i class="bi bi-hourglass-split"></i>
+        </div>
+
+        <div class="metric-content">
+          <span>Pending</span>
+          <strong id="pendingCount">0</strong>
+          <small>Waiting for review</small>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="col-sm-6 col-xl-3">
+
+      <div class="metric-card processing-card">
+
+        <div class="metric-icon">
+          <i class="bi bi-tools"></i>
+        </div>
+
+        <div class="metric-content">
+          <span>In Progress</span>
+          <strong id="processingCount">0</strong>
+          <small>Being handled</small>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <div class="col-sm-6 col-xl-3">
+
+      <div class="metric-card resolved-card">
+
+        <div class="metric-icon">
+          <i class="bi bi-check-circle-fill"></i>
+        </div>
+
+        <div class="metric-content">
+          <span>Resolved</span>
+          <strong id="resolvedCount">0</strong>
+          <small>Successfully completed</small>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     QUICK ACTIONS
+====================================================== -->
+<section class="quick-actions-section">
+
+  <div class="section-heading">
+
+    <div>
+      <span class="section-label">QUICK ACCESS</span>
+      <h2>Citizen Services</h2>
+    </div>
+
+  </div>
+
+
+  <div class="row g-3">
+
+    <div class="col-md-4">
+
+      <a href="complaints.html" class="quick-action-card">
+
+        <div class="quick-action-icon">
+          <i class="bi bi-megaphone-fill"></i>
+        </div>
+
+        <div>
+          <h3>Report a Problem</h3>
+          <p>Submit a new complaint or public issue.</p>
+        </div>
+
+        <i class="bi bi-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+
+    <div class="col-md-4">
+
+      <a href="chatbot.html" class="quick-action-card">
+
+        <div class="quick-action-icon ai-icon">
+          <i class="bi bi-robot"></i>
+        </div>
+
+        <div>
+          <h3>Ask JanakSewa AI</h3>
+          <p>Get help with municipal services and information.</p>
+        </div>
+
+        <i class="bi bi-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+
+    <div class="col-md-4">
+
+      <a href="services.html" class="quick-action-card">
+
+        <div class="quick-action-icon service-icon">
+          <i class="bi bi-grid-1x2-fill"></i>
+        </div>
+
+        <div>
+          <h3>Explore Services</h3>
+          <p>View available citizen and municipal services.</p>
+        </div>
+
+        <i class="bi bi-arrow-right"></i>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     COMPLAINT REPORTS
+====================================================== -->
+<section class="reports-section">
+
+  <div class="reports-card">
+
+    <div class="reports-header">
+
+      <div>
+
+        <span class="section-label">
+          MY ACTIVITY
+        </span>
+
+        <h2>
+          My Complaint Reports
+        </h2>
+
+        <p>
+          Status changes are updated by municipal staff.
+        </p>
+
+      </div>
+
+
+      <button
+        class="btn btn-outline-primary refresh-button"
+        id="refreshButton"
+      >
+        <i class="bi bi-arrow-clockwise"></i>
+        Refresh
+      </button>
+
+    </div>
+
+
+    <div class="table-responsive">
+
+      <table class="table reports-table align-middle mb-0">
+
+        <thead>
+
+          <tr>
+            <th>Report</th>
+            <th>Category / Ward</th>
+            <th>Submitted</th>
+            <th>Status</th>
+            <th>Details</th>
+          </tr>
+
+        </thead>
+
+
+        <tbody id="complaintsBody">
+
+          <tr>
+
+            <td colspan="5" class="empty-state">
+
+              <div class="loading-spinner">
+                <div class="spinner-border text-primary" role="status">
+                  <span class="visually-hidden">
+                    Loading...
+                  </span>
+                </div>
+              </div>
+
+              <p>
+                Loading your reports…
+              </p>
+
+            </td>
+
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     INFORMATION BANNER
+====================================================== -->
+<section class="help-banner">
+
+  <div class="help-banner-icon">
+    <i class="bi bi-info-circle-fill"></i>
+  </div>
+
+  <div class="help-banner-content">
+
+    <h3>
+      Need help with a municipal service?
+    </h3>
+
+    <p>
+      Ask JanakSewa AI about citizen services, complaints,
+      transportation, tourism and municipal information.
+    </p>
+
+  </div>
+
+  <a href="chatbot.html" class="btn btn-primary">
+    <i class="bi bi-stars me-2"></i>
+    Ask AI
+  </a>
+
+</section>
+```
+
+  </div>
+
+</main>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="dashboard-footer">
+
+  <div class="container">
+
+```
+<div class="row g-4">
+
+  <div class="col-lg-4">
+
+    <a href="index.html" class="footer-brand">
+
+      <div class="footer-logo">
+        <img
+          src="assets/images/janaksewa-logo.png"
+          alt="Janaksewa AI"
+          onerror="this.style.display='none';"
+        >
+        <i class="bi bi-buildings-fill"></i>
+      </div>
+
+      <div>
+        <strong>Janaksewa AI</strong>
+        <small>Citizen Assistance System</small>
+      </div>
+
+    </a>
+
+    <p class="footer-description">
+      A digital citizen assistance platform designed to
+      connect citizens with municipal information and services.
+    </p>
+
+  </div>
+
+
+  <div class="col-sm-6 col-lg-2">
+
+    <h4>Quick Links</h4>
+
+    <ul class="footer-links">
+
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a href="about.html">About</a>
+      </li>
+
+      <li>
+        <a href="services.html">Services</a>
+      </li>
+
+      <li>
+        <a href="news.html">Notices</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="col-sm-6 col-lg-2">
+
+    <h4>Citizen</h4>
+
+    <ul class="footer-links">
+
+      <li>
+        <a href="complaints.html">Complaints</a>
+      </li>
+
+      <li>
+        <a href="dashboard.html">Dashboard</a>
+      </li>
+
+      <li>
+        <a href="chatbot.html">AI Assistant</a>
+      </li>
+
+      <li>
+        <a href="emergency.html">Emergency</a>
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <div class="col-lg-4">
+
+    <h4>Contact</h4>
+
+    <ul class="footer-contact">
+
+      <li>
+        <i class="bi bi-geo-alt-fill"></i>
+        <span>
+          Janakpurdham, Dhanusha, Nepal
+        </span>
+      </li>
+
+      <li>
+        <i class="bi bi-telephone-fill"></i>
+        <span>
+          +977-41-520000
+        </span>
+      </li>
+
+      <li>
+        <i class="bi bi-envelope-fill"></i>
+        <span>
+          info@janakpurmun.gov.np
+        </span>
+      </li>
+
+    </ul>
+
+  </div>
+
+</div>
+
+
+<div class="footer-bottom">
+
+  <span>
+    © 2026 Janaksewa AI. All rights reserved.
+  </span>
+
+  <span>
+    Powered by JanakSewa AI
+  </span>
+
+</div>
+```
+
+  </div>
+
+</footer>
+
+<!-- =========================================================
+     FLOATING AI BUTTON
+========================================================= -->
+
+<a
+href="chatbot.html"
+class="floating-ai-button"
+title="Ask JanakSewa AI"
+
+>
+
+<i class="bi bi-robot"></i>
+
+  <span>
+    Ask JanakSewa AI
+  </span>
+
+</a>
+
+<!-- Bootstrap -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Dashboard JavaScript -->
+
+<script src="assets/js/user-dashboard.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,1897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Janaksewa AI | Municipal Services</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+
+    /* =========================
+       ROOT
+    ========================= */
+
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #084298;
+      --secondary: #0b7285;
+      --dark: #092b57;
+      --text: #172033;
+      --muted: #667085;
+      --light: #f5f8fd;
+      --border: #e4eaf2;
+      --white: #ffffff;
+      --shadow: 0 16px 40px rgba(15, 50, 90, 0.10);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--light);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+
+    /* =========================
+       TOP BAR
+    ========================= */
+
+    .top-bar {
+      background: var(--dark);
+      color: white;
+      padding: 9px 0;
+      font-size: 13px;
+    }
+
+    .top-bar-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 20px;
+    }
+
+    .top-left,
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .top-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .top-item i {
+      color: #7cc4ff;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-icons a {
+      width: 28px;
+      height: 28px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 50%;
+      color: white;
+
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       MAIN HEADER
+    ========================= */
+
+    .main-header {
+      background: white;
+      border-bottom: 1px solid #e8edf4;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 16px 20px;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .brand-title {
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      color: #667085;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .helpline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+
+      background: #f0f7ff;
+      padding: 10px 17px;
+      border-radius: 12px;
+    }
+
+    .helpline-icon {
+      width: 40px;
+      height: 40px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+    }
+
+    .helpline small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .helpline strong {
+      color: var(--primary-dark);
+    }
+
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .navbar-custom {
+      background: white;
+      border-bottom: 1px solid #e8edf4;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+
+      min-height: 60px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link-custom {
+      color: #334155;
+      font-size: 14px;
+      font-weight: 600;
+
+      padding: 10px 12px;
+      border-radius: 8px;
+
+      transition: 0.25s;
+    }
+
+    .nav-link-custom:hover {
+      color: var(--primary);
+      background: #eef6ff;
+    }
+
+    .nav-link-custom.active {
+      color: white;
+      background: var(--primary);
+    }
+
+    .ai-nav-btn {
+      color: white !important;
+
+      background:
+        linear-gradient(135deg, #0d6efd, #6f42c1);
+
+      border-radius: 25px;
+      padding: 10px 17px;
+
+      box-shadow:
+        0 7px 18px rgba(13,110,253,0.22);
+    }
+
+    .ai-nav-btn:hover {
+      color: white !important;
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .services-hero {
+      min-height: 370px;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4, 34, 70, 0.94),
+          rgba(7, 65, 125, 0.72),
+          rgba(4, 34, 70, 0.35)
+        ),
+        url("https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      width: 1200px;
+      max-width: 100%;
+      margin: auto;
+
+      padding: 65px 20px;
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      background: rgba(255,255,255,0.13);
+      border: 1px solid rgba(255,255,255,0.25);
+
+      padding: 8px 15px;
+      border-radius: 25px;
+
+      font-size: 13px;
+      margin-bottom: 18px;
+
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-content h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      font-weight: 800;
+
+      margin-bottom: 14px;
+    }
+
+    .hero-content p {
+      max-width: 720px;
+
+      color: #e6f0ff;
+      font-size: 17px;
+    }
+
+
+    /* =========================
+       SERVICES SECTION
+    ========================= */
+
+    .services-section {
+      padding: 75px 20px;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-label {
+      display: inline-block;
+
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-size: 36px;
+      font-weight: 800;
+
+      margin-bottom: 10px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+
+    /* =========================
+       SERVICE GRID
+    ========================= */
+
+    .service-grid {
+      max-width: 1150px;
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 24px;
+    }
+
+    .service-card {
+      position: relative;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 20px;
+
+      padding: 28px;
+
+      box-shadow: 0 8px 25px rgba(15,50,90,0.06);
+
+      overflow: hidden;
+
+      transition:
+        transform 0.3s,
+        box-shadow 0.3s,
+        border-color 0.3s;
+    }
+
+    .service-card::before {
+      content: "";
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 4px;
+
+      background:
+        linear-gradient(
+          90deg,
+          #0d6efd,
+          #6f42c1
+        );
+
+      transform: scaleX(0);
+      transform-origin: left;
+
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+
+      border-color: #cfe0f7;
+
+      box-shadow:
+        0 18px 40px rgba(15,50,90,0.12);
+    }
+
+    .service-card:hover::before {
+      transform: scaleX(1);
+    }
+
+
+    /* =========================
+       ICON
+    ========================= */
+
+    .service-icon {
+      width: 60px;
+      height: 60px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #edf5ff;
+      color: var(--primary);
+
+      border-radius: 16px;
+
+      font-size: 27px;
+
+      margin-bottom: 20px;
+
+      transition: 0.3s;
+    }
+
+    .service-card:hover .service-icon {
+      background: var(--primary);
+      color: white;
+
+      transform: scale(1.05);
+    }
+
+    .service-card h3 {
+      font-size: 21px;
+      font-weight: 750;
+
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #667085;
+      font-size: 14px;
+
+      min-height: 70px;
+      margin-bottom: 20px;
+    }
+
+    .service-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 14px;
+
+      transition: 0.25s;
+    }
+
+    .service-link:hover {
+      gap: 11px;
+    }
+
+
+    /* =========================
+       FEATURE IMAGE SECTION
+    ========================= */
+
+    .service-info-section {
+      padding: 0 20px 75px;
+    }
+
+    .service-info {
+      max-width: 1150px;
+      margin: auto;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+
+      background: white;
+
+      border-radius: 25px;
+      overflow: hidden;
+
+      box-shadow: var(--shadow);
+    }
+
+    .service-info-image {
+      min-height: 390px;
+
+      background:
+        linear-gradient(
+          rgba(5,42,85,0.25),
+          rgba(5,42,85,0.25)
+        ),
+        url("https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+    }
+
+    .service-info-content {
+      padding: 48px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .service-info-content h2 {
+      font-size: 32px;
+      font-weight: 800;
+
+      margin-bottom: 15px;
+    }
+
+    .service-info-content p {
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .benefit-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .benefit-list li {
+      display: flex;
+      align-items: center;
+
+      gap: 10px;
+
+      margin-bottom: 13px;
+
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .benefit-list i {
+      color: #198754;
+      font-size: 18px;
+    }
+
+    .service-info-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+
+      width: fit-content;
+
+      margin-top: 12px;
+
+      padding: 12px 19px;
+
+      color: white;
+
+      background: var(--primary);
+
+      border-radius: 10px;
+
+      font-weight: 700;
+
+      transition: 0.25s;
+    }
+
+    .service-info-button:hover {
+      color: white;
+
+      background: var(--primary-dark);
+
+      transform: translateY(-2px);
+    }
+
+
+    /* =========================
+       QUICK ACCESS
+    ========================= */
+
+    .quick-section {
+      padding: 0 20px 75px;
+    }
+
+    .quick-wrapper {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .quick-heading {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .quick-heading h3 {
+      font-weight: 800;
+    }
+
+    .quick-heading p {
+      color: var(--muted);
+    }
+
+    .quick-grid {
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 18px;
+    }
+
+    .quick-card {
+      background: white;
+
+      border: 1px solid var(--border);
+
+      border-radius: 16px;
+
+      padding: 23px;
+
+      text-align: center;
+
+      transition: 0.25s;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-5px);
+
+      box-shadow:
+        0 15px 30px rgba(15,50,90,0.09);
+    }
+
+    .quick-icon {
+      width: 52px;
+      height: 52px;
+
+      margin: 0 auto 13px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #eef5ff;
+      color: var(--primary);
+
+      border-radius: 50%;
+
+      font-size: 21px;
+    }
+
+    .quick-card h5 {
+      font-size: 16px;
+      font-weight: 750;
+
+      margin-bottom: 5px;
+    }
+
+    .quick-card p {
+      color: var(--muted);
+      font-size: 13px;
+
+      margin: 0;
+    }
+
+
+    /* =========================
+       AI CTA
+    ========================= */
+
+    .ai-section {
+      padding: 0 20px 75px;
+    }
+
+    .ai-box {
+      max-width: 1150px;
+      margin: auto;
+
+      position: relative;
+      overflow: hidden;
+
+      padding: 50px;
+
+      border-radius: 25px;
+
+      color: white;
+
+      background:
+        linear-gradient(
+          135deg,
+          #084298,
+          #0d6efd,
+          #6f42c1
+        );
+
+      box-shadow:
+        0 18px 45px rgba(13,110,253,0.20);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      gap: 30px;
+    }
+
+    .ai-box::after {
+      content: "";
+
+      position: absolute;
+
+      width: 250px;
+      height: 250px;
+
+      right: -80px;
+      top: -100px;
+
+      border: 2px solid rgba(255,255,255,0.12);
+
+      border-radius: 50%;
+    }
+
+    .ai-box-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .ai-box h2 {
+      font-size: 32px;
+      font-weight: 800;
+
+      margin-bottom: 10px;
+    }
+
+    .ai-box p {
+      color: #e6efff;
+      max-width: 650px;
+
+      margin: 0;
+    }
+
+    .ai-button {
+      position: relative;
+      z-index: 2;
+
+      white-space: nowrap;
+
+      padding: 13px 21px;
+
+      background: white;
+      color: var(--primary-dark);
+
+      border-radius: 12px;
+
+      font-weight: 800;
+
+      transition: 0.25s;
+    }
+
+    .ai-button:hover {
+      color: var(--primary-dark);
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 10px 22px rgba(0,0,0,0.15);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #071f3d;
+      color: #cbd8e8;
+
+      padding: 35px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      gap: 20px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #cbd8e8;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+
+    /* =========================
+       FLOATING AI
+    ========================= */
+
+    .floating-ai {
+      position: fixed;
+
+      right: 22px;
+      bottom: 22px;
+
+      width: 58px;
+      height: 58px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #0d6efd,
+          #6f42c1
+        );
+
+      color: white;
+
+      border-radius: 50%;
+
+      font-size: 23px;
+
+      box-shadow:
+        0 12px 28px rgba(13,110,253,0.35);
+
+      z-index: 2000;
+
+      transition: 0.25s;
+    }
+
+    .floating-ai:hover {
+      color: white;
+      transform: scale(1.08);
+    }
+
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 1000px) {
+
+      .service-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .quick-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+    }
+
+
+    @media (max-width: 768px) {
+
+      .top-bar-inner,
+      .header-inner,
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .top-left,
+      .top-right {
+        justify-content: center;
+      }
+
+      .helpline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .nav-inner {
+        padding: 8px 15px;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-info {
+        grid-template-columns: 1fr;
+      }
+
+      .service-info-image {
+        min-height: 280px;
+      }
+
+      .ai-box {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 35px 25px;
+      }
+
+      .ai-box h2 {
+        font-size: 27px;
+      }
+
+    }
+
+
+    @media (max-width: 576px) {
+
+      .brand-title {
+        font-size: 21px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .services-hero {
+        min-height: 300px;
+      }
+
+      .hero-content {
+        padding: 50px 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 35px;
+      }
+
+      .hero-content p {
+        font-size: 15px;
+      }
+
+      .services-section {
+        padding: 50px 20px;
+      }
+
+      .section-heading h2 {
+        font-size: 29px;
+      }
+
+      .service-card {
+        padding: 23px;
+      }
+
+      .service-info-content {
+        padding: 30px 23px;
+      }
+
+      .service-info-content h2 {
+        font-size: 27px;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-link-custom {
+        font-size: 12px;
+        padding: 8px 8px;
+      }
+
+      .floating-ai {
+        width: 52px;
+        height: 52px;
+
+        right: 15px;
+        bottom: 15px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =========================
+       TOP BAR
+  ========================== -->
+
+  <div class="top-bar">
+
+    <div class="top-bar-inner">
+
+      <div class="top-left">
+
+        <div class="top-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          Janakpurdham, Madhesh Province, Nepal
+        </div>
+
+        <div class="top-item">
+          <i class="bi bi-telephone-fill"></i>
+          +977-41-520000
+        </div>
+
+        <div class="top-item">
+          <i class="bi bi-envelope-fill"></i>
+          info@janakpurmun.gov.np
+        </div>
+
+      </div>
+
+
+      <div class="top-right">
+
+        <div class="social-icons">
+
+          <a href="#">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-x-twitter"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-youtube"></i>
+          </a>
+
+          <a href="#">
+            <i class="fab fa-instagram"></i>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- =========================
+       MAIN HEADER
+  ========================== -->
+
+  <header class="main-header">
+
+    <div class="header-inner">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="assets/images/janaksewa-logo.png"
+          alt="Janaksewa AI Logo"
+          class="brand-logo"
+        />
+
+        <div>
+
+          <div class="brand-title">
+            Janaksewa AI
+          </div>
+
+          <div class="brand-subtitle">
+            Citizen Assistance System
+          </div>
+
+        </div>
+
+      </a>
+
+
+      <div class="helpline">
+
+        <div class="helpline-icon">
+          <i class="bi bi-headset"></i>
+        </div>
+
+        <div>
+
+          <small>
+            Citizen Helpline
+          </small>
+
+          <strong>
+            1660-000-000
+          </strong>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav class="navbar-custom">
+
+    <div class="nav-inner">
+
+      <a
+        href="index.html"
+        class="nav-link-custom"
+        data-i18n="home"
+      >
+        <i class="bi bi-house-door"></i>
+        Home
+      </a>
+
+
+      <a
+        href="about.html"
+        class="nav-link-custom"
+        data-i18n="about"
+      >
+        About Municipality
+      </a>
+
+
+      <a
+        href="services.html"
+        class="nav-link-custom active"
+        data-i18n="services"
+      >
+        Services
+      </a>
+
+
+      <a
+        href="tourist-places.html"
+        class="nav-link-custom"
+        data-i18n="tourism"
+      >
+        Tourism
+      </a>
+
+
+      <a
+        href="transportation.html"
+        class="nav-link-custom"
+      >
+        Transportation
+      </a>
+
+
+      <a
+        href="notices.html"
+        class="nav-link-custom"
+      >
+        Notices
+      </a>
+
+
+      <a
+        href="complaints.html"
+        class="nav-link-custom"
+      >
+        Complaints
+      </a>
+
+
+      <a
+        href="contact.html"
+        class="nav-link-custom"
+        data-i18n="contact"
+      >
+        Contact
+      </a>
+
+
+      <a
+        href="chatbot.html"
+        class="nav-link-custom ai-nav-btn"
+        data-i18n="askAI"
+      >
+        <i class="bi bi-robot"></i>
+        JanakSewa AI
+      </a>
+
+
+      <a
+        href="dashboard.html"
+        class="nav-link-custom"
+      >
+        <i class="bi bi-person-circle"></i>
+        Dashboard
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="services-hero">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+
+        <i class="bi bi-building-check"></i>
+
+        Digital Municipal Services
+
+      </div>
+
+
+      <h1>
+        Municipal Services
+      </h1>
+
+
+      <p>
+        Access important municipal information, citizen
+        services, registration guidance, tax information
+        and administrative support through Janaksewa AI.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       SERVICES
+  ========================== -->
+
+  <section class="services-section">
+
+    <div class="section-heading">
+
+      <span class="section-label">
+        Citizen Services
+      </span>
+
+      <h2>
+        Services Designed for Citizens
+      </h2>
+
+      <p>
+        Find the information and municipal services you need
+        in one simple and convenient platform.
+      </p>
+
+    </div>
+
+
+    <div class="service-grid">
+
+
+      <!-- Birth -->
+
+      <div
+        class="service-card"
+        id="birth-registration"
+      >
+
+        <div class="service-icon">
+          <i class="bi bi-person-vcard"></i>
+        </div>
+
+        <h3 data-i18n="birthRegistration">
+          Birth Registration
+        </h3>
+
+        <p>
+          Get guidance about birth registration,
+          required documents, procedures and certificate services.
+        </p>
+
+        <a
+          href="#"
+          class="service-link"
+        >
+          View Service
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <!-- Death -->
+
+      <div
+        class="service-card"
+        id="death-registration"
+      >
+
+        <div class="service-icon">
+          <i class="bi bi-file-earmark-medical"></i>
+        </div>
+
+        <h3>
+          Death Registration
+        </h3>
+
+        <p>
+          Learn about death registration procedures,
+          documentation requirements and related municipal support.
+        </p>
+
+        <a
+          href="#"
+          class="service-link"
+        >
+          View Service
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <!-- Business -->
+
+      <div
+        class="service-card"
+        id="business-registration"
+      >
+
+        <div class="service-icon">
+          <i class="bi bi-building"></i>
+        </div>
+
+        <h3 data-i18n="businessRegistration">
+          Business Registration
+        </h3>
+
+        <p>
+          Find information about local business registration,
+          requirements, documents, fees and procedures.
+        </p>
+
+        <a
+          href="#"
+          class="service-link"
+        >
+          View Service
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <!-- Tax -->
+
+      <div
+        class="service-card"
+        id="tax-services"
+      >
+
+        <div class="service-icon">
+          <i class="bi bi-receipt"></i>
+        </div>
+
+        <h3 data-i18n="taxServices">
+          Tax Services
+        </h3>
+
+        <p>
+          Access information about municipal taxes,
+          payment procedures, deadlines and property-related services.
+        </p>
+
+        <a
+          href="#"
+          class="service-link"
+        >
+          View Service
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <!-- Recommendation -->
+
+      <div
+        class="service-card"
+        id="recommendation"
+      >
+
+        <div class="service-icon">
+          <i class="bi bi-file-earmark-check"></i>
+        </div>
+
+        <h3 data-i18n="recommendations">
+          Recommendation
+        </h3>
+
+        <p>
+          Get guidance for recommendation letters,
+          supporting documents and administrative procedures.
+        </p>
+
+        <a
+          href="#"
+          class="service-link"
+        >
+          View Service
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <!-- Property -->
+
+      <div
+        class="service-card"
+        id="property-services"
+      >
+
+        <div class="service-icon">
+          <i class="bi bi-house-check"></i>
+        </div>
+
+        <h3 data-i18n="houseProperty">
+          House & Property
+        </h3>
+
+        <p>
+          Explore information about property-related services,
+          land documentation and municipal property procedures.
+        </p>
+
+        <a
+          href="#"
+          class="service-link"
+        >
+          View Service
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <!-- House Registration -->
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-house-add"></i>
+        </div>
+
+        <h3>
+          House Registration
+        </h3>
+
+        <p>
+          Find general guidance about house registration,
+          municipal documentation and related procedures.
+        </p>
+
+        <a
+          href="#"
+          class="service-link"
+        >
+          View Service
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <!-- Social Security -->
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-people"></i>
+        </div>
+
+        <h3>
+          Social Security
+        </h3>
+
+        <p>
+          Access information about social security,
+          citizen support programs and eligibility guidance.
+        </p>
+
+        <a
+          href="#"
+          class="service-link"
+        >
+          View Service
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+
+
+      <!-- Document Verification -->
+
+      <div class="service-card">
+
+        <div class="service-icon">
+          <i class="bi bi-patch-check"></i>
+        </div>
+
+        <h3>
+          Document Verification
+        </h3>
+
+        <p>
+          Get information about document verification,
+          application status and municipal verification procedures.
+        </p>
+
+        <a
+          href="#"
+          class="service-link"
+        >
+          View Service
+          <i class="bi bi-arrow-right"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       INFORMATION SECTION
+  ========================== -->
+
+  <section class="service-info-section">
+
+    <div class="service-info">
+
+      <div class="service-info-image"></div>
+
+
+      <div class="service-info-content">
+
+        <span class="section-label">
+          Easy Digital Access
+        </span>
+
+        <h2>
+          Municipal Information in One Place
+        </h2>
+
+        <p>
+          Janaksewa AI helps citizens quickly understand
+          municipal services, required documents and
+          general procedures without searching through
+          multiple sources.
+        </p>
+
+
+        <ul class="benefit-list">
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Easy-to-understand service information
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Digital citizen assistance
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Complaint and problem reporting
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            AI-powered service guidance
+          </li>
+
+          <li>
+            <i class="bi bi-check-circle-fill"></i>
+            Multilingual citizen support
+          </li>
+
+        </ul>
+
+
+        <a
+          href="chatbot.html"
+          class="service-info-button"
+        >
+          <i class="bi bi-robot"></i>
+          Ask JanakSewa AI
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       QUICK ACCESS
+  ========================== -->
+
+  <section class="quick-section">
+
+    <div class="quick-wrapper">
+
+      <div class="quick-heading">
+
+        <h3>
+          Quick Citizen Access
+        </h3>
+
+        <p>
+          Quickly access commonly used Janaksewa AI features.
+        </p>
+
+      </div>
+
+
+      <div class="quick-grid">
+
+
+        <a
+          href="complaints.html"
+          class="quick-card"
+        >
+
+          <div class="quick-icon">
+            <i class="bi bi-megaphone-fill"></i>
+          </div>
+
+          <h5>
+            Report Problem
+          </h5>
+
+          <p>
+            Report roads, water, sanitation and public issues.
+          </p>
+
+        </a>
+
+
+        <a
+          href="dashboard.html"
+          class="quick-card"
+        >
+
+          <div class="quick-icon">
+            <i class="bi bi-speedometer2"></i>
+          </div>
+
+          <h5>
+            My Dashboard
+          </h5>
+
+          <p>
+            View your applications and complaint status.
+          </p>
+
+        </a>
+
+
+        <a
+          href="chatbot.html"
+          class="quick-card"
+        >
+
+          <div class="quick-icon">
+            <i class="bi bi-robot"></i>
+          </div>
+
+          <h5>
+            AI Assistant
+          </h5>
+
+          <p>
+            Ask JanakSewa AI for municipal information.
+          </p>
+
+        </a>
+
+
+        <a
+          href="contact.html"
+          class="quick-card"
+        >
+
+          <div class="quick-icon">
+            <i class="bi bi-headset"></i>
+          </div>
+
+          <h5>
+            Contact Support
+          </h5>
+
+          <p>
+            Get help and contact information.
+          </p>
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       AI CTA
+  ========================== -->
+
+  <section class="ai-section">
+
+    <div class="ai-box">
+
+      <div class="ai-box-content">
+
+        <h2>
+          Not Sure Which Service You Need?
+        </h2>
+
+        <p>
+          Ask JanakSewa AI. The intelligent assistant can
+          help you understand municipal services, complaints,
+          tourism, transportation and general citizen information.
+        </p>
+
+      </div>
+
+
+      <a
+        href="chatbot.html"
+        class="ai-button"
+      >
+        <i class="bi bi-chat-dots-fill me-2"></i>
+        Chat with AI
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+
+        <strong>
+          Janaksewa AI
+        </strong>
+
+        <br />
+
+        <small>
+          Citizen Assistance System
+        </small>
+
+      </div>
+
+
+      <div class="footer-links">
+
+        <a href="index.html">
+          Home
+        </a>
+
+        <a href="about.html">
+          About
+        </a>
+
+        <a href="services.html">
+          Services
+        </a>
+
+        <a href="tourist-places.html">
+          Tourism
+        </a>
+
+        <a href="complaints.html">
+          Complaints
+        </a>
+
+        <a href="contact.html">
+          Contact
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       FLOATING AI
+  ========================== -->
+
+  <a
+    href="chatbot.html"
+    class="floating-ai"
+    title="Ask JanakSewa AI"
+  >
+
+    <i class="bi bi-robot"></i>
+
+  </a>
+
+
+  <!-- Bootstrap JS -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+
+  <!-- Janaksewa JavaScript -->
+
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,1454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Janaksewa AI | Report a Problem</title>
+
+  <!-- Bootstrap -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <!-- Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+  />
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-dark: #084298;
+      --secondary: #0b7285;
+      --text: #172033;
+      --muted: #687386;
+      --light: #f4f8ff;
+      --border: #e2e8f2;
+      --white: #ffffff;
+      --danger: #dc3545;
+      --shadow: 0 18px 45px rgba(15, 50, 90, 0.12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f8fd;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* =========================
+       TOP BAR
+    ========================= */
+
+    .top-bar {
+      background: #092b57;
+      color: #fff;
+      font-size: 14px;
+      padding: 9px 0;
+    }
+
+    .top-bar-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .top-left,
+    .top-right {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .top-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .top-item i {
+      color: #7cc4ff;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 8px;
+    }
+
+    .social-icons a {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      border-radius: 50%;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       MAIN HEADER
+    ========================= */
+
+    .main-header {
+      background: #fff;
+      border-bottom: 1px solid #e7edf5;
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 17px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--text);
+    }
+
+    .brand-logo {
+      width: 58px;
+      height: 58px;
+      object-fit: contain;
+      border-radius: 12px;
+    }
+
+    .brand-title {
+      font-size: 25px;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.1;
+    }
+
+    .brand-subtitle {
+      color: #667085;
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    .helpline {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: #f0f7ff;
+      padding: 10px 17px;
+      border-radius: 12px;
+    }
+
+    .helpline-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .helpline small {
+      display: block;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .helpline strong {
+      color: var(--primary-dark);
+    }
+
+    /* =========================
+       NAVIGATION
+    ========================= */
+
+    .navbar-custom {
+      background: #fff;
+      border-bottom: 1px solid #e8edf4;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      margin: auto;
+      padding: 0 20px;
+      min-height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+
+    .nav-link-custom {
+      color: #334155;
+      font-weight: 600;
+      font-size: 14px;
+      padding: 11px 13px;
+      border-radius: 8px;
+      transition: 0.25s;
+    }
+
+    .nav-link-custom:hover {
+      color: var(--primary);
+      background: #eef6ff;
+    }
+
+    .nav-link-custom.active {
+      background: var(--primary);
+      color: white;
+    }
+
+    .ai-nav-btn {
+      background: linear-gradient(135deg, #0d6efd, #6f42c1);
+      color: white !important;
+      padding: 10px 17px;
+      border-radius: 25px;
+      margin-left: 5px;
+      box-shadow: 0 7px 18px rgba(13, 110, 253, 0.25);
+    }
+
+    .ai-nav-btn:hover {
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .complaint-hero {
+      min-height: 310px;
+      background:
+        linear-gradient(
+          90deg,
+          rgba(4, 34, 70, 0.92),
+          rgba(7, 65, 125, 0.72),
+          rgba(4, 34, 70, 0.35)
+        ),
+        url("https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      width: 1200px;
+      max-width: 100%;
+      margin: auto;
+      padding: 55px 20px;
+      color: white;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 8px 15px;
+      border-radius: 25px;
+      font-size: 13px;
+      margin-bottom: 18px;
+      backdrop-filter: blur(5px);
+    }
+
+    .hero-content h1 {
+      font-size: clamp(34px, 5vw, 52px);
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .hero-content p {
+      max-width: 680px;
+      font-size: 17px;
+      color: #e7f0ff;
+    }
+
+    /* =========================
+       COMPLAINT SECTION
+    ========================= */
+
+    .complaint-section {
+      padding: 70px 20px;
+      background:
+        radial-gradient(circle at top left, rgba(13,110,253,0.07), transparent 35%),
+        #f5f8fd;
+    }
+
+    .complaint-wrapper {
+      max-width: 1150px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 0.85fr 1.4fr;
+      gap: 30px;
+      align-items: stretch;
+    }
+
+    /* =========================
+       INFO CARD
+    ========================= */
+
+    .info-card {
+      position: relative;
+      overflow: hidden;
+      min-height: 620px;
+      border-radius: 24px;
+      color: white;
+      background:
+        linear-gradient(
+          180deg,
+          rgba(5, 42, 85, 0.45),
+          rgba(3, 25, 52, 0.94)
+        ),
+        url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85")
+        center/cover;
+      padding: 38px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      box-shadow: var(--shadow);
+    }
+
+    .info-card h2 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .info-card p {
+      color: #e3edfb;
+      font-size: 15px;
+    }
+
+    .info-features {
+      margin-top: 25px;
+      display: grid;
+      gap: 13px;
+    }
+
+    .info-feature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.13);
+      padding: 12px 14px;
+      border-radius: 12px;
+      backdrop-filter: blur(5px);
+    }
+
+    .info-feature i {
+      width: 34px;
+      height: 34px;
+      background: rgba(255,255,255,0.16);
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* =========================
+       FORM CARD
+    ========================= */
+
+    .form-card {
+      background: white;
+      border-radius: 24px;
+      padding: 38px;
+      box-shadow: var(--shadow);
+      border: 1px solid #e9eef5;
+    }
+
+    .form-heading {
+      margin-bottom: 28px;
+    }
+
+    .form-heading .label {
+      display: inline-block;
+      color: var(--primary);
+      font-size: 13px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+
+    .form-heading h2 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+
+    .form-heading p {
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .field {
+      margin-bottom: 19px;
+    }
+
+    .field label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 8px;
+      font-size: 14px;
+      color: #344054;
+    }
+
+    .input-wrapper {
+      position: relative;
+    }
+
+    .input-wrapper i {
+      position: absolute;
+      left: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #8b98aa;
+      pointer-events: none;
+    }
+
+    .input-wrapper input,
+    .input-wrapper select,
+    .input-wrapper textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 15px 13px 43px;
+      background: #fbfcfe;
+      color: var(--text);
+      outline: none;
+      transition: 0.25s;
+      font-size: 14px;
+    }
+
+    .input-wrapper textarea {
+      min-height: 140px;
+      resize: vertical;
+      padding-top: 14px;
+    }
+
+    .input-wrapper textarea + i {
+      top: 20px;
+      transform: none;
+    }
+
+    .input-wrapper input:focus,
+    .input-wrapper select:focus,
+    .input-wrapper textarea:focus {
+      border-color: var(--primary);
+      background: white;
+      box-shadow: 0 0 0 4px rgba(13,110,253,0.09);
+    }
+
+    .readonly-field {
+      background: #eef5ff !important;
+      color: #55708f !important;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .upload-box {
+      border: 2px dashed #cbd8e8;
+      border-radius: 13px;
+      padding: 18px;
+      text-align: center;
+      background: #f9fbfe;
+      color: #667085;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    .upload-box:hover {
+      border-color: var(--primary);
+      background: #f1f7ff;
+    }
+
+    .upload-box i {
+      font-size: 25px;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+
+    .upload-box small {
+      display: block;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      border-radius: 13px;
+      padding: 14px 20px;
+      background: linear-gradient(135deg, #0d6efd, #0954b8);
+      color: white;
+      font-weight: 700;
+      font-size: 15px;
+      box-shadow: 0 10px 22px rgba(13,110,253,0.23);
+      transition: 0.25s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(13,110,253,0.3);
+    }
+
+    .privacy-note {
+      text-align: center;
+      color: #7b8797;
+      font-size: 12px;
+      margin-top: 14px;
+    }
+
+    /* =========================
+       EMERGENCY / QUICK HELP
+    ========================= */
+
+    .quick-section {
+      padding: 0 20px 70px;
+    }
+
+    .quick-wrapper {
+      max-width: 1150px;
+      margin: auto;
+    }
+
+    .quick-title {
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .quick-title h3 {
+      font-weight: 800;
+    }
+
+    .quick-title p {
+      color: var(--muted);
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .quick-card {
+      background: white;
+      padding: 22px;
+      border-radius: 16px;
+      border: 1px solid #e6ebf2;
+      text-align: center;
+      transition: 0.25s;
+    }
+
+    .quick-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(14,47,83,0.09);
+    }
+
+    .quick-icon {
+      width: 50px;
+      height: 50px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      background: #eef5ff;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 21px;
+    }
+
+    .quick-card h5 {
+      font-weight: 700;
+      margin-bottom: 5px;
+    }
+
+    .quick-card p {
+      color: var(--muted);
+      font-size: 13px;
+      margin: 0;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      background: #071f3d;
+      color: #cbd8e8;
+      padding: 35px 20px;
+    }
+
+    .footer-inner {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: #cbd8e8;
+      font-size: 14px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    /* =========================
+       FLOATING AI
+    ========================= */
+
+    .floating-ai {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0d6efd, #6f42c1);
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 23px;
+      box-shadow: 0 12px 28px rgba(13,110,253,0.35);
+      z-index: 2000;
+      transition: 0.25s;
+    }
+
+    .floating-ai:hover {
+      color: white;
+      transform: scale(1.08);
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================= */
+
+    @media (max-width: 992px) {
+      .complaint-wrapper {
+        grid-template-columns: 1fr;
+      }
+
+      .info-card {
+        min-height: 420px;
+      }
+
+      .quick-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .nav-inner {
+        padding: 8px 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .top-bar-inner,
+      .header-inner,
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .top-left,
+      .top-right {
+        justify-content: center;
+      }
+
+      .helpline {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .nav-inner {
+        justify-content: center;
+      }
+
+      .form-card {
+        padding: 25px 20px;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .complaint-section {
+        padding-top: 45px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .brand-title {
+        font-size: 21px;
+      }
+
+      .brand-logo {
+        width: 48px;
+        height: 48px;
+      }
+
+      .complaint-hero {
+        min-height: 270px;
+      }
+
+      .hero-content {
+        padding: 45px 20px;
+      }
+
+      .hero-content h1 {
+        font-size: 34px;
+      }
+
+      .hero-content p {
+        font-size: 15px;
+      }
+
+      .info-card {
+        min-height: 500px;
+        padding: 25px 20px;
+      }
+
+      .form-heading h2 {
+        font-size: 25px;
+      }
+
+      .quick-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav-link-custom {
+        font-size: 13px;
+        padding: 8px 9px;
+      }
+
+      .floating-ai {
+        width: 52px;
+        height: 52px;
+        right: 15px;
+        bottom: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       TOP BAR
+  ========================== -->
+
+  <div class="top-bar">
+    <div class="top-bar-inner">
+
+      <div class="top-left">
+        <div class="top-item">
+          <i class="bi bi-geo-alt-fill"></i>
+          Janakpurdham, Madhesh Province, Nepal
+        </div>
+
+        <div class="top-item">
+          <i class="bi bi-telephone-fill"></i>
+          +977-41-520000
+        </div>
+
+        <div class="top-item">
+          <i class="bi bi-envelope-fill"></i>
+          info@janakpurmun.gov.np
+        </div>
+      </div>
+
+      <div class="top-right">
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- =========================
+       MAIN HEADER
+  ========================== -->
+
+  <header class="main-header">
+
+    <div class="header-inner">
+
+      <a href="index.html" class="brand">
+
+        <img
+          src="assets/images/janaksewa-logo.png"
+          alt="Janaksewa AI Logo"
+          class="brand-logo"
+        />
+
+        <div>
+          <div class="brand-title">Janaksewa AI</div>
+          <div class="brand-subtitle">
+            Citizen Assistance System
+          </div>
+        </div>
+
+      </a>
+
+
+      <div class="helpline">
+
+        <div class="helpline-icon">
+          <i class="bi bi-headset"></i>
+        </div>
+
+        <div>
+          <small>Citizen Helpline</small>
+          <strong>1660-000-000</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <nav class="navbar-custom">
+
+    <div class="nav-inner">
+
+      <a href="index.html" class="nav-link-custom">
+        <i class="bi bi-house-door"></i>
+        Home
+      </a>
+
+      <a href="about.html" class="nav-link-custom">
+        About Municipality
+      </a>
+
+      <a href="services.html" class="nav-link-custom">
+        Services
+      </a>
+
+      <a href="tourist-places.html" class="nav-link-custom">
+        Tourism
+      </a>
+
+      <a href="transportation.html" class="nav-link-custom">
+        Transportation
+      </a>
+
+      <a href="notices.html" class="nav-link-custom">
+        Notices
+      </a>
+
+      <a href="complaints.html" class="nav-link-custom active">
+        Complaints
+      </a>
+
+      <a href="contact.html" class="nav-link-custom">
+        Contact
+      </a>
+
+      <a href="chatbot.html" class="nav-link-custom ai-nav-btn">
+        <i class="bi bi-robot"></i>
+        JanakSewa AI
+      </a>
+
+      <a href="dashboard.html" class="nav-link-custom">
+        <i class="bi bi-person-circle"></i>
+        Dashboard
+      </a>
+
+    </div>
+
+  </nav>
+
+
+  <!-- =========================
+       HERO
+  ========================== -->
+
+  <section class="complaint-hero">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <i class="bi bi-megaphone-fill"></i>
+        Citizen Voice • Better Janakpur
+      </div>
+
+      <h1>Report a Municipal Problem</h1>
+
+      <p>
+        Help improve your community by reporting road, water,
+        sanitation, street-light and other public problems
+        directly through Janaksewa AI.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       COMPLAINT FORM
+  ========================== -->
+
+  <section class="complaint-section">
+
+    <div class="complaint-wrapper">
+
+
+      <!-- LEFT INFORMATION CARD -->
+
+      <div class="info-card">
+
+        <div>
+
+          <h2>Your Voice Matters</h2>
+
+          <p>
+            Every complaint helps identify public problems,
+            improve municipal services and make Janakpurdham
+            cleaner, safer and more citizen-friendly.
+          </p>
+
+          <div class="info-features">
+
+            <div class="info-feature">
+              <i class="bi bi-check-circle-fill"></i>
+              <span>Submit problems online</span>
+            </div>
+
+            <div class="info-feature">
+              <i class="bi bi-geo-alt-fill"></i>
+              <span>Tell us the exact location</span>
+            </div>
+
+            <div class="info-feature">
+              <i class="bi bi-clock-history"></i>
+              <span>Track your complaint status</span>
+            </div>
+
+            <div class="info-feature">
+              <i class="bi bi-shield-check"></i>
+              <span>Secure citizen information</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT FORM -->
+
+      <div class="form-card">
+
+        <div class="form-heading">
+
+          <span class="label">
+            <i class="bi bi-file-earmark-text"></i>
+            Complaint Form
+          </span>
+
+          <h2>Tell Us About the Problem</h2>
+
+          <p>
+            Please provide accurate information so the
+            concerned authority can understand the issue.
+          </p>
+
+        </div>
+
+
+        <form id="complaintForm">
+
+          <!-- FORM MESSAGE -->
+
+          <div
+            id="formMessage"
+            class="alert d-none"
+            role="alert">
+          </div>
+
+
+          <!-- NAME -->
+
+          <div class="field">
+
+            <label for="complaintName">
+              Full Name
+            </label>
+
+            <div class="input-wrapper">
+
+              <input
+                id="complaintName"
+                type="text"
+                class="readonly-field"
+                placeholder="Your signed-in account will be used"
+                readonly
+              />
+
+              <i class="bi bi-person-fill"></i>
+
+            </div>
+
+          </div>
+
+
+          <!-- PHONE + WARD -->
+
+          <div class="form-row">
+
+            <div class="field">
+
+              <label for="complaintPhone">
+                Phone Number
+              </label>
+
+              <div class="input-wrapper">
+
+                <input
+                  id="complaintPhone"
+                  type="tel"
+                  required
+                  placeholder="Enter phone number"
+                />
+
+                <i class="bi bi-telephone-fill"></i>
+
+              </div>
+
+            </div>
+
+
+            <div class="field">
+
+              <label for="complaintWard">
+                Ward Number
+              </label>
+
+              <div class="input-wrapper">
+
+                <select id="complaintWard" required>
+
+                  <option value="">Select Ward</option>
+                  <option>Ward 1</option>
+                  <option>Ward 2</option>
+                  <option>Ward 3</option>
+                  <option>Ward 4</option>
+                  <option>Ward 5</option>
+                  <option>Ward 6</option>
+                  <option>Ward 7</option>
+                  <option>Ward 8</option>
+                  <option>Ward 9</option>
+                  <option>Ward 10</option>
+                  <option>Ward 11</option>
+                  <option>Ward 12</option>
+                  <option>Ward 13</option>
+                  <option>Ward 14</option>
+                  <option>Ward 15</option>
+                  <option>Ward 16</option>
+                  <option>Ward 17</option>
+                  <option>Ward 18</option>
+                  <option>Ward 19</option>
+                  <option>Ward 20</option>
+                  <option>Ward 21</option>
+                  <option>Ward 22</option>
+                  <option>Ward 23</option>
+                  <option>Ward 24</option>
+                  <option>Ward 25</option>
+                </select>
+
+                <i class="bi bi-geo-alt-fill"></i>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- SUBJECT / ADDRESS -->
+
+          <div class="field">
+
+            <label for="complaintSubject">
+              Problem Title / Location
+            </label>
+
+            <div class="input-wrapper">
+
+              <input
+                id="complaintSubject"
+                type="text"
+                required
+                placeholder="e.g. Drain blockage near railway station"
+              />
+
+              <i class="bi bi-pin-map-fill"></i>
+
+            </div>
+
+          </div>
+
+
+          <!-- CATEGORY -->
+
+          <div class="field">
+
+            <label for="complaintCategory">
+              Problem Category
+            </label>
+
+            <div class="input-wrapper">
+
+              <select id="complaintCategory" required>
+
+                <option value="">
+                  Select Problem Category
+                </option>
+
+                <option value="road">
+                  Road Problem
+                </option>
+
+                <option value="water">
+                  Water & Drainage
+                </option>
+
+                <option value="garbage">
+                  Garbage & Sanitation
+                </option>
+
+                <option value="street-light">
+                  Street Light
+                </option>
+
+                <option value="traffic">
+                  Traffic & Transportation
+                </option>
+
+                <option value="electricity">
+                  Electricity Problem
+                </option>
+
+                <option value="public-property">
+                  Public Property
+                </option>
+
+                <option value="other">
+                  Other
+                </option>
+
+              </select>
+
+              <i class="bi bi-list-check"></i>
+
+            </div>
+
+          </div>
+
+
+          <!-- DESCRIPTION -->
+
+          <div class="field">
+
+            <label for="complaintDescription">
+              Problem Details
+            </label>
+
+            <div class="input-wrapper">
+
+              <textarea
+                id="complaintDescription"
+                rows="5"
+                required
+                placeholder="Describe the problem, exact location, impact and any useful details..."
+              ></textarea>
+
+              <i class="bi bi-chat-left-text-fill"></i>
+
+            </div>
+
+          </div>
+
+
+          <!-- IMAGE UPLOAD -->
+
+          <div class="field">
+
+            <label>
+              Problem Image
+              <span style="font-weight:400;color:#8a95a5;">
+                (Optional)
+              </span>
+            </label>
+
+            <label class="upload-box">
+
+              <i class="bi bi-cloud-arrow-up d-block"></i>
+
+              <strong>Upload an image</strong>
+
+              <small>
+                JPG, PNG or WebP • Helps verify the problem
+              </small>
+
+              <input
+                type="file"
+                id="complaintImage"
+                accept="image/png,image/jpeg,image/webp"
+                hidden
+              />
+
+            </label>
+
+          </div>
+
+
+          <!-- SUBMIT -->
+
+          <button
+            type="submit"
+            class="submit-btn"
+            data-i18n="submitComplaint"
+          >
+
+            <i class="bi bi-send-fill me-2"></i>
+
+            Submit Complaint
+
+          </button>
+
+          <div class="privacy-note">
+
+            <i class="bi bi-lock-fill"></i>
+
+            Your submitted information should be handled
+            securely by the authorized system.
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       QUICK HELP
+  ========================== -->
+
+  <section class="quick-section">
+
+    <div class="quick-wrapper">
+
+      <div class="quick-title">
+
+        <h3>What Can You Report?</h3>
+
+        <p>
+          Quickly report common public problems in your area.
+        </p>
+
+      </div>
+
+
+      <div class="quick-grid">
+
+        <div class="quick-card">
+
+          <div class="quick-icon">
+            <i class="bi bi-cone-striped"></i>
+          </div>
+
+          <h5>Road Problems</h5>
+
+          <p>
+            Potholes, damaged roads and unsafe public paths.
+          </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+          <div class="quick-icon">
+            <i class="bi bi-droplet-fill"></i>
+          </div>
+
+          <h5>Water & Drainage</h5>
+
+          <p>
+            Water leakage, blocked drains and flooding.
+          </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+          <div class="quick-icon">
+            <i class="bi bi-trash3-fill"></i>
+          </div>
+
+          <h5>Sanitation</h5>
+
+          <p>
+            Garbage collection and cleanliness problems.
+          </p>
+
+        </div>
+
+
+        <div class="quick-card">
+
+          <div class="quick-icon">
+            <i class="bi bi-lightbulb-fill"></i>
+          </div>
+
+          <h5>Street Lights</h5>
+
+          <p>
+            Broken, damaged or non-working street lights.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <div>
+        <strong>Janaksewa AI</strong>
+        <br />
+        <small>
+          Citizen Assistance System
+        </small>
+      </div>
+
+      <div class="footer-links">
+
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="tourist-places.html">Tourism</a>
+        <a href="chatbot.html">AI Chatbot</a>
+        <a href="contact.html">Contact</a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       FLOATING AI BUTTON
+  ========================== -->
+
+  <a
+    href="chatbot.html"
+    class="floating-ai"
+    title="Ask JanakSewa AI"
+  >
+
+    <i class="bi bi-robot"></i>
+
+  </a>
+
+
+  <!-- Bootstrap JS -->
+
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+  </script>
+
+
+  <!-- Your Existing JavaScript -->
+
+  <script src="assets/js/script.js"></script>
+
+  <script src="assets/js/complaints.js"></script>
+
+</body>
+</html>

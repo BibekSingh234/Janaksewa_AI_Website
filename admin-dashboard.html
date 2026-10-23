@@ -1,0 +1,2026 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JanakSewa AI - Admin Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Admin CSS -->
+    <link rel="stylesheet" href="assets/css/admin-dashboard.css">
+</head>
+
+<body>
+
+<!-- =========================
+     SIDEBAR
+========================= -->
+
+<aside class="sidebar" id="sidebar">
+
+    <div class="sidebar-header">
+        <div class="brand-logo">
+            <i class="bi bi-buildings-fill"></i>
+        </div>
+
+        <div class="brand-text">
+            <h5>JanakSewa AI</h5>
+            <span>Admin Panel</span>
+        </div>
+    </div>
+
+    <div class="admin-mini-profile">
+        <div class="admin-avatar">
+            <img src="https://i.pravatar.cc/100?img=12" alt="Admin">
+            <span class="online-dot"></span>
+        </div>
+
+        <div>
+            <strong>Admin User</strong>
+            <small>Super Administrator</small>
+        </div>
+    </div>
+
+    <nav class="sidebar-menu">
+
+        <p class="menu-title">MAIN</p>
+
+        <a href="#" class="menu-link active" data-section="dashboard">
+            <i class="bi bi-grid-1x2-fill"></i>
+            <span>Dashboard</span>
+        </a>
+
+        <a href="#" class="menu-link" data-section="users">
+            <i class="bi bi-people-fill"></i>
+            <span>Users</span>
+            <b>24</b>
+        </a>
+
+        <a href="#" class="menu-link" data-section="complaints">
+            <i class="bi bi-chat-left-text-fill"></i>
+            <span>Complaints</span>
+            <b class="danger-count">8</b>
+        </a>
+
+        <a href="#" class="menu-link" data-section="news">
+            <i class="bi bi-newspaper"></i>
+            <span>News</span>
+        </a>
+
+        <a href="#" class="menu-link" data-section="tourism">
+            <i class="bi bi-geo-alt-fill"></i>
+            <span>Tourism</span>
+        </a>
+
+        <a href="#" class="menu-link" data-section="transport">
+            <i class="bi bi-bus-front-fill"></i>
+            <span>Transportation</span>
+        </a>
+
+        <p class="menu-title">MANAGEMENT</p>
+
+        <a href="#" class="menu-link" data-section="services">
+            <i class="bi bi-grid-fill"></i>
+            <span>Services</span>
+        </a>
+
+        <a href="#" class="menu-link" data-section="emergency">
+            <i class="bi bi-telephone-fill"></i>
+            <span>Emergency</span>
+        </a>
+
+        <a href="#" class="menu-link" data-section="faq">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>FAQ</span>
+        </a>
+
+        <a href="#" class="menu-link" data-section="chatbot">
+            <i class="bi bi-robot"></i>
+            <span>AI Chatbot</span>
+        </a>
+
+        <p class="menu-title">SYSTEM</p>
+
+        <a href="#" class="menu-link" data-section="recovery">
+            <i class="bi bi-trash3-fill"></i>
+            <span>Recovery</span>
+        </a>
+
+        <a href="#" class="menu-link" data-section="settings">
+            <i class="bi bi-gear-fill"></i>
+            <span>Settings</span>
+        </a>
+
+    </nav>
+
+    <div class="sidebar-bottom">
+        <button class="logout-btn" id="logoutBtn">
+            <i class="bi bi-box-arrow-right"></i>
+            Logout
+        </button>
+    </div>
+
+</aside>
+
+
+<!-- =========================
+     MAIN CONTENT
+========================= -->
+
+<main class="main-content">
+
+    <!-- TOPBAR -->
+
+    <header class="topbar">
+
+        <div class="topbar-left">
+
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="bi bi-list"></i>
+            </button>
+
+            <div>
+                <h4 id="pageTitle">Dashboard Overview</h4>
+                <p>Manage your JanakSewa AI system</p>
+            </div>
+
+        </div>
+
+
+        <div class="topbar-right">
+
+            <!-- Search -->
+
+            <div class="top-search">
+                <i class="bi bi-search"></i>
+                <input type="text" id="globalSearch" placeholder="Search...">
+            </div>
+
+
+            <!-- Notification -->
+
+            <button class="top-icon-btn" id="notificationBtn">
+                <i class="bi bi-bell-fill"></i>
+                <span>4</span>
+            </button>
+
+
+            <!-- Admin -->
+
+            <div class="admin-dropdown">
+
+                <button id="adminProfileBtn">
+
+                    <img src="https://i.pravatar.cc/100?img=12" alt="Admin">
+
+                    <div>
+                        <strong>Admin User</strong>
+                        <small>Administrator</small>
+                    </div>
+
+                    <i class="bi bi-chevron-down"></i>
+
+                </button>
+
+                <div class="profile-menu" id="profileMenu">
+
+                    <a href="#" data-section="profile">
+                        <i class="bi bi-person"></i>
+                        My Profile
+                    </a>
+
+                    <a href="#" data-section="settings">
+                        <i class="bi bi-gear"></i>
+                        Account Settings
+                    </a>
+
+                    <hr>
+
+                    <a href="#" id="profileLogout">
+                        <i class="bi bi-box-arrow-right"></i>
+                        Logout
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PAGE AREA
+    ========================= -->
+
+    <section class="dashboard-area">
+
+
+        <!-- =========================
+             DASHBOARD SECTION
+        ========================= -->
+
+        <div class="page-section active-section" id="dashboard">
+
+            <div class="welcome-card">
+
+                <div>
+
+                    <span class="welcome-label">
+                        <i class="bi bi-stars"></i>
+                        Welcome back
+                    </span>
+
+                    <h2>Good Evening, Admin 👋</h2>
+
+                    <p>
+                        Here's what's happening with your citizen assistance system today.
+                    </p>
+
+                </div>
+
+                <div class="welcome-icon">
+                    <i class="bi bi-bar-chart-line-fill"></i>
+                </div>
+
+            </div>
+
+
+            <!-- STATISTICS -->
+
+            <div class="stats-grid">
+
+                <div class="stat-card blue">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-people-fill"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Total Users</span>
+                        <h3>1,248</h3>
+                        <small>
+                            <i class="bi bi-arrow-up"></i>
+                            12.5% this month
+                        </small>
+                    </div>
+
+                    <button class="stat-action" data-section="users">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="stat-card orange">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Total Complaints</span>
+                        <h3>386</h3>
+                        <small>
+                            <i class="bi bi-arrow-up"></i>
+                            8.2% this month
+                        </small>
+                    </div>
+
+                    <button class="stat-action" data-section="complaints">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="stat-card green">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-check-circle-fill"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>Resolved</span>
+                        <h3>294</h3>
+                        <small>
+                            <i class="bi bi-arrow-up"></i>
+                            15.4% this month
+                        </small>
+                    </div>
+
+                    <button class="stat-action" data-section="complaints">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="stat-card purple">
+
+                    <div class="stat-icon">
+                        <i class="bi bi-robot"></i>
+                    </div>
+
+                    <div class="stat-content">
+                        <span>AI Conversations</span>
+                        <h3>8,642</h3>
+                        <small>
+                            <i class="bi bi-arrow-up"></i>
+                            21.8% this month
+                        </small>
+                    </div>
+
+                    <button class="stat-action" data-section="chatbot">
+                        <i class="bi bi-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="analytics-grid">
+                <article class="dashboard-card trend-card">
+                    <div class="card-header"><div><h5>Complaint activity</h5><p>Incoming reports over the last seven days</p></div><span class="period-chip">This week</span></div>
+                    <div class="trend-legend"><span><i class="legend-dot green"></i> Reports received</span><span><i class="legend-dot blue"></i> Resolved</span></div>
+                    <svg class="trend-chart" viewBox="0 0 680 235" role="img" aria-label="Weekly complaint activity chart">
+                        <defs><linearGradient id="reportArea" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#16a34a" stop-opacity=".22"/><stop offset="1" stop-color="#16a34a" stop-opacity="0"/></linearGradient></defs>
+                        <g class="chart-grid"><line x1="35" y1="30" x2="655" y2="30"/><line x1="35" y1="80" x2="655" y2="80"/><line x1="35" y1="130" x2="655" y2="130"/><line x1="35" y1="180" x2="655" y2="180"/></g>
+                        <path class="chart-area" d="M40 170 C85 152 102 157 140 130 S204 114 240 125 S304 145 340 108 S409 83 445 102 S504 136 545 104 S601 82 650 58 L650 180 L40 180 Z"/>
+                        <path class="chart-line report-line" d="M40 170 C85 152 102 157 140 130 S204 114 240 125 S304 145 340 108 S409 83 445 102 S504 136 545 104 S601 82 650 58"/>
+                        <path class="chart-line resolved-line" d="M40 180 C85 172 105 148 140 155 S202 164 240 142 S302 152 340 132 S405 116 445 126 S504 139 545 120 S606 127 650 96"/>
+                        <g class="chart-days"><text x="35" y="215">Mon</text><text x="135" y="215">Tue</text><text x="235" y="215">Wed</text><text x="335" y="215">Thu</text><text x="435" y="215">Fri</text><text x="535" y="215">Sat</text><text x="630" y="215">Sun</text></g>
+                    </svg>
+                </article>
+                <article class="dashboard-card status-card">
+                    <div class="card-header"><div><h5>Report status</h5><p>All municipal complaints</p></div></div>
+                    <div class="donut-wrap"><div class="donut"><strong id="statusTotal">0</strong><span>Total</span></div></div>
+                    <div class="status-breakdown"><div><span><i class="legend-dot orange"></i> Pending</span><strong id="pendingSummary">0</strong></div><div><span><i class="legend-dot blue"></i> Processing</span><strong id="processingSummary">0</strong></div><div><span><i class="legend-dot green"></i> Resolved</span><strong id="resolvedSummary">0</strong></div></div>
+                    <button class="primary-action" data-section="complaints">Manage reports <i class="bi bi-arrow-right"></i></button>
+                </article>
+            </div>
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="section-header">
+
+                <div>
+                    <h5>Quick Actions</h5>
+                    <p>Manage your system quickly</p>
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <button class="quick-card" data-action="add-user">
+
+                    <span>
+                        <i class="bi bi-person-plus-fill"></i>
+                    </span>
+
+                    <strong>Add User</strong>
+                    <small>Create new user account</small>
+
+                </button>
+
+
+                <button class="quick-card" data-action="add-news">
+
+                    <span>
+                        <i class="bi bi-file-earmark-plus-fill"></i>
+                    </span>
+
+                    <strong>Add News</strong>
+                    <small>Publish new news</small>
+
+                </button>
+
+
+                <button class="quick-card" data-action="add-tourism">
+
+                    <span>
+                        <i class="bi bi-geo-alt-fill"></i>
+                    </span>
+
+                    <strong>Add Tourist Place</strong>
+                    <small>Add tourism information</small>
+
+                </button>
+
+
+                <button class="quick-card" data-action="view-complaints">
+
+                    <span>
+                        <i class="bi bi-chat-square-text-fill"></i>
+                    </span>
+
+                    <strong>View Complaints</strong>
+                    <small>Manage citizen complaints</small>
+
+                </button>
+
+            </div>
+
+
+            <!-- CONTENT GRID -->
+
+            <div class="content-grid">
+
+                <!-- RECENT COMPLAINTS -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h5>Recent Complaints</h5>
+                            <p>Latest citizen complaints</p>
+                        </div>
+
+                        <button class="view-all" data-section="complaints">
+                            View All
+                            <i class="bi bi-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="table-responsive">
+
+                        <table class="admin-table">
+
+                            <thead>
+
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Citizen</th>
+                                    <th>Problem</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+
+                            </thead>
+
+                            <tbody>
+
+                                <tr>
+
+                                    <td>#CMP-1024</td>
+
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="https://i.pravatar.cc/50?img=11">
+                                            <span>Ram Kumar</span>
+                                        </div>
+                                    </td>
+
+                                    <td>Road Maintenance</td>
+
+                                    <td>
+                                        <span class="status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        <div class="table-actions">
+
+                                            <button
+                                                class="action-btn view"
+                                                data-bs-toggle="tooltip"
+                                                title="View">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+
+                                            <button
+                                                class="action-btn edit"
+                                                data-bs-toggle="tooltip"
+                                                title="Edit">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+
+                                            <button
+                                                class="action-btn delete"
+                                                data-bs-toggle="tooltip"
+                                                title="Delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+
+                                        </div>
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>#CMP-1023</td>
+
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="https://i.pravatar.cc/50?img=32">
+                                            <span>Sita Devi</span>
+                                        </div>
+                                    </td>
+
+                                    <td>Street Light</td>
+
+                                    <td>
+                                        <span class="status progress">
+                                            In Progress
+                                        </span>
+                                    </td>
+
+                                    <td>
+
+                                        <div class="table-actions">
+
+                                            <button class="action-btn view">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+
+                                            <button class="action-btn edit">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+
+                                            <button class="action-btn delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>#CMP-1022</td>
+
+                                    <td>
+                                        <div class="user-cell">
+                                            <img src="https://i.pravatar.cc/50?img=45">
+                                            <span>Hari Shah</span>
+                                        </div>
+                                    </td>
+
+                                    <td>Water Supply</td>
+
+                                    <td>
+                                        <span class="status resolved">
+                                            Resolved
+                                        </span>
+                                    </td>
+
+                                    <td>
+
+                                        <div class="table-actions">
+
+                                            <button class="action-btn view">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+
+                                            <button class="action-btn edit">
+                                                <i class="bi bi-pencil"></i>
+                                            </button>
+
+                                            <button class="action-btn delete">
+                                                <i class="bi bi-trash"></i>
+                                            </button>
+
+                                        </div>
+
+                                    </td>
+
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIVITY -->
+
+                <div class="dashboard-card">
+
+                    <div class="card-header">
+
+                        <div>
+                            <h5>Recent Activity</h5>
+                            <p>System activity</p>
+                        </div>
+
+                        <button class="icon-only">
+                            <i class="bi bi-three-dots"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="activity-list">
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon blue">
+                                <i class="bi bi-person-plus-fill"></i>
+                            </div>
+
+                            <div>
+                                <strong>New user registered</strong>
+                                <p>Ramesh Yadav created an account</p>
+                                <small>5 minutes ago</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon orange">
+                                <i class="bi bi-chat-left-text-fill"></i>
+                            </div>
+
+                            <div>
+                                <strong>New complaint received</strong>
+                                <p>Complaint #CMP-1024 was submitted</p>
+                                <small>20 minutes ago</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon green">
+                                <i class="bi bi-check-circle-fill"></i>
+                            </div>
+
+                            <div>
+                                <strong>Complaint resolved</strong>
+                                <p>Complaint #CMP-1022 was resolved</p>
+                                <small>1 hour ago</small>
+                            </div>
+
+                        </div>
+
+
+                        <div class="activity-item">
+
+                            <div class="activity-icon purple">
+                                <i class="bi bi-newspaper"></i>
+                            </div>
+
+                            <div>
+                                <strong>News published</strong>
+                                <p>New municipality announcement published</p>
+                                <small>2 hours ago</small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             USERS SECTION
+        ========================= -->
+
+        <div class="page-section" id="users">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>User Management</h2>
+                    <p>View, edit, update and delete registered users.</p>
+                </div>
+
+                <button class="primary-btn" data-action="add-user">
+                    <i class="bi bi-plus-lg"></i>
+                    Add User
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="toolbar">
+
+                    <div class="search-box">
+                        <i class="bi bi-search"></i>
+                        <input
+                            type="text"
+                            class="table-search"
+                            placeholder="Search users...">
+                    </div>
+
+                    <select class="filter-select">
+                        <option>All Users</option>
+                        <option>Active</option>
+                        <option>Inactive</option>
+                        <option>Admin</option>
+                    </select>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="admin-table">
+
+                        <thead>
+                            <tr>
+                                <th>User</th>
+                                <th>Email</th>
+                                <th>Role</th>
+                                <th>Status</th>
+                                <th>Joined</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/50?img=11">
+                                        <span>Ram Kumar</span>
+                                    </div>
+                                </td>
+
+                                <td>ram@example.com</td>
+
+                                <td>
+                                    <span class="role-badge">Citizen</span>
+                                </td>
+
+                                <td>
+                                    <span class="status resolved">Active</span>
+                                </td>
+
+                                <td>Aug 20, 2026</td>
+
+                                <td>
+                                    <div class="table-actions">
+
+                                        <button class="action-btn view">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                    </div>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/50?img=32">
+                                        <span>Sita Devi</span>
+                                    </div>
+                                </td>
+
+                                <td>sita@example.com</td>
+
+                                <td>
+                                    <span class="role-badge">Citizen</span>
+                                </td>
+
+                                <td>
+                                    <span class="status resolved">Active</span>
+                                </td>
+
+                                <td>Aug 18, 2026</td>
+
+                                <td>
+
+                                    <div class="table-actions">
+
+                                        <button class="action-btn view">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             COMPLAINTS
+        ========================= -->
+
+        <div class="page-section" id="complaints">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>Complaint Management</h2>
+                    <p>Manage citizen problems and complaints.</p>
+                </div>
+
+                <button class="primary-btn" id="exportComplaints">
+                    <i class="bi bi-download"></i>
+                    Export
+                </button>
+
+            </div>
+
+
+            <div class="mini-stats">
+
+                <div>
+                    <span>Total</span>
+                    <strong>386</strong>
+                </div>
+
+                <div>
+                    <span>Pending</span>
+                    <strong>48</strong>
+                </div>
+
+                <div>
+                    <span>In Progress</span>
+                    <strong>44</strong>
+                </div>
+
+                <div>
+                    <span>Resolved</span>
+                    <strong>294</strong>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="toolbar">
+
+                    <div class="search-box">
+                        <i class="bi bi-search"></i>
+                        <input
+                            type="text"
+                            class="table-search"
+                            placeholder="Search complaints...">
+                    </div>
+
+                    <select class="filter-select">
+                        <option>All Status</option>
+                        <option>Pending</option>
+                        <option>In Progress</option>
+                        <option>Resolved</option>
+                    </select>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Complaint ID</th>
+                                <th>Citizen</th>
+                                <th>Category</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>#CMP-1024</td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/50?img=11">
+                                        <span>Ram Kumar</span>
+                                    </div>
+                                </td>
+
+                                <td>Road</td>
+
+                                <td>Aug 31, 2026</td>
+
+                                <td>
+                                    <span class="status pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <div class="table-actions">
+
+                                        <button class="action-btn view">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>#CMP-1023</td>
+
+                                <td>
+                                    <div class="user-cell">
+                                        <img src="https://i.pravatar.cc/50?img=32">
+                                        <span>Sita Devi</span>
+                                    </div>
+                                </td>
+
+                                <td>Street Light</td>
+
+                                <td>Aug 30, 2026</td>
+
+                                <td>
+                                    <span class="status progress">
+                                        In Progress
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <div class="table-actions">
+
+                                        <button class="action-btn view">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             NEWS
+        ========================= -->
+
+        <div class="page-section" id="news">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>News Management</h2>
+                    <p>Create and manage municipality news.</p>
+                </div>
+
+                <button class="primary-btn" data-action="add-news">
+                    <i class="bi bi-plus-lg"></i>
+                    Add News
+                </button>
+
+            </div>
+
+
+            <div class="management-grid">
+
+                <div class="management-card">
+
+                    <div class="management-image">
+                        <img src="https://images.unsplash.com/photo-1495020689067-958852a7765e?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="management-body">
+
+                        <span class="content-tag">
+                            Announcement
+                        </span>
+
+                        <h5>Municipality Development Program</h5>
+
+                        <p>
+                            Latest development information for citizens.
+                        </p>
+
+                        <div class="management-footer">
+
+                            <small>Aug 31, 2026</small>
+
+                            <div class="table-actions">
+
+                                <button class="action-btn view">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+
+                                <button class="action-btn edit">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+
+                                <button class="action-btn delete">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="management-card">
+
+                    <div class="management-image">
+                        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="management-body">
+
+                        <span class="content-tag">
+                            Tourism
+                        </span>
+
+                        <h5>Visit Janakpur Tourism Update</h5>
+
+                        <p>
+                            Discover new tourist attractions around Janakpur.
+                        </p>
+
+                        <div class="management-footer">
+
+                            <small>Aug 28, 2026</small>
+
+                            <div class="table-actions">
+
+                                <button class="action-btn view">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+
+                                <button class="action-btn edit">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+
+                                <button class="action-btn delete">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             TOURISM
+        ========================= -->
+
+        <div class="page-section" id="tourism">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>Tourism Management</h2>
+                    <p>Manage Janakpur tourist places and information.</p>
+                </div>
+
+                <button class="primary-btn" data-action="add-tourism">
+                    <i class="bi bi-plus-lg"></i>
+                    Add Tourist Place
+                </button>
+
+            </div>
+
+
+            <div class="management-grid">
+
+                <div class="management-card">
+
+                    <div class="management-image">
+                        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=700&q=80">
+                    </div>
+
+                    <div class="management-body">
+
+                        <span class="content-tag">
+                            Religious
+                        </span>
+
+                        <h5>Janaki Mandir</h5>
+
+                        <p>
+                            Important cultural and religious destination.
+                        </p>
+
+                        <div class="management-footer">
+
+                            <small>Janakpur</small>
+
+                            <div class="table-actions">
+
+                                <button class="action-btn view">
+                                    <i class="bi bi-eye"></i>
+                                </button>
+
+                                <button class="action-btn edit">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+
+                                <button class="action-btn delete">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             TRANSPORT
+        ========================= -->
+
+        <div class="page-section" id="transport">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>Transportation</h2>
+                    <p>Manage buses, routes and transportation information.</p>
+                </div>
+
+                <button class="primary-btn" data-action="add-transport">
+                    <i class="bi bi-plus-lg"></i>
+                    Add Route
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="table-responsive">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Route</th>
+                                <th>Vehicle</th>
+                                <th>Departure</th>
+                                <th>Destination</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Janakpur → Kathmandu</td>
+
+                                <td>
+                                    Bus
+                                </td>
+
+                                <td>06:30 AM</td>
+
+                                <td>Kathmandu</td>
+
+                                <td>
+                                    <span class="status resolved">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <div class="table-actions">
+
+                                        <button class="action-btn view">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SERVICES
+        ========================= -->
+
+        <div class="page-section" id="services">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>Services</h2>
+                    <p>Manage citizen services.</p>
+                </div>
+
+                <button class="primary-btn" data-action="add-service">
+                    <i class="bi bi-plus-lg"></i>
+                    Add Service
+                </button>
+
+            </div>
+
+
+            <div class="service-management-grid">
+
+                <div class="service-admin-card">
+
+                    <i class="bi bi-file-earmark-text-fill"></i>
+
+                    <h5>Document Services</h5>
+
+                    <p>Manage document-related citizen services.</p>
+
+                    <div>
+                        <button class="small-btn edit">
+                            Edit
+                        </button>
+
+                        <button class="small-btn delete">
+                            Delete
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <div class="service-admin-card">
+
+                    <i class="bi bi-building-fill"></i>
+
+                    <h5>Municipality Services</h5>
+
+                    <p>Manage municipality online services.</p>
+
+                    <div>
+                        <button class="small-btn edit">
+                            Edit
+                        </button>
+
+                        <button class="small-btn delete">
+                            Delete
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             EMERGENCY
+        ========================= -->
+
+        <div class="page-section" id="emergency">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>Emergency Contacts</h2>
+                    <p>Manage important emergency numbers.</p>
+                </div>
+
+                <button class="primary-btn" data-action="add-emergency">
+                    <i class="bi bi-plus-lg"></i>
+                    Add Contact
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="table-responsive">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Department</th>
+                                <th>Phone</th>
+                                <th>Availability</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Police</td>
+
+                                <td>100</td>
+
+                                <td>24/7</td>
+
+                                <td>
+                                    <span class="status resolved">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+
+                                    <div class="table-actions">
+
+                                        <button class="action-btn view">
+                                            <i class="bi bi-eye"></i>
+                                        </button>
+
+                                        <button class="action-btn edit">
+                                            <i class="bi bi-pencil"></i>
+                                        </button>
+
+                                        <button class="action-btn delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             FAQ
+        ========================= -->
+
+        <div class="page-section" id="faq">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>FAQ Management</h2>
+                    <p>Manage frequently asked questions.</p>
+                </div>
+
+                <button class="primary-btn" data-action="add-faq">
+                    <i class="bi bi-plus-lg"></i>
+                    Add FAQ
+                </button>
+
+            </div>
+
+
+            <div class="faq-list">
+
+                <div class="faq-admin-item">
+
+                    <div>
+                        <h5>How can I submit a complaint?</h5>
+                        <p>
+                            Citizens can submit complaints through the complaint form or AI chatbot.
+                        </p>
+                    </div>
+
+                    <div class="table-actions">
+
+                        <button class="action-btn view">
+                            <i class="bi bi-eye"></i>
+                        </button>
+
+                        <button class="action-btn edit">
+                            <i class="bi bi-pencil"></i>
+                        </button>
+
+                        <button class="action-btn delete">
+                            <i class="bi bi-trash"></i>
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             CHATBOT
+        ========================= -->
+
+        <div class="page-section" id="chatbot">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>AI Chatbot</h2>
+                    <p>Monitor JanakSewa AI chatbot activity.</p>
+                </div>
+
+                <span class="ai-online">
+                    <span></span>
+                    AI Online
+                </span>
+
+            </div>
+
+
+            <div class="ai-dashboard-grid">
+
+                <div class="ai-stat-card">
+
+                    <i class="bi bi-chat-dots-fill"></i>
+
+                    <span>Total Conversations</span>
+
+                    <strong>8,642</strong>
+
+                </div>
+
+
+                <div class="ai-stat-card">
+
+                    <i class="bi bi-person-check-fill"></i>
+
+                    <span>Active Users</span>
+
+                    <strong>742</strong>
+
+                </div>
+
+
+                <div class="ai-stat-card">
+
+                    <i class="bi bi-clock-history"></i>
+
+                    <span>Average Response</span>
+
+                    <strong>1.2s</strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card chatbot-monitor">
+
+                <div class="chat-header">
+
+                    <div class="ai-avatar">
+                        <i class="bi bi-robot"></i>
+                    </div>
+
+                    <div>
+                        <strong>JanakSewa AI</strong>
+                        <small>Monitoring Mode</small>
+                    </div>
+
+                </div>
+
+
+                <div class="chat-message user-message">
+                    How can I report a road problem?
+                </div>
+
+                <div class="chat-message ai-message">
+                    You can submit a road complaint through the Complaints section.
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             RECOVERY
+        ========================= -->
+
+        <div class="page-section" id="recovery">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>Recovery / Trash</h2>
+                    <p>Restore deleted records or permanently remove them.</p>
+                </div>
+
+                <button class="danger-btn" id="emptyTrash">
+                    <i class="bi bi-trash3-fill"></i>
+                    Empty Trash
+                </button>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="recovery-info">
+
+                    <i class="bi bi-shield-check"></i>
+
+                    <div>
+                        <h5>Deleted records are protected</h5>
+                        <p>
+                            Restore records when necessary or permanently delete them.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-responsive">
+
+                    <table class="admin-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Item</th>
+                                <th>Type</th>
+                                <th>Deleted By</th>
+                                <th>Date</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Old Complaint #CMP-990</td>
+
+                                <td>Complaint</td>
+
+                                <td>Admin User</td>
+
+                                <td>Aug 29, 2026</td>
+
+                                <td>
+
+                                    <div class="table-actions">
+
+                                        <button class="restore-btn">
+                                            <i class="bi bi-arrow-counterclockwise"></i>
+                                            Restore
+                                        </button>
+
+                                        <button class="action-btn delete permanent-delete">
+                                            <i class="bi bi-trash"></i>
+                                        </button>
+
+                                    </div>
+
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             PROFILE
+        ========================= -->
+
+        <div class="page-section" id="profile">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>Admin Profile</h2>
+                    <p>Manage your administrator account.</p>
+                </div>
+
+                <button class="primary-btn" id="editProfile">
+                    <i class="bi bi-pencil"></i>
+                    Edit Profile
+                </button>
+
+            </div>
+
+
+            <div class="profile-layout">
+
+                <div class="dashboard-card profile-card">
+
+                    <div class="large-profile-avatar">
+
+                        <img src="https://i.pravatar.cc/200?img=12">
+
+                        <button>
+                            <i class="bi bi-camera-fill"></i>
+                        </button>
+
+                    </div>
+
+                    <h3>Admin User</h3>
+
+                    <p>Super Administrator</p>
+
+                    <span class="profile-status">
+                        <span></span>
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="dashboard-card profile-details">
+
+                    <h5>Personal Information</h5>
+
+                    <div class="profile-info-grid">
+
+                        <div>
+                            <label>Full Name</label>
+                            <strong>Admin User</strong>
+                        </div>
+
+                        <div>
+                            <label>Email Address</label>
+                            <strong>admin@janaksewa.ai</strong>
+                        </div>
+
+                        <div>
+                            <label>Phone Number</label>
+                            <strong>+977 9800000000</strong>
+                        </div>
+
+                        <div>
+                            <label>Role</label>
+                            <strong>Super Administrator</strong>
+                        </div>
+
+                        <div>
+                            <label>Last Login</label>
+                            <strong>Today, 08:25 PM</strong>
+                        </div>
+
+                        <div>
+                            <label>Account Created</label>
+                            <strong>Jan 01, 2026</strong>
+                        </div>
+
+                    </div>
+
+                    <hr>
+
+                    <h5>Security</h5>
+
+                    <button class="secondary-btn" id="changePassword">
+                        <i class="bi bi-key-fill"></i>
+                        Change Password
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             SETTINGS
+        ========================= -->
+
+        <div class="page-section" id="settings">
+
+            <div class="page-heading">
+
+                <div>
+                    <h2>System Settings</h2>
+                    <p>Configure your administrator dashboard.</p>
+                </div>
+
+            </div>
+
+
+            <div class="settings-grid">
+
+                <div class="dashboard-card setting-card">
+
+                    <div class="setting-icon">
+                        <i class="bi bi-bell-fill"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Notifications</h5>
+
+                        <p>
+                            Receive alerts for new complaints and users.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input type="checkbox" checked>
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="dashboard-card setting-card">
+
+                    <div class="setting-icon">
+                        <i class="bi bi-moon-fill"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Dark Mode</h5>
+
+                        <p>
+                            Change dashboard appearance.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input type="checkbox" id="darkModeToggle">
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+
+                <div class="dashboard-card setting-card">
+
+                    <div class="setting-icon">
+                        <i class="bi bi-shield-lock-fill"></i>
+                    </div>
+
+                    <div>
+
+                        <h5>Two-Factor Authentication</h5>
+
+                        <p>
+                            Add additional account security.
+                        </p>
+
+                    </div>
+
+                    <label class="switch">
+
+                        <input type="checkbox">
+
+                        <span></span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer class="dashboard-footer">
+
+        <span>
+            © 2026 JanakSewa AI. Admin Dashboard.
+        </span>
+
+        <span>
+            <i class="bi bi-shield-check"></i>
+            Secure Administration
+        </span>
+
+    </footer>
+
+</main>
+
+
+<!-- =========================
+     MODAL
+========================= -->
+
+<div class="custom-modal" id="actionModal">
+
+    <div class="modal-box">
+
+        <button class="modal-close" id="modalClose">
+            <i class="bi bi-x-lg"></i>
+        </button>
+
+        <div class="modal-icon">
+            <i class="bi bi-pencil-square"></i>
+        </div>
+
+        <h4 id="modalTitle">Edit Record</h4>
+
+        <p id="modalMessage">
+            Update record information.
+        </p>
+
+        <div class="modal-form" id="modalForm">
+
+            <label>
+                Name
+                <input type="text" id="modalName" value="">
+            </label>
+
+            <label>
+                Description
+                <textarea id="modalDescription"></textarea>
+            </label>
+
+        </div>
+
+        <div class="modal-buttons">
+
+            <button class="secondary-btn" id="modalCancel">
+                Cancel
+            </button>
+
+            <button class="primary-btn" id="modalConfirm">
+                Save Changes
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- TOAST -->
+
+<div class="toast-message" id="toastMessage">
+
+    <i class="bi bi-check-circle-fill"></i>
+
+    <div>
+        <strong id="toastTitle">Success</strong>
+        <span id="toastText">Action completed successfully.</span>
+    </div>
+
+    <button id="toastClose">
+        <i class="bi bi-x"></i>
+    </button>
+
+</div>
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Admin JS -->
+
+<script src="assets/js/admin-dashboard.js"></script>
+
+</body>
+</html>
